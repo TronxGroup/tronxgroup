@@ -1,0 +1,1 @@
+import { render, screen } from '@testing-library/react'; import { describe, it, expect } from 'vitest'; import Home from '@/app/page'; describe('Home', () => { it('renders title', () => { render(<Home />); expect(screen.getByText('Tronx Group')).toBeInTheDocument(); }); });
