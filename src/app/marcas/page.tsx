@@ -13,7 +13,7 @@ const brands: {
 }[] = [
   {
     name: 'Dekaelo Media',
-    desc: 'Producción Audiovisual Estratégica para empresas: video largo + 4–5 reels mensuales.',
+    desc: 'Estudio audiovisual estratégico: producción de alto nivel con enfoque en negocio. Un video institucional + 4–5 reels mensuales para dar presencia constante a tu marca.',
     url: 'https://www.dekaelomedia.com',
     socials: [
       { name: 'LinkedIn', url: '#', icon: Linkedin },
@@ -22,13 +22,13 @@ const brands: {
   },
   {
     name: 'Tronx Strategy',
-    desc: 'Consultoría B2B, propuestas corporativas, growth & CRM.',
+    desc: 'Consultoría corporativa y B2B: diseño de propuestas, gestión de growth, embudos de ventas, CRM y performance digital para empresas en expansión.',
     url: 'https://www.tronxstrategy.com',
     socials: [{ name: 'LinkedIn', url: '#', icon: Linkedin }],
   },
   {
     name: 'Tronx TV',
-    desc: 'Canal de contenido y documentales (en desarrollo).',
+    desc: 'Canal propio de contenidos y documentales en desarrollo. Un espacio de formatos originales para inspirar, informar y conectar con audiencias B2B y masivas.',
     url: '#',
     socials: [
       { name: 'YouTube', url: '#', icon: Youtube },
@@ -45,7 +45,10 @@ export default function Marcas() {
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-semibold">Marcas</h1>
         <p className="mt-2 text-white/70 max-w-2xl">
-          Ecosistema coordinado para entregar valor 360°: estrategia, contenido y distribución.
+          Ecosistema integrado que cubre las tres áreas críticas para el crecimiento empresarial:
+          <span className="text-white"> estrategia</span>, 
+          <span className="text-white"> contenido</span> y 
+          <span className="text-white"> distribución</span>.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 mt-8">
