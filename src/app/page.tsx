@@ -59,7 +59,7 @@ export default function Home() {
         <div className="container">
           <h2 className="text-2xl md:text-3xl font-semibold">Marcas Tronx Group</h2>
           <p className="mt-2 text-white/70 max-w-2xl">
-            Operamos tres marcas complementarias que cubren <b>estrategia</b>, <b>contenido</b> y <b>distribución</b>.
+            Operamo tres marcas complementarias que cubren <b>estrategia</b>, <b>contenido</b> y <b>distribución</b>.
           </p>
 
           {/* 3 marcas propias */}
