@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 export function Footer() {
   return (
     <footer className="border-t border-white/10">
@@ -9,9 +10,12 @@ export function Footer() {
             <Link href="/quienes-somos" className="link">Quiénes Somos</Link>
             <Link href="/marcas" className="link">Marcas</Link>
             <Link href="/contacto" className="link">Contacto</Link>
+            <Link href="/privacidad-condiciones" className="link">Privacidad y Condiciones</Link>
           </div>
         </div>
-        <p className="mt-2">Operamos desde Chile para LatAm y el mundo. Sitio en construcción — se irán integrando fotos, casos y prensa.</p>
+        <p className="mt-2">
+          Operamos desde Chile para Latinoamérica y el mundo.
+        </p>
       </div>
     </footer>
   );
