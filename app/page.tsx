@@ -19,7 +19,6 @@ import {
   Youtube,
   Facebook,
   Twitter,
-  Tiktok,
 } from "lucide-react";
 
 const fadeUp = {
@@ -54,7 +53,7 @@ const SocialIcon = ({ platform, href }: { platform: 'linkedin' | 'instagram' | '
     youtube: <Youtube className={common} />,
     facebook: <Facebook className={common} />,
     x: <Twitter className={common} />, // usar Twitter icon para X
-    tiktok: <Tiktok className={common} />,
+    tiktok: <ExternalLink className={common} />, // lucide-react no incluye TikTok
   };
   return (
     <a
@@ -347,7 +346,7 @@ export default function Page() {
         <div className="mx-auto max-w-3xl text-center">
           <h3 className="text-2xl sm:text-3xl font-bold">¿Listo para conversar?</h3>
           <p className="mt-3 text-neutral-300">Cuéntanos tu contexto y objetivos. Te proponemos un plan claro con hitos, KPIs y tiempos de implementación.</p>
-                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
             <a href={`mailto:${LINKS.tronxGroup.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-neutral-900 px-5 py-3 font-semibold hover:bg-neutral-100">
               <Mail size={18}/> {LINKS.tronxGroup.email}
             </a>
