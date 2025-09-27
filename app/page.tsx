@@ -248,7 +248,7 @@ export default function Page() {
             </div>
           </Card>
 
-          {/* Tronx Strategy */}
+           {/* Tronx Strategy */}
           <Card>
             <div className="flex items-center gap-3">
               <div className="rounded-xl bg-emerald-500/20 p-2"><LineChart size={18} className="text-emerald-300"/></div>
@@ -262,7 +262,14 @@ export default function Page() {
               <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Revenue Share: 15–25% servicios, 20–35% productos digitales</li>
             </ul>
             <div className="mt-4 flex flex-wrap items-center gap-2">
-              <a href={LINKS.brands.strategy.site} target="_blank" className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200}><Globe size={14}/> Sitio <ExternalLink size={14}/></a>
+              {/* <- AQUÍ ESTABA EL ERROR -> */}
+              <a
+                href={LINKS.brands.strategy.site}
+                target="_blank"
+                className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200"
+              >
+                <Globe size={14}/> Sitio <ExternalLink size={14}/>
+              </a>
               <SocialIcon platform="linkedin" href={LINKS.brands.strategy.socials.linkedin} />
             </div>
           </Card>
