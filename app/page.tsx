@@ -255,11 +255,11 @@ export default function Page() {
               <p className="text-sm font-semibold tracking-wide">Tronx Strategy</p>
             </div>
             <h4 className="mt-3 text-lg font-bold">Crecimiento B2B con estrategia, tecnología y contenido</h4>
-            <p className="mt-2 text-sm text-neutral-300">Implementamos y operamos tu embudo: sitios y landings, performance, CRM y automatizaciones. Retainers y Programa Socios (Revenue Share).</p>
+            <p className="mt-2 text-sm text-neutral-300">Diseñamos y operamos embudos de conversión completos: desde sitios y landings optimizadas hasta performance marketing, CRM y automatizaciones. Todo con foco en resultados medibles y escalables.</p>
             <ul className="mt-4 space-y-2 text-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Onboarding 2–4 semanas</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Retainers de growth y capacitación</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Revenue Share: 15–25% servicios, 20–35% productos digitales</li>
+              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Onboarding empresarial (2–4 semanas): dominios, correos, CRM, landings</li>
+              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Retainers de growth y capacitación: campañas de performance, SEO/CRO, playbooks y formación.</li>
+              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Programa Socios (Revenue Share): Tronx capta, nutre y cierra; tú entregas.</li>
             </ul>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               {/* <- AQUÍ ESTABA EL ERROR -> */}
