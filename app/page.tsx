@@ -221,86 +221,136 @@ export default function Page() {
       </Section>
 
       {/* MARCAS */}
-      <Section id="marcas" className="py-14">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold">Nuestras marcas</h3>
+<Section id="marcas" className="py-14">
+  <div className="flex items-center justify-between mb-6">
+    <h3 className="text-xl sm:text-2xl font-bold">Nuestras marcas</h3>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {/* Dekaelo Media */}
+    <Card>
+      <div className="flex items-center gap-3">
+        <div className="rounded-xl bg-sky-500/20 p-2">
+          <Video size={18} className="text-sky-300" />
         </div>
+        <p className="text-sm font-semibold tracking-wide">Dekaelo Media</p>
+      </div>
+      <h4 className="mt-3 text-lg font-bold">Producción Audiovisual Estratégica</h4>
+      <p className="mt-2 text-sm text-neutral-300">
+        Creamos contenido con calidad cinematográfica todos los meses, diseñado para múltiples plataformas:
+        cápsulas, reels, vodcasts y campañas. Entregas listas para publicación.
+      </p>
+      <ul className="mt-4 space-y-2 text-sm">
+        <li className="flex items-center gap-2">
+          <CheckCircle2 size={16} className="text-sky-300" /> Planes mensuales de contenido
+        </li>
+        <li className="flex items-center gap-2">
+          <CheckCircle2 size={16} className="text-sky-300" /> Banco Bice (vodcasts internos 2026)
+        </li>
+        <li className="flex items-center gap-2">
+          <CheckCircle2 size={16} className="text-sky-300" /> Largometrajes: “Domo” y “Las Horribles” (2026–2029)
+        </li>
+      </ul>
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <a
+          href={LINKS.brands.dekaelo.site}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sm text-sky-300 hover:text-sky-200"
+        >
+          <Globe size={14} /> Sitio <ExternalLink size={14} />
+        </a>
+        <SocialIcon platform="linkedin" href={LINKS.brands.dekaelo.socials.linkedin} />
+        <SocialIcon platform="instagram" href={LINKS.brands.dekaelo.socials.instagram} />
+        <SocialIcon platform="youtube" href={LINKS.brands.dekaelo.socials.youtube} />
+      </div>
+    </Card>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Dekaelo Media */}
-          <Card>
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-sky-500/20 p-2"><Video size={18} className="text-sky-300"/></div>
-              <p className="text-sm font-semibold tracking-wide">Dekaelo Media</p>
-            </div>
-            <h4 className="mt-3 text-lg font-bold">Producción Audiovisual Estratégica</h4>
-            <p className="mt-2 text-sm text-neutral-300">Contenido con calidad cinematográfica todos los meses: cápsulas, reels, vodcasts y campañas. Publicación lista por plataforma.</p>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-sky-300"/> Planes mensuales</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-sky-300"/> Banco Bice (vodcasts internos 2026)</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-sky-300"/> Películas “Domo” y “Las Horribles” (2026–2029)</li>
-            </ul>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <a href={LINKS.brands.dekaelo.site} target="_blank" className="inline-flex items-center gap-1 text-sm text-sky-300 hover:text-sky-200"><Globe size={14}/> Sitio <ExternalLink size={14}/></a>
-              <SocialIcon platform="linkedin" href={LINKS.brands.dekaelo.socials.linkedin} />
-              <SocialIcon platform="instagram" href={LINKS.brands.dekaelo.socials.instagram} />
-              <SocialIcon platform="youtube" href={LINKS.brands.dekaelo.socials.youtube} />
-            </div>
-          </Card>
-
-           {/* Tronx Strategy */}
-          <Card>
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-emerald-500/20 p-2"><LineChart size={18} className="text-emerald-300"/></div>
-              <p className="text-sm font-semibold tracking-wide">Tronx Strategy</p>
-            </div>
-            <h4 className="mt-3 text-lg font-bold">Crecimiento B2B con estrategia, tecnología y contenido</h4>
-            <p className="mt-2 text-sm text-neutral-300">Diseñamos y operamos embudos de conversión completos: desde sitios y landings optimizadas hasta performance marketing, CRM y automatizaciones. Todo con foco en resultados medibles y escalables.</p>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Onboarding empresarial (2–4 semanas): dominios, correos, CRM, landings</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Retainers de growth y capacitación: campañas de performance, SEO/CRO, playbooks y formación.</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Programa Socios (Revenue Share): Tronx capta, nutre y cierra; tú entregas.</li>
-            </ul>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              {/* <- AQUÍ ESTABA EL ERROR -> */}
-              <a
-                href={LINKS.brands.strategy.site}
-                target="_blank"
-                className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200"
-              >
-                <Globe size={14}/> Sitio <ExternalLink size={14}/>
-              </a>
-              <SocialIcon platform="linkedin" href={LINKS.brands.strategy.socials.linkedin} />
-            </div>
-          </Card>
-
-          {/* Tronx TV */}
-          <Card>
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-fuchsia-500/20 p-2"><Tv size={18} className="text-fuchsia-300"/></div>
-              <p className="text-sm font-semibold tracking-wide">Tronx TV</p>
-            </div>
-            <h4 className="mt-3 text-lg font-bold">Historias que trascienden fronteras</h4>
-            <p className="mt-2 text-sm text-neutral-300">Canal editorial multiplataforma con narrativas originales que combinan documental, ficción y conversación en 4K UHD. Publicación por temporadas.</p>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-fuchsia-300"/> Programa: "Reality Day" (12 minutos)</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-fuchsia-300"/> Mirada editorial propia</li>
-            </ul>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <a href={LINKS.brands.tv.site} target="_blank" className="inline-flex items-center gap-1 text-sm text-fuchsia-300 hover:text-fuchsia-200"><Globe size={14}/> Sitio <ExternalLink size={14}/></a>
-              <SocialIcon platform="youtube" href={LINKS.brands.tv.socials.youtube} />
-              <SocialIcon platform="instagram" href={LINKS.brands.tv.socials.instagram} />
-              <SocialIcon platform="tiktok" href={LINKS.brands.tv.socials.tiktok} />
-              <SocialIcon platform="facebook" href={LINKS.brands.tv.socials.facebook} />
-            </div>
-          </Card>
+    {/* Tronx Strategy */}
+    <Card>
+      <div className="flex items-center gap-3">
+        <div className="rounded-xl bg-emerald-500/20 p-2">
+          <LineChart size={18} className="text-emerald-300" />
         </div>
+        <p className="text-sm font-semibold tracking-wide">Tronx Strategy</p>
+      </div>
+      <h4 className="mt-3 text-lg font-bold">Crecimiento B2B con estrategia, tecnología y contenido</h4>
+      <p className="mt-2 text-sm text-neutral-300">
+        Diseñamos y operamos embudos de conversión completos: sitios y landings optimizadas, performance marketing,
+        CRM y automatizaciones. Foco en resultados medibles y escalables.
+      </p>
+      <ul className="mt-4 space-y-2 text-sm">
+        <li className="flex items-center gap-2">
+          <CheckCircle2 size={16} className="text-emerald-300" /> Onboarding (2–4 semanas): dominios, correos, CRM, landings
+        </li>
+        <li className="flex items-center gap-2">
+          <CheckCircle2 size={16} className="text-emerald-300" /> Retainers de growth: performance, SEO/CRO, playbooks y formación
+        </li>
+        <li className="flex items-center gap-2">
+          <CheckCircle2 size={16} className="text-emerald-300" /> Programa Socios (Revenue Share): Tronx capta, nutre y cierra; tú entregas
+        </li>
+      </ul>
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <a
+          href={LINKS.brands.strategy.site}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200"
+        >
+          <Globe size={14} /> Sitio <ExternalLink size={14} />
+        </a>
+        <SocialIcon platform="linkedin" href={LINKS.brands.strategy.socials.linkedin} />
+      </div>
+    </Card>
 
-        {/* Teléfono único visible */}
-        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 text-center text-sm">
-          <p>📞 Canal único de contacto para todas las marcas: <a className="font-semibold hover:underline" href={`tel:${LINKS.tronxGroup.phone.replace(/\s/g, "")}`}>{LINKS.tronxGroup.phone}</a></p>
+    {/* Tronx TV */}
+    <Card>
+      <div className="flex items-center gap-3">
+        <div className="rounded-xl bg-fuchsia-500/20 p-2">
+          <Tv size={18} className="text-fuchsia-300" />
         </div>
-      </Section>
+        <p className="text-sm font-semibold tracking-wide">Tronx TV</p>
+      </div>
+      <h4 className="mt-3 text-lg font-bold">Historias que trascienden fronteras</h4>
+      <p className="mt-2 text-sm text-neutral-300">
+        Canal editorial multiplataforma con narrativas originales que combinan documental, ficción y conversación en 4K UHD.
+        Publicación por temporadas con mirada editorial propia.
+      </p>
+      <ul className="mt-4 space-y-2 text-sm">
+        <li className="flex items-center gap-2">
+          <CheckCircle2 size={16} className="text-fuchsia-300" /> Programa original: “Reality Day” (12 minutos)
+        </li>
+        <li className="flex items-center gap-2">
+          <CheckCircle2 size={16} className="text-fuchsia-300" /> Desarrollo de nuevas temporadas y formatos
+        </li>
+      </ul>
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <a
+          href={LINKS.brands.tv.site}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sm text-fuchsia-300 hover:text-fuchsia-200"
+        >
+          <Globe size={14} /> Sitio <ExternalLink size={14} />
+        </a>
+        <SocialIcon platform="youtube" href={LINKS.brands.tv.socials.youtube} />
+        <SocialIcon platform="instagram" href={LINKS.brands.tv.socials.instagram} />
+        <SocialIcon platform="tiktok" href={LINKS.brands.tv.socials.tiktok} />
+        <SocialIcon platform="facebook" href={LINKS.brands.tv.socials.facebook} />
+      </div>
+    </Card>
+  </div>
+
+  {/* Teléfono único visible */}
+  <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 text-center text-sm">
+    <p>
+      📞 Canal único de contacto para todas las marcas:&nbsp;
+      <a className="font-semibold hover:underline" href={`tel:${LINKS.tronxGroup.phone.replace(/\s/g, "")}`}>
+        {LINKS.tronxGroup.phone}
+      </a>
+    </p>
+  </div>
+</Section>
 
       {/* PROPUESTA DE VALOR */}
       <Section id="valor" className="py-14">
