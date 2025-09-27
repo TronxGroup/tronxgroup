@@ -381,37 +381,89 @@ export default function Page() {
       </Section>
 
       {/* ECOSISTEMA: Socios del Programa (Tronx Strategy) */}
-      <Section id="ecosistema" className="py-14">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold">Ecosistema</h3>
-          <Tag>Socios del Programa · Tronx Strategy</Tag>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
-            <p className="text-sm font-semibold tracking-wide">Cámara de Comercio Asia Pacífico (APCC)</p>
-            <p className="mt-2 text-sm text-neutral-300">Socio del Programa (Tronx Strategy).</p>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <a href={LINKS.partners.apcc.site} target="_blank" className="inline-flex items-center gap-1 text-sm text-sky-300 hover:text-sky-200"><Globe size={14}/> Sitio <ExternalLink size={14}/></a>
-              <SocialIcon platform="facebook" href={LINKS.partners.apcc.socials.facebook} />
-              <SocialIcon platform="instagram" href={LINKS.partners.apcc.socials.instagram} />
-              <SocialIcon platform="linkedin" href={LINKS.partners.apcc.socials.linkedin} />
-              <SocialIcon platform="youtube" href={LINKS.partners.apcc.socials.youtube} />
-            </div>
-          </Card>
-          <Card>
-            <p className="text-sm font-semibold tracking-wide">Echevensko B2B</p>
-            <p className="mt-2 text-sm text-neutral-300">Socio del Programa (Tronx Strategy).</p>
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <a href={LINKS.partners.echevensko.site} target="_blank" className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200"><Globe size={14}/> Sitio <ExternalLink size={14}/></a>
-              <SocialIcon platform="instagram" href={LINKS.partners.echevensko.socials.instagram} />
-              <SocialIcon platform="linkedin" href={LINKS.partners.echevensko.socials.linkedin} />
-            </div>
-          </Card>
-        </div>
-        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 text-center text-sm">
-          <p>Llegues por Dekaelo, Tronx TV, Tronx Strategic, APCC o Echevensko, el contacto es único: <strong>+56 9 2008 0031</strong> · <a className="hover:underline" href="mailto:info@tronxgroup.com">info@tronxgroup.com</a></p>
-        </div>
-      </Section>
+<Section id="ecosistema" className="py-14">
+  <div className="flex items-center justify-between mb-6">
+    <h3 className="text-xl sm:text-2xl font-bold">Ecosistema</h3>
+    <Tag>Socios del Programa · Tronx Strategy</Tag>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* APCC */}
+    <Card>
+      <div className="flex items-center justify-between">
+        <p className="text-sm font-semibold tracking-wide">
+          Cámara de Comercio Asia Pacífico (APCC)
+        </p>
+        <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] tracking-wide border border-white/10">
+          Revenue Share
+        </span>
+      </div>
+      <p className="mt-2 text-sm text-neutral-300">
+        Socio del Programa (Tronx Strategy). Embudo de membresías, automatizaciones y reporting integrado.
+      </p>
+      <ul className="mt-3 space-y-1 text-sm text-neutral-300/90">
+        <li className="flex items-center gap-2">• Web y landings con medición (GA4/GTM)</li>
+        <li className="flex items-center gap-2">• Formularios a Zoho CRM + sync automático a HubSpot APCC</li>
+        <li className="flex items-center gap-2">• Campañas de captación y nurturing</li>
+      </ul>
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <a
+          href={LINKS.partners.apcc.site}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sm text-sky-300 hover:text-sky-200"
+        >
+          <Globe size={14} /> Sitio <ExternalLink size={14} />
+        </a>
+        <SocialIcon platform="facebook" href={LINKS.partners.apcc.socials.facebook} />
+        <SocialIcon platform="instagram" href={LINKS.partners.apcc.socials.instagram} />
+        <SocialIcon platform="linkedin" href={LINKS.partners.apcc.socials.linkedin} />
+        <SocialIcon platform="youtube" href={LINKS.partners.apcc.socials.youtube} />
+      </div>
+    </Card>
+
+    {/* Echevensko B2B */}
+    <Card>
+      <div className="flex items-center justify-between">
+        <p className="text-sm font-semibold tracking-wide">Echevensko B2B</p>
+        <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] tracking-wide border border-white/10">
+          Revenue Share
+        </span>
+      </div>
+      <p className="mt-2 text-sm text-neutral-300">
+        Socio del Programa (Tronx Strategy). Charlas corporativas “La Magia de la Imaginación” y nuevas experiencias.
+      </p>
+      <ul className="mt-3 space-y-1 text-sm text-neutral-300/90">
+        <li className="flex items-center gap-2">• Landing de captación y secuencias de outreach</li>
+        <li className="flex items-center gap-2">• CRM con scoring y pipelines de ventas</li>
+        <li className="flex items-center gap-2">• Reporting de leads, conversiones y liquidaciones</li>
+      </ul>
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <a
+          href={LINKS.partners.echevensko.site}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200"
+        >
+          <Globe size={14} /> Sitio <ExternalLink size={14} />
+        </a>
+        <SocialIcon platform="instagram" href={LINKS.partners.echevensko.socials.instagram} />
+        <SocialIcon platform="linkedin" href={LINKS.partners.echevensko.socials.linkedin} />
+      </div>
+    </Card>
+  </div>
+
+  {/* Nota de canal único */}
+  <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 text-center text-sm">
+    <p>
+      Llegues por Dekaelo, Tronx TV, Tronx Strategy, APCC o Echevensko, el contacto es único:&nbsp;
+      <strong>{LINKS.tronxGroup.phone}</strong>&nbsp;·&nbsp;
+      <a className="hover:underline" href={`mailto:${LINKS.tronxGroup.email}`}>
+        {LINKS.tronxGroup.email}
+      </a>
+    </p>
+  </div>
+</Section>
 
       {/* CONTACTO */}
       <Section id="contacto" className="py-16">
