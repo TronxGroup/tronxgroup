@@ -194,7 +194,7 @@ export default function Page() {
       <Section className="py-10">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-neutral-400">Quiénes somos</p>
-          <h2 className="mt-2 text-2xl sm:text-3xl font-bold">Holding chileno liderado por Tomás Echeverría</h2>
+          <h2 className="mt-2 text-2xl sm:text-3xl font-bold">Holding chileno de creatividad, estrategia y narrativa</h2>
           <p className="mt-4 text-neutral-300">
             Centralizamos administración, estrategia y producción en tres marcas que trabajan integradas para entregar resultados medibles y narrativas memorables. Un único canal de contacto para todo el ecosistema.
           </p>
