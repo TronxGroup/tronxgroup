@@ -349,7 +349,7 @@ export default function Page() {
             </div>
           </Card>
           <Card>
-            <p className="text-sm font-semibold tracking-wide">Echevensko</p>
+            <p className="text-sm font-semibold tracking-wide">Echevensko B2B</p>
             <p className="mt-2 text-sm text-neutral-300">Socio del Programa (Tronx Strategy).</p>
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <a href={LINKS.partners.echevensko.site} target="_blank" className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200"><Globe size={14}/> Sitio <ExternalLink size={14}/></a>
