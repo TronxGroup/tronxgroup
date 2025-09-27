@@ -45,6 +45,13 @@ const Card = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+/** TikTok SVG propio */
+const TikTokIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
+  <svg viewBox="0 0 48 48" aria-hidden="true" className={className} fill="currentColor">
+    <path d="M31.8 8.6c1.8 2.3 4.1 4 7.1 4.4v5.3c-2.8-.1-5.3-1-7.1-2.3v10.8c0 6.9-4.7 10.9-10.1 10.9-4.8 0-9.1-3.3-9.1-8.7 0-6 5.6-8.6 9.1-8.6.7 0 1.4.1 2 .2v5.3c-.6-.2-1.3-.3-2-.3-2.2 0-4.3 1.4-4.3 3.8 0 2.5 2.1 3.9 4.2 3.9 2.3 0 4.2-1.6 4.2-4.6V8h5.9z"/>
+  </svg>
+);
+
 const SocialIcon = ({ platform, href }: { platform: 'linkedin' | 'instagram' | 'youtube' | 'facebook' | 'x' | 'tiktok'; href?: string }) => {
   const common = "h-5 w-5";
   const icon: Record<string, React.ReactNode> = {
@@ -53,7 +60,7 @@ const SocialIcon = ({ platform, href }: { platform: 'linkedin' | 'instagram' | '
     youtube: <Youtube className={common} />,
     facebook: <Facebook className={common} />,
     x: <Twitter className={common} />, // usar Twitter icon para X
-    tiktok: <ExternalLink className={common} />, // lucide-react no incluye TikTok
+    tiktok: <TikTokIcon className={common} />, // SVG propio
   };
   return (
     <a
@@ -72,7 +79,7 @@ const LINKS = {
   tronxGroup: {
     phone: "+56 9 2008 0031",
     x: "https://x.com/tronxgroup", // TODO: ajustar handle si corresponde
-    email: "hola@tronx.group",
+    email: "info@tronxgroup.com",   // actualizado
   },
   brands: {
     dekaelo: {
@@ -120,6 +127,18 @@ const LINKS = {
 };
 
 export default function Page() {
+  /** handler simple para el formulario (placeholder) */
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const nombre = data.get("nombre");
+    const apellido = data.get("apellido");
+    const correo = data.get("correo");
+    const newsletter = data.get("newsletter") ? "Sí" : "No";
+    alert(`Gracias, ${nombre} ${apellido}. Te contactaremos a ${correo}. Newsletter: ${newsletter}`);
+    e.currentTarget.reset();
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-neutral-100 selection:bg-sky-500/30">
       {/* NAVBAR */}
@@ -205,10 +224,6 @@ export default function Page() {
       <Section id="marcas" className="py-14">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-xl sm:text-2xl font-bold">Nuestras marcas</h3>
-          <div className="hidden sm:flex gap-2">
-            <Tag>Holding</Tag>
-            <Tag>Chile → Mundo</Tag>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -221,7 +236,7 @@ export default function Page() {
             <h4 className="mt-3 text-lg font-bold">Producción Audiovisual Estratégica</h4>
             <p className="mt-2 text-sm text-neutral-300">Contenido con calidad cinematográfica todos los meses: cápsulas, reels, vodcasts y campañas. Publicación lista por plataforma.</p>
             <ul className="mt-4 space-y-2 text-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-sky-300"/> Planes mensuales (IVA inc.)</li>
+              <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-sky-300"/> Planes mensuales</li>
               <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-sky-300"/> Banco Bice (vodcasts internos 2026)</li>
               <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-sky-300"/> Películas “Domo” y “Las Horribles” (2026–2029)</li>
             </ul>
@@ -247,7 +262,7 @@ export default function Page() {
               <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-300"/> Revenue Share: 15–25% servicios, 20–35% productos digitales</li>
             </ul>
             <div className="mt-4 flex flex-wrap items-center gap-2">
-              <a href={LINKS.brands.strategy.site} target="_blank" className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200"><Globe size={14}/> Sitio <ExternalLink size={14}/></a>
+              <a href={LINKS.brands.strategy.site} target="_blank" className="inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200}><Globe size={14}/> Sitio <ExternalLink size={14}/></a>
               <SocialIcon platform="linkedin" href={LINKS.brands.strategy.socials.linkedin} />
             </div>
           </Card>
@@ -337,7 +352,7 @@ export default function Page() {
           </Card>
         </div>
         <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 text-center text-sm">
-          <p>Llegues por Dekaelo, Tronx TV, APCC o Echevensko, el contacto es único: <a className="font-semibold hover:underline" href={`tel:${LINKS.tronxGroup.phone.replace(/\s/g, "")}`}>{LINKS.tronxGroup.phone}</a> · <a className="hover:underline" href={`mailto:${LINKS.tronxGroup.email}`}>{LINKS.tronxGroup.email}</a></p>
+          <p>Llegues por Dekaelo, Tronx TV, Tronx Strategic, APCC o Echevensko, el contacto es único: <strong>+56 9 2008 0031</strong> · <a className="hover:underline" href="mailto:info@tronxgroup.com">info@tronxgroup.com</a></p>
         </div>
       </Section>
 
@@ -346,17 +361,30 @@ export default function Page() {
         <div className="mx-auto max-w-3xl text-center">
           <h3 className="text-2xl sm:text-3xl font-bold">¿Listo para conversar?</h3>
           <p className="mt-3 text-neutral-300">Cuéntanos tu contexto y objetivos. Te proponemos un plan claro con hitos, KPIs y tiempos de implementación.</p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <a href={`mailto:${LINKS.tronxGroup.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-neutral-900 px-5 py-3 font-semibold hover:bg-neutral-100">
-              <Mail size={18}/> {LINKS.tronxGroup.email}
-            </a>
-            <a href={`tel:${LINKS.tronxGroup.phone.replace(/\s/g, "")}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-semibold hover:bg-white/5">
-              <Phone size={18}/> {LINKS.tronxGroup.phone}
-            </a>
-            <a href={`https://wa.me/56920080031`} target="_blank" className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-semibold hover:bg-white/5">
-              WhatsApp directo
-            </a>
-          </div>
+
+          {/* Formulario breve de contacto + newsletter */}
+          <form onSubmit={handleSubmit} className="mt-6 grid gap-3 text-left">
+            <div className="grid sm:grid-cols-2 gap-3">
+              <input name="nombre" required placeholder="Nombre" className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+              <input name="apellido" required placeholder="Apellido" className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+            </div>
+            <input name="correo" type="email" required placeholder="Correo electrónico" className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+            <label className="inline-flex items-center gap-2 text-sm text-neutral-300">
+              <input type="checkbox" name="newsletter" className="h-4 w-4 rounded border-white/20 bg-white/5" />
+              Suscribirme al newsletter
+            </label>
+            <div className="grid gap-3 sm:grid-cols-3">
+              <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-neutral-900 px-5 py-3 font-semibold hover:bg-neutral-100">
+                Enviar <ArrowRight size={18}/>
+              </button>
+              <a href={`mailto:${LINKS.tronxGroup.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-semibold hover:bg-white/5">
+                <Mail size={18}/> {LINKS.tronxGroup.email}
+              </a>
+              <a href={`tel:${LINKS.tronxGroup.phone.replace(/\s/g, "")}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-semibold hover:bg-white/5">
+                <Phone size={18}/> {LINKS.tronxGroup.phone}
+              </a>
+            </div>
+          </form>
         </div>
       </Section>
 
@@ -370,6 +398,7 @@ export default function Page() {
               <a href="#valor" className="hover:text-white">Valor</a>
               <a href="#ecosistema" className="hover:text-white">Ecosistema</a>
               <a href="#contacto" className="hover:text-white">Contacto</a>
+              <a href="/privacidad" className="hover:text-white">Privacidad y condiciones</a>
             </div>
           </div>
           {/* RRSS Tronx Group */}
