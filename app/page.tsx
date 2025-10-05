@@ -1,192 +1,225 @@
-'use client'
+"use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
+  Building2,
+  Rocket,
   Video,
-  LineChart,
   Tv,
+  Lightbulb,
   Mail,
-  Phone,
+  Linkedin,
   Globe,
-  ExternalLink,
+  CheckCircle2,
 } from "lucide-react";
 
-// ===== Helpers =====
-const Section = ({ id, className = "", children }: { id?: string; className?: string; children: React.ReactNode }) => (
-  <section id={id} className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>{children}</section>
-);
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 },
+};
 
-const Card = ({ children }: { children: React.ReactNode }) => (
-  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-sm backdrop-blur-sm transition hover:bg-white/10">
-    {children}
-  </div>
-);
-
-// ===== Data =====
-const LINKS = {
-  tronx: {
-    phone: "+56 9 2008 0031",
-    email: "info@tronxgroup.com",
-  },
-  brands: {
-    dekaelo: { site: "https://dekaleomedia.com" },
-    strategy: { site: "https://tronxstrategy.com" },
-    tv: { site: "https://tronxtv.com" },
+export const metadata = {
+  title: "Tronx Group — Crecimiento, Tecnología y Contenido",
+  description:
+    "Tronx Group es un holding creativo-tecnológico que integra estrategia, medios y conocimiento para impulsar el crecimiento empresarial con propósito.",
+  alternates: { canonical: "https://www.tronxgroup.com" },
+  openGraph: {
+    title: "Tronx Group — Crecimiento, Tecnología y Contenido",
+    description:
+      "Holding creativo-tecnológico: Tronx Strategy, Dekaelo Media, Tronx TV y Echevensko.",
+    images: ["/og-tronx.jpg"],
   },
 };
 
 export default function Page() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const nombre = data.get("nombre");
-    const correo = data.get("correo");
-    alert(`Gracias, ${nombre}. Te contactaremos a ${correo}.`);
-    e.currentTarget.reset();
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 text-neutral-100 selection:bg-sky-500/30">
-      {/* NAV */}
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-neutral-950/70 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60">
-        <Section className="flex items-center justify-between py-4">
-          <div className="flex items-center gap-3">
-            <img src="/tronx-logo.png" alt="Tronx Group" className="h-8 w-8 rounded-lg object-contain" />
-            <span className="text-sm font-semibold tracking-wider">TRONX GROUP SpA</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-300">
-            <a href="#marcas" className="hover:text-white">Marcas</a>
-            <a href="#contacto" className="hover:text-white">Contacto</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <a
-              href={`tel:${LINKS.tronx.phone.replace(/\s/g, "")}`}
-              className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-sm hover:bg-white/5"
-            >
-              <Phone size={16}/> {LINKS.tronx.phone}
-            </a>
-            <a href="#contacto" className="inline-flex items-center gap-2 rounded-xl bg-white text-neutral-900 px-4 py-2 text-sm font-semibold shadow-sm hover:bg-neutral-100">
-              Conversemos <ArrowRight size={16} />
-            </a>
-          </div>
-        </Section>
-      </header>
+    <main className="bg-black text-white">
+      {/* === HERO === */}
+      <section className="relative flex flex-col items-center justify-center min-h-[90vh] text-center px-6">
+        <motion.h1
+          {...fadeUp}
+          className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
+        >
+          Tronx Group
+        </motion.h1>
+        <motion.p
+          {...fadeUp}
+          transition={{ delay: 0.2 }}
+          className="max-w-2xl text-lg md:text-xl text-gray-300 mb-8"
+        >
+          Holding creativo-tecnológico que une estrategia, contenido y sistemas
+          para construir crecimiento real, medible y con propósito.
+        </motion.p>
 
-      {/* HERO (muy breve) */}
-      <Section className="py-16 sm:py-24 text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
-          Holding creativo y tecnológico con foco en impacto real
-        </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-neutral-300">
-          Tronx Group integra estrategia B2B, producción audiovisual y plataformas editoriales. Un solo equipo, tres marcas.
-        </p>
-        <div className="mt-8 flex items-center justify-center gap-3">
-          <a href="#marcas" className="inline-flex items-center gap-2 rounded-xl bg-sky-500 px-5 py-3 font-semibold text-white shadow hover:bg-sky-400">
-            Ver marcas <ArrowRight size={18} />
+        <motion.div {...fadeUp} transition={{ delay: 0.4 }}>
+          <a
+            href="#contacto"
+            className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+          >
+            Conversemos <ArrowRight className="w-4 h-4" />
           </a>
-          <a href={`mailto:${LINKS.tronx.email}`} className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-semibold hover:bg-white/5">
-            <Mail size={18}/> {LINKS.tronx.email}
-          </a>
-        </div>
-      </Section>
+        </motion.div>
 
-      {/* MARCAS (solo lo esencial) */}
-      <Section id="marcas" className="py-10">
-        <h2 className="text-2xl sm:text-3xl font-bold">Marcas</h2>
-        <p className="mt-2 text-neutral-300">Operamos como un ecosistema: cada marca aporta una pieza clave.</p>
+        <motion.div
+          {...fadeUp}
+          transition={{ delay: 0.6 }}
+          className="absolute bottom-8 text-sm text-gray-500"
+        >
+          Crecer. Simplificar. Escalar.
+        </motion.div>
+      </section>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Dekaelo Media */}
-          <Card>
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-sky-500/20 p-2"><Video size={18} className="text-sky-300" /></div>
-              <p className="text-sm font-semibold tracking-wide">Dekaelo Media</p>
-            </div>
-            <h3 className="mt-3 text-lg font-bold">Producción Audiovisual Estratégica</h3>
-            <p className="mt-2 text-sm text-neutral-300">Contenido mensual con calidad cinematográfica: cápsulas, reels, vodcasts y piezas para campañas.</p>
-            <a href={LINKS.brands.dekaelo.site} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm text-sky-300 hover:text-sky-200">
-              <Globe size={14}/> Sitio <ExternalLink size={14}/>
-            </a>
-          </Card>
+      {/* === MARCAS === */}
+      <section className="max-w-7xl mx-auto px-6 py-20 space-y-16">
+        <motion.div {...fadeUp} className="text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            Ecosistema Tronx
+          </h2>
+          <p className="text-gray-400 max-w-3xl mx-auto">
+            Cada marca refleja una energía: estrategia (1), comunicación (3),
+            expansión (5), sabiduría (7) y estructura (8).  
+            Juntas forman un sistema diseñado para el crecimiento B2B moderno.
+          </p>
+        </motion.div>
 
+        {/* Grid marcas */}
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Tronx Strategy */}
-          <Card>
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-emerald-500/20 p-2"><LineChart size={18} className="text-emerald-300" /></div>
-              <p className="text-sm font-semibold tracking-wide">Tronx Strategy</p>
-            </div>
-            <h3 className="mt-3 text-lg font-bold">Crecimiento B2B</h3>
-            <p className="mt-2 text-sm text-neutral-300">Embudos, performance, CRM y automatizaciones para generar demanda y cerrar negocios.</p>
-            <a href={LINKS.brands.strategy.site} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm text-emerald-300 hover:text-emerald-200">
-              <Globe size={14}/> Sitio <ExternalLink size={14}/>
-            </a>
-          </Card>
+          <motion.div
+            {...fadeUp}
+            className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800"
+          >
+            <Rocket className="w-8 h-8 text-blue-400 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Tronx Strategy</h3>
+            <p className="text-gray-400 mb-4">
+              Unidad de crecimiento B2B. Estrategia, CRM, automatización y
+              performance marketing. Operación digital rápida y medible.
+            </p>
+            <ul className="text-sm text-gray-400 space-y-1">
+              <li>• Tronx Cloud Suite</li>
+              <li>• Revenue Share Program</li>
+              <li>• Growth & Data Playbooks</li>
+            </ul>
+          </motion.div>
+
+          {/* Dekaelo Media */}
+          <motion.div
+            {...fadeUp}
+            transition={{ delay: 0.1 }}
+            className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800"
+          >
+            <Video className="w-8 h-8 text-pink-400 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Dekaelo Media</h3>
+            <p className="text-gray-400 mb-4">
+              Estudio audiovisual estratégico. Videos, reels, vodcasts y piezas
+              cinematográficas que transmiten propósito y emoción.
+            </p>
+            <ul className="text-sm text-gray-400 space-y-1">
+              <li>• Producción mensual y on-demand</li>
+              <li>• Storytelling corporativo</li>
+              <li>• Contenido para performance y fidelización</li>
+            </ul>
+          </motion.div>
 
           {/* Tronx TV */}
-          <Card>
-            <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-fuchsia-500/20 p-2"><Tv size={18} className="text-fuchsia-300" /></div>
-              <p className="text-sm font-semibold tracking-wide">Tronx TV</p>
-            </div>
-            <h3 className="mt-3 text-lg font-bold">Narrativas Originales</h3>
-            <p className="mt-2 text-sm text-neutral-300">Canal editorial con documental, ficción y conversación en 4K UHD por temporadas.</p>
-            <a href={LINKS.brands.tv.site} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm text-fuchsia-300 hover:text-fuchsia-200">
-              <Globe size={14}/> Sitio <ExternalLink size={14}/>
-            </a>
-          </Card>
+          <motion.div
+            {...fadeUp}
+            transition={{ delay: 0.2 }}
+            className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800"
+          >
+            <Tv className="w-8 h-8 text-green-400 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Tronx TV</h3>
+            <p className="text-gray-400 mb-4">
+              Plataforma editorial de contenidos originales en video. Historias,
+              documentales y realities sobre liderazgo, innovación y conciencia.
+            </p>
+            <ul className="text-sm text-gray-400 space-y-1">
+              <li>• Reality Day y series originales</li>
+              <li>• Entrevistas y comunidad creativa</li>
+              <li>• Expansión LATAM ↔ APAC</li>
+            </ul>
+          </motion.div>
         </div>
+      </section>
 
-        {/* Teléfono único */}
-        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4 text-center text-sm">
-          <p>
-            📞 Canal único de contacto:&nbsp;
-            <a className="font-semibold hover:underline" href={`tel:${LINKS.tronx.phone.replace(/\s/g, "")}`}>
-              {LINKS.tronx.phone}
-            </a>
+      {/* === FILOSOFÍA === */}
+      <section className="bg-zinc-950 py-24 px-6">
+        <motion.div
+          {...fadeUp}
+          className="max-w-4xl mx-auto text-center space-y-8"
+        >
+          <Lightbulb className="w-10 h-10 mx-auto text-yellow-400" />
+          <h2 className="text-3xl md:text-4xl font-semibold">
+            Estrategia con Propósito
+          </h2>
+          <p className="text-gray-400 leading-relaxed">
+            Tronx Group nace de la idea de que el crecimiento no se mide solo en
+            cifras, sino en impacto real.  
+            Combinamos tecnología, comunicación y conciencia para que cada
+            proyecto crezca de forma escalable, humana y sostenible.
           </p>
-        </div>
-      </Section>
-
-      {/* CONTACTO (breve) */}
-      <Section id="contacto" className="py-14">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold">Contacto</h2>
-          <p className="mt-3 text-neutral-300">Cuéntanos tu contexto. Te respondemos con los próximos pasos.</p>
-
-          <form onSubmit={handleSubmit} className="mt-6 grid gap-3 text-left">
-            <div className="grid sm:grid-cols-2 gap-3">
-              <input name="nombre" required placeholder="Nombre" className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
-              <input name="correo" type="email" required placeholder="Correo" className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-gray-300 text-sm">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-green-400" /> Crecimiento
+              medible
             </div>
-            <input name="empresa" placeholder="Empresa (opcional)" className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
-            <textarea name="mensaje" required rows={4} placeholder="Cuéntanos brevemente tu necesidad" className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500" />
-            <div className="grid gap-3 sm:grid-cols-3">
-              <button type="submit" className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-neutral-900 px-5 py-3 font-semibold hover:bg-neutral-100">
-                Enviar <ArrowRight size={18}/>
-              </button>
-              <a href={`mailto:${LINKS.tronx.email}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-semibold hover:bg-white/5">
-                <Mail size={18}/> {LINKS.tronx.email}
-              </a>
-              <a href={`tel:${LINKS.tronx.phone.replace(/\s/g, "")}`} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-5 py-3 font-semibold hover:bg-white/5">
-                <Phone size={18}/> {LINKS.tronx.phone}
-              </a>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-green-400" /> Sistemas
+              replicables
             </div>
-          </form>
-        </div>
-      </Section>
-
-      {/* FOOTER (mínimo) */}
-      <footer className="border-t border-white/10 py-8 text-sm text-neutral-400">
-        <Section className="flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© {new Date().getFullYear()} Tronx Group SpA.</p>
-          <div className="flex items-center gap-4">
-            <a href="#marcas" className="hover:text-white">Marcas</a>
-            <a href="#contacto" className="hover:text-white">Contacto</a>
-            <a href="/privacidad" className="hover:text-white">Privacidad</a>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-green-400" /> Creatividad
+              estratégica
+            </div>
           </div>
-        </Section>
+        </motion.div>
+      </section>
+
+      {/* === CONTACTO === */}
+      <section id="contacto" className="py-24 px-6 text-center">
+        <motion.h2
+          {...fadeUp}
+          className="text-3xl md:text-4xl font-semibold mb-8"
+        >
+          Conectemos
+        </motion.h2>
+        <motion.p
+          {...fadeUp}
+          transition={{ delay: 0.1 }}
+          className="max-w-xl mx-auto text-gray-400 mb-8"
+        >
+          ¿Eres empresa, socio o creador interesado en construir el futuro con
+          Tronx Group? Escríbenos y coordinemos una conversación.
+        </motion.p>
+        <motion.a
+          {...fadeUp}
+          transition={{ delay: 0.2 }}
+          href="mailto:info@tronxgroup.com"
+          className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+        >
+          info@tronxgroup.com <Mail className="w-4 h-4" />
+        </motion.a>
+
+        <div className="flex justify-center gap-6 mt-10 text-gray-400">
+          <a
+            href="https://www.linkedin.com/company/tronxgroup"
+            className="hover:text-white"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+          <a href="https://www.tronxgroup.com" className="hover:text-white">
+            <Globe className="w-5 h-5" />
+          </a>
+        </div>
+      </section>
+
+      {/* === FOOTER === */}
+      <footer className="border-t border-zinc-800 py-8 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Tronx Group SpA. Crecer con propósito.
       </footer>
-    </div>
+    </main>
   );
 }
