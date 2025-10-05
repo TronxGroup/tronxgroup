@@ -9,9 +9,10 @@ import {
   Tv,
   Lightbulb,
   Mail,
-  Linkedin,
+  Phone,
   Globe,
   CheckCircle2,
+  Twitter,
 } from "lucide-react";
 
 const fadeUp = {
@@ -84,8 +85,8 @@ export default function Landing() {
             Ecosistema Tronx
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            Cada marca refleja una energía: estrategia (1), comunicación (3),
-            expansión (5), sabiduría (7) y estructura (8). Juntas forman un
+            Cada marca refleja una energía: estrategia, comunicación,
+            expansión, sabiduría y estructura. Juntas forman un
             sistema diseñado para el crecimiento B2B moderno.
           </p>
         </motion.div>
@@ -211,26 +212,38 @@ export default function Landing() {
           className="max-w-xl mx-auto text-gray-400 mb-8"
         >
           ¿Eres empresa, socio o creador interesado en construir el futuro con
-          Tronx Group? Escríbenos y coordinemos una conversación.
+          Tronx Group? Escríbenos o llámanos directamente.
         </motion.p>
-        <motion.a
+
+        <motion.div
           initial={fadeUp.initial}
           whileInView={fadeUp.whileInView}
           transition={{ ...fadeUp.transition, delay: 0.2 }}
           viewport={{ once: true }}
-          href="mailto:info@tronxgroup.com"
-          className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+          className="flex flex-col items-center gap-4"
         >
-          info@tronxgroup.com <Mail className="w-4 h-4" />
-        </motion.a>
+          <a
+            href="mailto:info@tronxgroup.com"
+            className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+          >
+            info@tronxgroup.com <Mail className="w-4 h-4" />
+          </a>
+
+          <a
+            href="tel:+56920080031"
+            className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition"
+          >
+            <Phone className="w-4 h-4" /> +56 9 2008 0031
+          </a>
+        </motion.div>
 
         <div className="flex justify-center gap-6 mt-10 text-gray-400">
           <a
-            href="https://www.linkedin.com/company/tronxgroup"
+            href="https://x.com/TronxGroup"
             className="hover:text-white"
-            aria-label="LinkedIn Tronx Group"
+            aria-label="X Tronx Group"
           >
-            <Linkedin className="w-5 h-5" />
+            <Twitter className="w-5 h-5" />
           </a>
           <a
             href="https://www.tronxgroup.com"
