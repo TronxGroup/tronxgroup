@@ -143,8 +143,8 @@ export default function Landing() {
             Ecosistema Tronx
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            Cada marca refleja una energía: estrategia (1), comunicación (3),
-            expansión (5), sabiduría (7) y estructura (8). Juntas forman un
+            Cada marca refleja una energía: estrategia, comunicación,
+            expansión y estructura. Juntas forman un
             sistema diseñado para el crecimiento B2B moderno.
           </p>
         </motion.div>
