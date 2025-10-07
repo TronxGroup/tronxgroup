@@ -1,7 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useCallback } from 'react';
+import Image from 'next/image';
+import Script from 'next/script';
+import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Rocket,
@@ -15,8 +17,7 @@ import {
   Youtube,
   Facebook,
   ExternalLink,
-} from "lucide-react";
-import Image from "next/image";
+} from 'lucide-react';
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -56,8 +57,124 @@ const TikTokIcon = () => (
 );
 
 export default function Landing() {
+  // === Funciones Zoho (adaptadas tal cual del snippet, manteniendo nombres) ===
+  const validateEmail6988454000000768151 = useCallback(() => {
+    const form = document.forms['WebToLeads6988454000000768151'] as HTMLFormElement;
+    if (!form) return true;
+    const emailFld = form.querySelectorAll('[ftype=email]') as NodeListOf<HTMLInputElement>;
+    for (let i = 0; i < emailFld.length; i++) {
+      const emailVal = emailFld[i].value;
+      if (emailVal.trim().length !== 0) {
+        const atpos = emailVal.indexOf('@');
+        const dotpos = emailVal.lastIndexOf('.');
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
+          alert('Introduzca una dirección de correo electrónico válida.');
+          emailFld[i].focus();
+          return false;
+        }
+      }
+    }
+    return true;
+  }, []);
+
+  const reCaptchaAlert6988454000000768151 = useCallback(() => {
+    const recap = document.getElementById('recap6988454000000768151');
+    if (recap && recap.getAttribute('captcha-verified') === 'false') {
+      const err = document.getElementById('recapErr6988454000000768151');
+      if (err) err.style.visibility = 'visible';
+      return false;
+    }
+    return true;
+  }, []);
+
+  // callback que invoca reCAPTCHA
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (globalThis as any).rccallback6988454000000768151 = () => {
+    const recap = document.getElementById('recap6988454000000768151');
+    if (recap) recap.setAttribute('captcha-verified', 'true');
+    const err = document.getElementById('recapErr6988454000000768151') as HTMLDivElement | null;
+    if (err && err.style.visibility === 'visible') err.style.visibility = 'hidden';
+  };
+
+  const checkMandatory6988454000000768151 = useCallback(() => {
+    const form = document.forms['WebToLeads6988454000000768151'] as HTMLFormElement;
+    if (!form) return false;
+
+    const mndFileds = ['First Name', 'Last Name', 'Email', 'LEADCF3'];
+    const fldLangVal = ['Nombre', 'Apellido', 'Correo electrónico', 'Mensaje'];
+
+    for (let i = 0; i < mndFileds.length; i++) {
+      const fieldObj = (form as any)[mndFileds[i]] as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement | null;
+      if (fieldObj) {
+        const val = (fieldObj as HTMLInputElement).value?.trim?.() ?? '';
+        if (val.length === 0) {
+          if ((fieldObj as HTMLInputElement).type === 'file') {
+            alert('Seleccione un archivo para cargar.');
+          } else {
+            alert(`${fldLangVal[i]} no puede estar vacío.`);
+          }
+          fieldObj.focus();
+          return false;
+        } else if (fieldObj.nodeName === 'SELECT') {
+          const sel = fieldObj as HTMLSelectElement;
+          if (sel.options[sel.selectedIndex].value === '-None-') {
+            alert(`${fldLangVal[i]} no puede ser nulo.`);
+            fieldObj.focus();
+            return false;
+          }
+        } else if ((fieldObj as HTMLInputElement).type === 'checkbox') {
+          const chk = fieldObj as HTMLInputElement;
+          if (chk.checked === false) {
+            alert(`Please accept ${fldLangVal[i]}`);
+            fieldObj.focus();
+            return false;
+          }
+        }
+      }
+    }
+
+    if (!validateEmail6988454000000768151()) return false;
+    if (!reCaptchaAlert6988454000000768151()) return false;
+
+    // smarturl param
+    const urlparams = new URLSearchParams(window.location.search);
+    if (urlparams.has('service') && urlparams.get('service') === 'smarturl') {
+      const webform = document.getElementById('webform6988454000000768151') as HTMLFormElement | null;
+      const service = urlparams.get('service')!;
+      if (webform) {
+        const smarturlfield = document.createElement('input');
+        smarturlfield.setAttribute('type', 'hidden');
+        smarturlfield.setAttribute('value', service);
+        smarturlfield.setAttribute('name', 'service');
+        webform.appendChild(smarturlfield);
+      }
+    }
+
+    const submitBtn = document.querySelector('.crmWebToEntityForm .formsubmit') as HTMLInputElement | null;
+    if (submitBtn) submitBtn.setAttribute('disabled', 'true');
+
+    return true;
+  }, [reCaptchaAlert6988454000000768151, validateEmail6988454000000768151]);
+
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      // Respeta el onSubmit original del snippet
+      (document as any).charset = 'UTF-8';
+      const ok = checkMandatory6988454000000768151();
+      if (!ok) {
+        e.preventDefault();
+        return false;
+      }
+      return true;
+    },
+    [checkMandatory6988454000000768151]
+  );
+
   return (
     <main id="top" className="bg-black text-white">
+      {/* reCAPTCHA v2 */}
+      <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" async defer />
+
       {/* === HEADER === */}
       <header className="sticky top-0 z-40 bg-black/70 backdrop-blur border-b border-zinc-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -161,12 +278,9 @@ export default function Landing() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            Ecosistema Tronx
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">Ecosistema Tronx</h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            Cada marca refleja una energía: estrategia, comunicación,
-            expansión y estructura. Juntas forman un
+            Cada marca refleja una energía: estrategia, comunicación, expansión y estructura. Juntas forman un
             sistema diseñado para el crecimiento B2B moderno.
           </p>
         </motion.div>
@@ -193,8 +307,8 @@ export default function Landing() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Tronx Strategy</h3>
             <p className="text-gray-400 mb-4">
-              Unidad de crecimiento B2B. Estrategia, CRM, automatización y
-              performance marketing. Operación digital rápida y medible.
+              Unidad de crecimiento B2B. Estrategia, CRM, automatización y performance marketing. Operación digital
+              rápida y medible.
             </p>
             <ul className="text-sm text-gray-400 space-y-1 mb-4">
               <li>• Tronx Cloud Suite</li>
@@ -244,8 +358,8 @@ export default function Landing() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Dekaelo Media</h3>
             <p className="text-gray-400 mb-4">
-              Estudio audiovisual estratégico. Videos, reels, vodcasts y piezas
-              cinematográficas que transmiten propósito y emoción.
+              Estudio audiovisual estratégico. Videos, reels, vodcasts y piezas cinematográficas que transmiten
+              propósito y emoción.
             </p>
             <ul className="text-sm text-gray-400 space-y-1 mb-4">
               <li>• Producción mensual y on-demand</li>
@@ -298,8 +412,8 @@ export default function Landing() {
             </div>
             <h3 className="text-xl font-semibold mb-2">Tronx TV</h3>
             <p className="text-gray-400 mb-4">
-              Plataforma editorial de contenidos originales en video. Historias,
-              documentales y realities sobre liderazgo, innovación y conciencia.
+              Plataforma editorial de contenidos originales en video. Historias, documentales y realities sobre
+              liderazgo, innovación y conciencia.
             </p>
             <ul className="text-sm text-gray-400 space-y-1 mb-4">
               <li>• Reality Day y series originales</li>
@@ -307,7 +421,6 @@ export default function Landing() {
               <li>• Expansión LATAM ↔ APAC</li>
             </ul>
             <div className="flex items-center gap-4 text-gray-400">
-              {/* Sustituir # por URLs reales cuando estén listos */}
               <a className="hover:text-white" aria-label="YouTube Tronx TV" href="#">
                 <Youtube className="w-5 h-5" />
               </a>
@@ -338,14 +451,11 @@ export default function Landing() {
           className="max-w-4xl mx-auto text-center space-y-8"
         >
           <Lightbulb className="w-10 h-10 mx-auto text-yellow-400" />
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            Estrategia con Propósito
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-semibold">Estrategia con Propósito</h2>
           <p className="text-gray-400 leading-relaxed">
-            Tronx Group nace de la idea de que el crecimiento no se mide solo en
-            cifras, sino en impacto real. Combinamos tecnología, comunicación y
-            conciencia para que cada proyecto crezca de forma escalable, humana
-            y sostenible.
+            Tronx Group nace de la idea de que el crecimiento no se mide solo en cifras, sino en impacto real.
+            Combinamos tecnología, comunicación y conciencia para que cada proyecto crezca de forma escalable, humana y
+            sostenible.
           </p>
         </motion.div>
       </section>
@@ -369,109 +479,218 @@ export default function Landing() {
             viewport={{ once: true }}
             className="text-center text-gray-400 mb-10"
           >
-            ¿Eres empresa, socio o creador interesado en construir el futuro con Tronx Group?
-            Escríbenos o envíanos un mensaje directo.
+            ¿Eres empresa, socio o creador interesado en construir el futuro con Tronx Group? Escríbenos o envíanos un
+            mensaje directo.
           </motion.p>
 
-          {/* FORMULARIO */}
-          <form
-            className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-8 shadow-lg"
-            method="POST"
-            action="https://formspree.io/f/your-endpoint" // TODO: reemplaza por tu endpoint o crea /api/contact
+          {/* === FORMULARIO: Diseño Tailwind + envío a Zoho WebToLead === */}
+          <div
+            id="crmWebToEntityForm"
+            className="crmWebToEntityForm bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-8 shadow-lg"
+            style={{ backgroundColor: 'transparent', color: 'white', maxWidth: '100%' }}
           >
-            {/* Honeypot */}
-            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
-            <input type="hidden" name="_subject" value="Nuevo mensaje desde TronxGroup.com" />
+            {/* Do not remove this code. Mantengo los hidden EXACTOS del snippet */}
+            <form
+              id="webform6988454000000768151"
+              action="https://crm.zoho.com/crm/WebToLeadForm"
+              name="WebToLeads6988454000000768151"
+              method="POST"
+              acceptCharset="UTF-8"
+              onSubmit={handleSubmit}
+            >
+              <input
+                type="text"
+                style={{ display: 'none' }}
+                name="xnQsjsdp"
+                value="c8b16296486d2860a4b23aa15d1ac647044f9c87a9c104366cdc0555e25b788c"
+                readOnly
+              />
+              <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+              <input
+                type="text"
+                style={{ display: 'none' }}
+                name="xmIwtLD"
+                value="c85ed9ecf2b74bce9120505206b6b8119337042138eac711daa5200f90bacdfdf33787bd7c21fef02621e1261dccbd4c"
+                readOnly
+              />
+              <input type="text" style={{ display: 'none' }} name="actionType" value="TGVhZHM=" readOnly />
+              <input type="text" style={{ display: 'none' }} name="returnURL" value="null" readOnly />
+              {/* Honeypot */}
+              <input type="text" name="aG9uZXlwb3Q" style={{ display: 'none' }} defaultValue="" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="nombre" className="block text-sm text-gray-300 mb-1">
-                  Nombre
-                </label>
-                <input
-                  id="nombre"
-                  name="nombre"
-                  type="text"
-                  required
-                  autoComplete="given-name"
-                  className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
-                  placeholder="Tu nombre"
-                />
+              {/* Campos visibles con el MISMO diseño Tailwind que ya tenías */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="First_Name" className="block text-sm text-gray-300 mb-1">
+                    Nombre <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="First_Name"
+                    name="First Name"
+                    type="text"
+                    required
+                    maxLength={40}
+                    autoComplete="given-name"
+                    aria-required="true"
+                    aria-label="First Name"
+                    className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
+                    placeholder="Tu nombre"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="Last_Name" className="block text-sm text-gray-300 mb-1">
+                    Apellido <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="Last_Name"
+                    name="Last Name"
+                    type="text"
+                    required
+                    maxLength={80}
+                    autoComplete="family-name"
+                    aria-required="true"
+                    aria-label="Last Name"
+                    className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
+                    placeholder="Tu apellido"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label htmlFor="Email" className="block text-sm text-gray-300 mb-1">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    id="Email"
+                    name="Email"
+                    type="email"
+                    inputMode="email"
+                    required
+                    maxLength={100}
+                    autoComplete="email"
+                    ftype="email"
+                    aria-required="true"
+                    aria-label="Email"
+                    className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
+                    placeholder="tu@empresa.com"
+                  />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label htmlFor="LEADCF3" className="block text-sm text-gray-300 mb-1">
+                    Mensaje <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    id="LEADCF3"
+                    name="LEADCF3"
+                    required
+                    rows={5}
+                    aria-required="true"
+                    aria-label="LEADCF3"
+                    className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20 resize-y"
+                    placeholder="Cuéntanos brevemente qué necesitas…"
+                    style={{ fontFamily: 'Arial, sans-serif' }}
+                  />
+                </div>
               </div>
 
-              <div>
-                <label htmlFor="apellido" className="block text-sm text-gray-300 mb-1">
-                  Apellido
-                </label>
-                <input
-                  id="apellido"
-                  name="apellido"
-                  type="text"
-                  required
-                  autoComplete="family-name"
-                  className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
-                  placeholder="Tu apellido"
-                />
-              </div>
-
-              <div className="md:col-span-2">
-                <label htmlFor="email" className="block text-sm text-gray-300 mb-1">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  inputMode="email"
-                  required
-                  autoComplete="email"
-                  className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
-                  placeholder="tu@empresa.com"
-                />
-              </div>
-
-              <div className="md:col-span-2">
-                <label htmlFor="mensaje" className="block text-sm text-gray-300 mb-1">
-                  Mensaje
-                </label>
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  required
-                  rows={5}
-                  className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20 resize-y"
-                  placeholder="Cuéntanos brevemente qué necesitas…"
-                />
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
-                aria-label="Enviar formulario de contacto"
-              >
-                Enviar <Mail className="w-4 h-4" />
-              </button>
-
-              <div className="flex items-center gap-3 text-gray-400">
-                <a
-                  href="mailto:info@tronxgroup.com"
-                  className="inline-flex items-center gap-2 hover:text-white transition"
+              {/* Campos ocultos que pide Zoho */}
+              <div className="hidden">
+                <label htmlFor="LEADCF5" className="block text-sm">Marca</label>
+                <select
+                  id="LEADCF5"
+                  name="LEADCF5"
+                  defaultValue="Tronx-Group"
+                  aria-label="LEADCF5"
+                  className="zcwf_col_fld_slt"
                 >
-                  info@tronxgroup.com <Mail className="w-4 h-4" />
-                </a>
-                <a
-                  href="https://wa.me/56920080031"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-[#25D366] transition"
+                  <option value="-None-">-None-</option>
+                  <option value="Tronx-Group">Tronx-Group</option>
+                  <option value="Dekaelo">Dekaelo</option>
+                  <option value="Tronx-TV">Tronx-TV</option>
+                  <option value="Tonx-Strategy">Tonx-Strategy</option>
+                  <option value="Echevensko">Echevensko</option>
+                  <option value="APCC">APCC</option>
+                  <option value="HKLABA">HKLABA</option>
+                </select>
+
+                <label htmlFor="LEADCF9" className="block text-sm">Lead_Origen</label>
+                <select
+                  id="LEADCF9"
+                  name="LEADCF9"
+                  defaultValue="tronxgroup.com/contacto"
+                  aria-label="LEADCF9"
+                  className="zcwf_col_fld_slt"
                 >
-                  <WhatsAppIcon /> +56 9 2008 0031
-                </a>
+                  <option value="-None-">-None-</option>
+                  <option value="plan.dekaelomedia.com">plan.dekaelomedia.com</option>
+                  <option value="tronxgroup.com/contacto">tronxgroup.com&#x2f;contacto</option>
+                  <option value="tronxstrategic.com/contacto">tronxstrategic.com&#x2f;contacto</option>
+                  <option value="dekaelomedia.com/contacto">dekaelomedia.com&#x2f;contacto</option>
+                  <option value="empresas.echevensko.com">empresas.echevensko.com</option>
+                  <option value="asiapacific-chamber.com/contacto">asiapacific-chamber.com&#x2f;contacto</option>
+                  <option value="asiapacific-chamber/join">asiapacific-chamber&#x2f;join</option>
+                  <option value="hklaba.com/contacto">hklaba.com&#x2f;contacto</option>
+                  <option value="asiapacific-chamber/eventos">asiapacific-chamber&#x2f;eventos</option>
+                </select>
               </div>
-            </div>
-          </form>
+
+              {/* reCAPTCHA */}
+              <div className="mt-6">
+                <div
+                  className="g-recaptcha"
+                  data-sitekey="6Lch8eArAAAAAKq0w3lMg8-Cej5Y8LUMm4rPi9Ao"
+                  data-theme="dark"
+                  data-callback="rccallback6988454000000768151"
+                  id="recap6988454000000768151"
+                  // Zoho espera este flag:
+                  data-captcha-verified="false"
+                />
+                <div
+                  id="recapErr6988454000000768151"
+                  style={{ fontSize: 12, color: 'red', visibility: 'hidden' }}
+                >
+                  Error en validación de Captcha. Si no es un robot, inténtelo de nuevo.
+                </div>
+              </div>
+
+              {/* Botones */}
+              <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
+                <input
+                  type="submit"
+                  id="formsubmit"
+                  role="button"
+                  className="formsubmit inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition cursor-pointer"
+                  value="Enviar"
+                  aria-label="Enviar"
+                  title="Enviar"
+                />
+                <input
+                  type="reset"
+                  className="zcwf_button inline-flex items-center gap-2 bg-transparent border border-zinc-700 text-gray-300 px-6 py-3 rounded-full hover:bg-white/5 transition cursor-pointer"
+                  role="button"
+                  name="reset"
+                  value="Restablecer"
+                  aria-label="Restablecer"
+                  title="Restablecer"
+                />
+
+                <div className="flex items-center gap-3 text-gray-400">
+                  <a href="mailto:info@tronxgroup.com" className="inline-flex items-center gap-2 hover:text-white transition">
+                    info@tronxgroup.com <Mail className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://wa.me/56920080031"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 hover:text-[#25D366] transition"
+                  >
+                    <WhatsAppIcon /> +56 9 2008 0031
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
 
           {/* Accesos rápidos */}
           <div className="flex justify-center gap-6 mt-10 text-gray-400">
@@ -484,11 +703,7 @@ export default function Landing() {
             >
               <XIcon />
             </a>
-            <a
-              href="#top"
-              className="inline-flex items-center gap-2 hover:text-white transition"
-              aria-label="Ir al inicio"
-            >
+            <a href="#top" className="inline-flex items-center gap-2 hover:text-white transition" aria-label="Ir al inicio">
               <Home className="w-5 h-5" />
               <span className="hidden sm:inline">Inicio</span>
             </a>
@@ -500,13 +715,7 @@ export default function Landing() {
       <footer className="border-t border-zinc-800 py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           <div className="flex items-center gap-3">
-            <Image
-              src="/tronxgrouplogo.png"
-              alt="Tronx Group"
-              width={28}
-              height={28}
-              className="rounded"
-            />
+            <Image src="/tronxgrouplogo.png" alt="Tronx Group" width={28} height={28} className="rounded" />
             <span>© {new Date().getFullYear()} Tronx Group SpA. Crecer con propósito.</span>
           </div>
           <div className="flex items-center gap-5">
