@@ -26,13 +26,25 @@ const fadeUp = {
 
 // --- Íconos personalizados ---
 const XIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" className="w-5 h-5 fill-current">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 1227"
+    className="w-5 h-5 fill-current"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path d="M714.2 519.8L1179.5 0H1073.1L666.5 461.7L358.3 0H0L486.2 708.1L0 1226.6H106.4L537.4 744.2L861.7 1226.6H1200L714.2 519.8ZM589.5 678.4L543.6 612.2L145.2 79.7H306.4L612.2 520.2L658.1 586.4L1073.6 1146.9H912.5L589.5 678.4Z" />
   </svg>
 );
 
 const WhatsAppIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    className="w-5 h-5 fill-current"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path d="M16 2C8.268 2 2 8.268 2 16a13.9 13.9 0 002.027 7.202L2 30l6.995-2.007A13.9 13.9 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25a11.82 11.82 0 01-6.022-1.655l-.43-.255-4.155 1.192 1.194-4.046-.281-.422A11.84 11.84 0 014.2 16C4.2 9.934 9.934 4.2 16 4.2S27.8 9.934 27.8 16 22.066 27 16 27zm6.377-8.489c-.347-.174-2.052-1.012-2.37-1.128-.317-.116-.55-.174-.782.175-.231.348-.898 1.128-1.1 1.362-.203.231-.406.26-.753.087-.347-.174-1.468-.541-2.797-1.726-1.034-.923-1.734-2.064-1.937-2.412-.203-.348-.022-.536.152-.71.157-.156.348-.406.522-.609.174-.203.231-.348.347-.579.116-.231.058-.435-.029-.609-.087-.174-.782-1.884-1.07-2.574-.283-.679-.571-.587-.782-.597l-.667-.012c-.203 0-.523.076-.797.376-.274.3-1.046 1.02-1.046 2.483s1.071 2.879 1.22 3.076c.174.231 2.099 3.2 5.089 4.487.712.307 1.267.491 1.7.63.713.227 1.362.195 1.875.118.572-.085 1.758-.718 2.007-1.41.247-.692.247-1.282.174-1.41-.072-.128-.26-.203-.606-.377z" />
   </svg>
 );
@@ -295,20 +307,20 @@ export default function Landing() {
               <li>• Expansión LATAM ↔ APAC</li>
             </ul>
             <div className="flex items-center gap-4 text-gray-400">
-              {/* Enlaza cuando estén listos */}
-              <a className="hover:text-white" aria-label="YouTube Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+              {/* Sustituir # por URLs reales cuando estén listos */}
+              <a className="hover:text-white" aria-label="YouTube Tronx TV" href="#">
                 <Youtube className="w-5 h-5" />
               </a>
-              <a className="hover:text-white" aria-label="Instagram Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+              <a className="hover:text-white" aria-label="Instagram Tronx TV" href="#">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a className="hover:text-white" aria-label="Facebook Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+              <a className="hover:text-white" aria-label="Facebook Tronx TV" href="#">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a className="hover:text-white" aria-label="TikTok Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+              <a className="hover:text-white" aria-label="TikTok Tronx TV" href="#">
                 <TikTokIcon />
               </a>
-              <a className="hover:text-white" aria-label="X Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+              <a className="hover:text-white" aria-label="X Tronx TV" href="#">
                 <XIcon />
               </a>
             </div>
@@ -365,7 +377,7 @@ export default function Landing() {
           <form
             className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-8 shadow-lg"
             method="POST"
-            action="https://formspree.io/f/your-endpoint" // TODO: Reemplaza por tu endpoint Formspree o una ruta /api/contact
+            action="https://formspree.io/f/your-endpoint" // TODO: reemplaza por tu endpoint o crea /api/contact
           >
             {/* Honeypot */}
             <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
