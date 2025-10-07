@@ -9,8 +9,12 @@ import {
   Tv,
   Lightbulb,
   Mail,
-  CheckCircle2,
   Home,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Facebook,
+  ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -30,6 +34,12 @@ const XIcon = () => (
 const WhatsAppIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
     <path d="M16 2C8.268 2 2 8.268 2 16a13.9 13.9 0 002.027 7.202L2 30l6.995-2.007A13.9 13.9 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25a11.82 11.82 0 01-6.022-1.655l-.43-.255-4.155 1.192 1.194-4.046-.281-.422A11.84 11.84 0 014.2 16C4.2 9.934 9.934 4.2 16 4.2S27.8 9.934 27.8 16 22.066 27 16 27zm6.377-8.489c-.347-.174-2.052-1.012-2.37-1.128-.317-.116-.55-.174-.782.175-.231.348-.898 1.128-1.1 1.362-.203.231-.406.26-.753.087-.347-.174-1.468-.541-2.797-1.726-1.034-.923-1.734-2.064-1.937-2.412-.203-.348-.022-.536.152-.71.157-.156.348-.406.522-.609.174-.203.231-.348.347-.579.116-.231.058-.435-.029-.609-.087-.174-.782-1.884-1.07-2.574-.283-.679-.571-.587-.782-.597l-.667-.012c-.203 0-.523.076-.797.376-.274.3-1.046 1.02-1.046 2.483s1.071 2.879 1.22 3.076c.174.231 2.099 3.2 5.089 4.487.712.307 1.267.491 1.7.63.713.227 1.362.195 1.875.118.572-.085 1.758-.718 2.007-1.41.247-.692.247-1.282.174-1.41-.072-.128-.26-.203-.606-.377z" />
+  </svg>
+);
+
+const TikTokIcon = () => (
+  <svg viewBox="0 0 48 48" aria-hidden="true" className="w-5 h-5 fill-current">
+    <path d="M32.7 5.3c1.8 3.5 5 6.1 8.9 6.9v6.2c-3.3-.1-6.5-1.1-9.3-2.9v12.5c0 7.5-6.1 13.6-13.6 13.6S5.1 35.5 5.1 28s6.1-13.6 13.6-13.6c1 0 2 .1 3 .4v6.7c-.9-.3-1.9-.5-3-.5-4.1 0-7.4 3.3-7.4 7.4S14.6 36 18.7 36s7.4-3.3 7.4-7.4V5.3h6.6z" />
   </svg>
 );
 
@@ -158,17 +168,47 @@ export default function Landing() {
             viewport={{ once: true }}
             className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800"
           >
-            <Rocket className="w-8 h-8 text-blue-400 mb-4" />
+            <div className="flex items-center justify-between mb-4">
+              <Rocket className="w-8 h-8 text-blue-400" />
+              <a
+                href="https://www.tronxstrategy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm inline-flex items-center gap-1 text-blue-300 hover:text-white"
+              >
+                Sitio <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
             <h3 className="text-xl font-semibold mb-2">Tronx Strategy</h3>
             <p className="text-gray-400 mb-4">
               Unidad de crecimiento B2B. Estrategia, CRM, automatización y
               performance marketing. Operación digital rápida y medible.
             </p>
-            <ul className="text-sm text-gray-400 space-y-1">
+            <ul className="text-sm text-gray-400 space-y-1 mb-4">
               <li>• Tronx Cloud Suite</li>
               <li>• Revenue Share Program</li>
               <li>• Growth &amp; Data Playbooks</li>
             </ul>
+            <div className="flex items-center gap-4 text-gray-400">
+              <a
+                href="https://www.linkedin.com/company/tronx-strategy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Tronx Strategy"
+                className="hover:text-white"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/tronx_strategy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Tronx Strategy"
+                className="hover:text-white"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </motion.div>
 
           {/* Dekaelo Media */}
@@ -179,38 +219,99 @@ export default function Landing() {
             viewport={{ once: true }}
             className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800"
           >
-            <Video className="w-8 h-8 text-pink-400 mb-4" />
+            <div className="flex items-center justify-between mb-4">
+              <Video className="w-8 h-8 text-pink-400" />
+              <a
+                href="https://www.dekaelomedia.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm inline-flex items-center gap-1 text-pink-300 hover:text-white"
+              >
+                Sitio <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
             <h3 className="text-xl font-semibold mb-2">Dekaelo Media</h3>
             <p className="text-gray-400 mb-4">
               Estudio audiovisual estratégico. Videos, reels, vodcasts y piezas
               cinematográficas que transmiten propósito y emoción.
             </p>
-            <ul className="text-sm text-gray-400 space-y-1">
+            <ul className="text-sm text-gray-400 space-y-1 mb-4">
               <li>• Producción mensual y on-demand</li>
               <li>• Storytelling corporativo</li>
               <li>• Contenido para performance y fidelización</li>
             </ul>
+            <div className="flex items-center gap-4 text-gray-400">
+              <a
+                href="https://www.instagram.com/dekaelo_media/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Dekaelo"
+                className="hover:text-white"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/dekaelo-media/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Dekaelo"
+                className="hover:text-white"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.youtube.com/@dekaelo_media"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube Dekaelo"
+                className="hover:text-white"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+            </div>
           </motion.div>
 
           {/* Tronx TV */}
           <motion.div
+            id="tronxtv"
             initial={fadeUp.initial}
             whileInView={fadeUp.whileInView}
             transition={{ ...fadeUp.transition, delay: 0.2 }}
             viewport={{ once: true }}
             className="bg-zinc-900 rounded-2xl p-8 border border-zinc-800"
           >
-            <Tv className="w-8 h-8 text-green-400 mb-4" />
+            <div className="flex items-center justify-between mb-4">
+              <Tv className="w-8 h-8 text-green-400" />
+              <span className="text-xs text-gray-400">Próximamente</span>
+            </div>
             <h3 className="text-xl font-semibold mb-2">Tronx TV</h3>
             <p className="text-gray-400 mb-4">
               Plataforma editorial de contenidos originales en video. Historias,
               documentales y realities sobre liderazgo, innovación y conciencia.
             </p>
-            <ul className="text-sm text-gray-400 space-y-1">
+            <ul className="text-sm text-gray-400 space-y-1 mb-4">
               <li>• Reality Day y series originales</li>
               <li>• Entrevistas y comunidad creativa</li>
               <li>• Expansión LATAM ↔ APAC</li>
             </ul>
+            <div className="flex items-center gap-4 text-gray-400">
+              {/* Enlaza cuando estén listos */}
+              <a className="hover:text-white" aria-label="YouTube Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a className="hover:text-white" aria-label="Instagram Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a className="hover:text-white" aria-label="Facebook Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a className="hover:text-white" aria-label="TikTok Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+                <TikTokIcon />
+              </a>
+              <a className="hover:text-white" aria-label="X Tronx TV" href="#" onClick={(e)=>e.preventDefault()}>
+                <XIcon />
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -238,69 +339,148 @@ export default function Landing() {
       </section>
 
       {/* === CONTACTO === */}
-      <section id="contacto" className="py-24 px-6 text-center">
-        <motion.h2
-          initial={fadeUp.initial}
-          whileInView={fadeUp.whileInView}
-          transition={fadeUp.transition}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-semibold mb-8"
-        >
-          Conectemos
-        </motion.h2>
-        <motion.p
-          initial={fadeUp.initial}
-          whileInView={fadeUp.whileInView}
-          transition={{ ...fadeUp.transition, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="max-w-xl mx-auto text-gray-400 mb-8"
-        >
-          ¿Eres empresa, socio o creador interesado en construir el futuro con
-          Tronx Group? Escríbenos o envíanos un mensaje directo.
-        </motion.p>
+      <section id="contacto" className="py-24 px-6">
+        <div className="max-w-3xl mx-auto">
+          <motion.h2
+            initial={fadeUp.initial}
+            whileInView={fadeUp.whileInView}
+            transition={fadeUp.transition}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-semibold mb-4 text-center"
+          >
+            Conectemos
+          </motion.h2>
+          <motion.p
+            initial={fadeUp.initial}
+            whileInView={fadeUp.whileInView}
+            transition={{ ...fadeUp.transition, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-center text-gray-400 mb-10"
+          >
+            ¿Eres empresa, socio o creador interesado en construir el futuro con Tronx Group?
+            Escríbenos o envíanos un mensaje directo.
+          </motion.p>
 
-        <motion.div
-          initial={fadeUp.initial}
-          whileInView={fadeUp.whileInView}
-          transition={{ ...fadeUp.transition, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center gap-4"
-        >
-          <a
-            href="mailto:info@tronxgroup.com"
-            className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+          {/* FORMULARIO */}
+          <form
+            className="bg-zinc-900/60 border border-zinc-800 rounded-2xl p-6 md:p-8 shadow-lg"
+            method="POST"
+            action="https://formspree.io/f/your-endpoint" // TODO: Reemplaza por tu endpoint Formspree o una ruta /api/contact
           >
-            info@tronxgroup.com <Mail className="w-4 h-4" />
-          </a>
+            {/* Honeypot */}
+            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde TronxGroup.com" />
 
-          <a
-            href="https://wa.me/56920080031"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-gray-300 hover:text-[#25D366] transition"
-          >
-            <WhatsAppIcon /> +56 9 2008 0031
-          </a>
-        </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="nombre" className="block text-sm text-gray-300 mb-1">
+                  Nombre
+                </label>
+                <input
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  required
+                  autoComplete="given-name"
+                  className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
+                  placeholder="Tu nombre"
+                />
+              </div>
 
-        <div className="flex justify-center gap-6 mt-10 text-gray-400">
-          <a
-            href="https://x.com/TronxGroup"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition"
-            aria-label="X Tronx Group"
-          >
-            <XIcon />
-          </a>
-          <a
-            href="#top"
-            className="inline-flex items-center gap-2 hover:text-white transition"
-            aria-label="Ir al inicio"
-          >
-            <Home className="w-5 h-5" />
-            <span className="hidden sm:inline">Inicio</span>
-          </a>
+              <div>
+                <label htmlFor="apellido" className="block text-sm text-gray-300 mb-1">
+                  Apellido
+                </label>
+                <input
+                  id="apellido"
+                  name="apellido"
+                  type="text"
+                  required
+                  autoComplete="family-name"
+                  className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
+                  placeholder="Tu apellido"
+                />
+              </div>
+
+              <div className="md:col-span-2">
+                <label htmlFor="email" className="block text-sm text-gray-300 mb-1">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  inputMode="email"
+                  required
+                  autoComplete="email"
+                  className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20"
+                  placeholder="tu@empresa.com"
+                />
+              </div>
+
+              <div className="md:col-span-2">
+                <label htmlFor="mensaje" className="block text-sm text-gray-300 mb-1">
+                  Mensaje
+                </label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  required
+                  rows={5}
+                  className="w-full rounded-xl bg-black/40 border border-zinc-700 px-4 py-3 outline-none focus:ring-2 focus:ring-white/20 resize-y"
+                  placeholder="Cuéntanos brevemente qué necesitas…"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-col sm:flex-row items-center gap-4">
+              <button
+                type="submit"
+                className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-200 transition"
+                aria-label="Enviar formulario de contacto"
+              >
+                Enviar <Mail className="w-4 h-4" />
+              </button>
+
+              <div className="flex items-center gap-3 text-gray-400">
+                <a
+                  href="mailto:info@tronxgroup.com"
+                  className="inline-flex items-center gap-2 hover:text-white transition"
+                >
+                  info@tronxgroup.com <Mail className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://wa.me/56920080031"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-[#25D366] transition"
+                >
+                  <WhatsAppIcon /> +56 9 2008 0031
+                </a>
+              </div>
+            </div>
+          </form>
+
+          {/* Accesos rápidos */}
+          <div className="flex justify-center gap-6 mt-10 text-gray-400">
+            <a
+              href="https://x.com/TronxGroup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+              aria-label="X Tronx Group"
+            >
+              <XIcon />
+            </a>
+            <a
+              href="#top"
+              className="inline-flex items-center gap-2 hover:text-white transition"
+              aria-label="Ir al inicio"
+            >
+              <Home className="w-5 h-5" />
+              <span className="hidden sm:inline">Inicio</span>
+            </a>
+          </div>
         </div>
       </section>
 
