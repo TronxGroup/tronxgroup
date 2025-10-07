@@ -29,7 +29,14 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, maxSnippet: -1, maxImagePreview: "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      // opcional:
+      // "max-video-preview": -1,
+    },
   },
   keywords: [
     "Tronx Group",
@@ -42,7 +49,6 @@ export const metadata: Metadata = {
     "video corporativo",
     "Chile",
   ],
-  category: "business",
 };
 
 export default function Page() {
@@ -113,7 +119,6 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
-
       <Landing />
     </>
   );
