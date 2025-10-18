@@ -4,14 +4,14 @@ import Landing from "./_components/Landing";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tronxgroup.com"),
-  title: "Tronx Group — Crecimiento, Tecnología y Contenido",
+  title: "Tronx Group — Sistemas que escalan",
   description:
-    "Tronx Group es un holding creativo-tecnológico que integra estrategia, medios y conocimiento para impulsar el crecimiento empresarial con propósito.",
+    "Holding creativo-tecnológico: Strategy (growth B2B), Dekaelo Media (audiovisual) y Tronx TV (plataforma editorial). Embudos con CRM, Ads y reporting.",
   alternates: { canonical: "https://www.tronxgroup.com" },
   openGraph: {
-    title: "Tronx Group — Crecimiento, Tecnología y Contenido",
+    title: "Tronx Group — Sistemas que escalan",
     description:
-      "Holding creativo-tecnológico: Tronx Strategy, Dekaelo Media, Tronx TV y Echevensko.",
+      "Estrategia, tecnología y narrativa con resultados reales. Embudos con CRM, Ads y reporting.",
     url: "https://www.tronxgroup.com",
     images: ["/og-tronx.jpg"],
     type: "website",
@@ -20,34 +20,20 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tronx Group — Crecimiento, Tecnología y Contenido",
+    title: "Tronx Group — Sistemas que escalan",
     description:
-      "Holding creativo-tecnológico: Tronx Strategy, Dekaelo Media, Tronx TV y Echevensko.",
+      "Holding creativo-tecnológico: Strategy, Dekaelo Media y Tronx TV.",
     images: ["/og-tronx.jpg"],
     creator: "@TronxGroup",
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      // opcional:
-      // "max-video-preview": -1,
-    },
+    googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large" },
   },
   keywords: [
-    "Tronx Group",
-    "Tronx Strategy",
-    "Dekaelo Media",
-    "Tronx TV",
-    "growth B2B",
-    "CRM",
-    "automatización",
-    "video corporativo",
-    "Chile",
+    "Tronx Group","Tronx Strategy","Dekaelo Media","Tronx TV",
+    "growth B2B","CRM","automatización","video corporativo","Chile",
   ],
 };
 
@@ -80,7 +66,7 @@ export default function Page() {
         url: "https://www.tronxstrategy.com/",
         sameAs: [
           "https://www.linkedin.com/company/tronx-strategy",
-          "https://www.instagram.com/tronx_strategy/",
+          "https://www.instagram.com/tronxstrategy/",
         ],
       },
       {
@@ -109,16 +95,10 @@ export default function Page() {
 
   return (
     <>
-      <Script
-        id="jsonld-org"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-      />
-      <Script
-        id="jsonld-website"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
+      <Script id="jsonld-org" type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <Script id="jsonld-website" type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       <Landing />
     </>
   );
