@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
+/* Tema claro azul Tronx */
 html, body { height: 100%; }
-body { background: #0a0a0a; }
+body { background: #ffffff; color: #0f172a; } /* slate-900 aprox */
+
+/* Hero en azul (sin tocar tailwind.config) */
+.gradient-hero-blue{
+  background:
+    radial-gradient(900px 600px at 0% -10%, rgba(14,165,233,.20), transparent 60%),
+    radial-gradient(800px 500px at 100% -20%, rgba(2,132,199,.18), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+/* ===== Components ===== */
+@layer components {
+  .section { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .card { @apply rounded-2xl border border-slate-200 bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.2)]; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-semibold transition; }
+  .btn-primary { @apply bg-sky-600 text-white hover:bg-sky-700; }
+  .btn-secondary { @apply bg-sky-50 text-sky-700 border border-sky-200 hover:bg-sky-100; }
+  .btn-ghost { @apply border border-slate-300 hover:bg-slate-50; }
+  .p-muted { @apply text-slate-600; }
+  .pill { @apply inline-flex items-center rounded-full bg-sky-50 text-sky-700 border border-sky-200 px-3 py-1 text-xs font-medium; }
+}
+
+/* ===== Brand utilities ===== */
+@layer utilities {
+  .bg-brand-50 { @apply bg-sky-50; }
+  .bg-brand-100 { @apply bg-sky-100; }
+  .bg-brand-200 { @apply bg-sky-200; }
+  .bg-brand-600 { @apply bg-sky-600; }
+  .text-brand-700 { @apply text-sky-700; }
+  .border-brand-200 { @apply border-sky-200; }
+}
+
+/* Accesibilidad focus */
+a:focus-visible, button:focus-visible { @apply outline-none ring-2 ring-sky-400 ring-offset-2; }
