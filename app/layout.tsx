@@ -5,41 +5,41 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.tronxgroup.com"),
   applicationName: "Tronx Group",
   title: {
-    default: "Tronx Group SpA",
+    default: "Tronx Group — Sistemas que escalan",
     template: "%s | Tronx Group",
   },
   description:
-    "Creatividad, estrategia y narrativa desde Chile hacia el mundo.",
+    "Holding creativo–tecnológico: Strategy (growth B2B), Dekaelo Media (audiovisual) y Tronx TV (plataforma editorial). Operación 100 % cloud con métricas.",
   keywords: [
     "Tronx Group",
     "Tronx Strategy",
     "Dekaelo Media",
     "Tronx TV",
-    "growth",
-    "B2B",
-    "contenido",
+    "growth B2B",
     "CRM",
     "automatización",
+    "embudos",
+    "video corporativo",
+    "Chile",
   ],
-  alternates: {
-    canonical: "https://www.tronxgroup.com/",
-  },
+  alternates: { canonical: "https://www.tronxgroup.com/" },
   openGraph: {
-    title: "Tronx Group SpA",
+    title: "Tronx Group — Sistemas que escalan",
     description:
-      "Holding creativo-tecnológico que integra estrategia, contenido y sistemas para crecer con propósito.",
+      "Creatividad, tecnología y narrativa integradas en un solo sistema cloud.",
     url: "https://www.tronxgroup.com/",
     siteName: "Tronx Group",
     type: "website",
-    // Si tienes una imagen OG, colócala en /public/og-tronx.jpg y descomenta:
-    // images: ["/og-tronx.jpg"],
+    images: ["/og-tronx.jpg"], // coloca /public/og-tronx.jpg (1200x630)
+    locale: "es_CL",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tronx Group SpA",
+    title: "Tronx Group — Sistemas que escalan",
     description:
-      "Creatividad, estrategia y narrativa desde Chile hacia el mundo.",
-    // images: ["/og-tronx.jpg"],
+      "Holding creativo–tecnológico con estrategia, audiovisual y medios.",
+    images: ["/og-tronx.jpg"],
+    creator: "@TronxGroup",
   },
   icons: {
     icon: "/favicon_tronxgroup.png",
@@ -53,8 +53,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
-  colorScheme: "dark",
+  themeColor: "#0EA5E9",      // azul Tronx
+  colorScheme: "light",       // sitio en modo claro
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -64,7 +66,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen bg-white text-slate-900 antialiased">
+        {children}
+      </body>
     </html>
   );
 }
