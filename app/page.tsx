@@ -1,3 +1,4 @@
+// app/page.tsx
 import type { Metadata } from "next";
 import Script from "next/script";
 import TronxLanding from "./_components/TronxLanding";
@@ -7,6 +8,27 @@ export const metadata: Metadata = {
   title: "Tronx Group — Sistemas que escalan",
   description:
     "Holding creativo–tecnológico: Strategy (growth B2B), Dekaelo Media (audiovisual) y Tronx TV (plataforma editorial). Operación 100 % cloud con métricas.",
+  keywords: [
+    "Tronx Group",
+    "Tronx Strategy",
+    "Dekaelo Media",
+    "Tronx TV",
+    "Growth B2B",
+    "CRM",
+    "Zoho",
+    "HubSpot",
+    "Make",
+    "Automatización",
+    "Producción audiovisual",
+    "Vercel",
+    "Cloudflare",
+    "GA4",
+    "GTM",
+    "Looker Studio",
+    "Revenue Share",
+    "Chile",
+    "Holding tecnológico",
+  ],
   alternates: { canonical: "https://www.tronxgroup.com" },
   openGraph: {
     title: "Tronx Group — Sistemas que escalan",
@@ -41,7 +63,13 @@ export default function Page() {
     name: "Tronx Group",
     url: "https://www.tronxgroup.com",
     logo: "https://www.tronxgroup.com/tronxgrouplogo.png",
-    sameAs: ["https://x.com/TronxGroup", "https://www.linkedin.com/company/tronx-group"],
+    sameAs: [
+      "https://x.com/TronxGroup",
+      "https://www.linkedin.com/company/tronx-group",
+      "https://www.tronxstrategy.com",
+      "https://www.dekaelomedia.com",
+      "https://www.tronxtv.com",
+    ],
     brand: [
       { "@type": "Brand", name: "Tronx Strategy", url: "https://www.tronxstrategy.com" },
       { "@type": "Brand", name: "Dekaelo Media", url: "https://www.dekaelomedia.com" },
@@ -58,10 +86,37 @@ export default function Page() {
     ],
   };
 
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Tronx Group — Sistemas que escalan",
+    description:
+      "Holding creativo–tecnológico con Strategy, Dekaelo Media y Tronx TV, operando 100 % en la nube con KPIs claros.",
+    url: "https://www.tronxgroup.com",
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: "https://www.tronxgroup.com/og-tronx.jpg",
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.tronxgroup.com" },
+      ],
+    },
+  };
+
   return (
     <>
-      <Script id="jsonld-org" type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+      <Script
+        id="jsonld-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
+      <Script
+        id="jsonld-webpage"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
       <TronxLanding />
     </>
   );
