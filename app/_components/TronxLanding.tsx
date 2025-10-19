@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Script from "next/script";
-import { useCallback, useMemo } from "react";
-import type { ReactNode, HTMLAttributes, FormEvent, SVGProps } from "react";
+import { useMemo } from "react";
+import type { ReactNode, HTMLAttributes, SVGProps } from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -64,7 +64,7 @@ function GlassCard({
   );
 }
 
-/** Logotipo oficial de X (Twitter) como SVG embebido */
+/** Logotipo X (Twitter) como SVG embebido */
 function XLogo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false" {...props}>
@@ -88,20 +88,8 @@ function TikTokLogo(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-/** Logotipo WhatsApp en SVG (sin dependencias externas) */
-function WhatsAppLogo(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 256 256" aria-hidden="true" focusable="false" {...props}>
-      <path
-        fill="currentColor"
-        d="M128 24c57.4 0 104 46.6 104 104 0 57.4-46.6 104-104 104-18.1 0-35.9-4.7-51.6-13.6L24 232l17.7-50.9C33.1 165.3 24 147.1 24 128 24 70.6 70.6 24 128 24zm0 16c-48.6 0-88 39.4-88 88 0 17.1 5 33.6 14.4 47.9l2.3 3.4-10.3 29.6 30.4-10 3.3 2c14.1 8.4 30.2 12.8 47 12.8 48.6 0 88-39.4 88-88s-39.4-88-88-88zm47.5 50.7c3.5-.1 7.5 1 9 5.2 1.1 3 .9 6.9.8 10.1-.2 6.4-4.4 14.6-14 23.9-12.1 11.8-24.3 19.4-42.1 8.4-8.8-5.4-23.6-19.5-28.2-33.8-4.8-14.9 1.1-22.9 6.5-26.1 2.2-1.3 4.6-1.3 6.6-.8 2 .6 4.2 1.9 5.3 4.6 1.2 2.8 4.5 10.6 4.8 11.4.4.8.7 1.7.7 2.6.1 1.4-.6 3-1.9 4.8-1.4 1.8-3.1 4.1-3.9 5.5-.8 1.4-.8 2.5 0 4.1.8 1.6 3.5 8.3 10.2 14.9 6.7 6.6 13.6 9.3 15.3 10.1 1.7.8 2.7.7 4.1-.3 1.4-1 4.7-4.2 6-5.6 1.3-1.4 2.4-1.7 3.8-1.1 1.4.6 9.3 4.4 10.9 5.2 1.6.8 2.7 1.2 3.2 2.5.5 1.3.5 7.4-2.3 11.9-2.8 4.5-8.2 8.3-13.5 8.3-3.5 0-6.2-.2-12.8-3.1-6.6-2.9-20.5-10.7-30.5-21.8-10-11.1-16.6-24.9-17.8-28.1-1.2-3.2-1.2-6.1.2-8.7 1.4-2.6 4.2-6.9 5.9-9.1 1.7-2.2 3.7-2.6 6-1.9 2.3.7 14.7 6.1 14.7 6.1z"
-      />
-    </svg>
-  );
-}
-
 export default function TronxLanding() {
-  /** mapeo de campos Zoho WebToLead */
+  /** Config Zoho WebToLead */
   const zoho = useMemo(
     () => ({
       action: "https://crm.zoho.com/crm/WebToLeadForm",
@@ -112,8 +100,6 @@ export default function TronxLanding() {
       actionType: "TGVhZHM=",
       returnURL: "https://www.tronxgroup.com/gracias",
       recaptchaSiteKey: "6Lch8eArAAAAAKq0w3lMg8-Cej5Y8LUMm4rPi9Ao",
-      // campos visibles (React): First Name, Last Name, Email, LEADCF3 (Mensaje)
-      // ocultos sugeridos:
       defaults: {
         LEADCF5: "Tronx-Group", // Marca
         LEADCF9: "tronxgroup.com/contacto", // Lead_Origen
@@ -122,54 +108,47 @@ export default function TronxLanding() {
     []
   );
 
-  /** Si quieres mantener también envío por mailto como fallback, puedes usar esto */
-  const submitMailto = useCallback((e: FormEvent<HTMLFormElement>) => {
-    // (no se usa ahora; dejamos Zoho como acción principal)
-    e.preventDefault();
-  }, []);
-
   return (
-  <>
-    {/* Carga de reCAPTCHA v2 */}
-    <Script
-      src="https://www.google.com/recaptcha/api.js"
-      strategy="afterInteractive"
-      async
-      defer
-    />
+    <>
+      {/* Carga de reCAPTCHA v2 */}
+      <Script
+        src="https://www.google.com/recaptcha/api.js"
+        strategy="afterInteractive"
+        async
+        defer
+      />
 
-    {/* ANCLA SUPERIOR */}
-    <div id="top" />
+      {/* ANCLA SUPERIOR */}
+      <div id="top" />
 
-    {/* NAV */}
-    <nav className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[rgba(12,19,43,0.80)] bg-[rgba(12,19,43,0.92)] border-b border-white/10">
-      <div className="section flex items-center justify-between py-3">
-        <a href="#top" aria-label="Volver al inicio" className="flex items-center">
-          <Image
-            src="/tronxgrouplogo.png"
-            alt="Tronx Group"
-            width={72}
-            height={72}
-            priority
-          />
-        </a>
-
-        <div className="hidden md:flex items-center gap-5 text-sm">
-          <a href="#holding" className="nav-link">Holding</a>
-          <a href="#adn" className="nav-link">ADN &amp; Propósito</a>
-          <a href="#unidades" className="nav-link">Unidades</a>
-          <a href="#cloud" className="nav-link">Cloud Suite</a>
-          <a href="#socios" className="nav-link">Programa Socios</a>
-          <a
-            href="#contacto"
-            className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 text-white"
-          >
-            Contactar
+      {/* NAV */}
+      <nav className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[rgba(12,19,43,0.80)] bg-[rgba(12,19,43,0.92)] border-b border-white/10">
+        <div className="section flex items-center justify-between py-3">
+          <a href="#top" aria-label="Volver al inicio" className="flex items-center">
+            <Image
+              src="/tronxgrouplogo.png"
+              alt="Tronx Group"
+              width={72}
+              height={72}
+              priority
+            />
           </a>
+
+          <div className="hidden md:flex items-center gap-5 text-sm">
+            <a href="#holding" className="nav-link">Holding</a>
+            <a href="#adn" className="nav-link">ADN &amp; Propósito</a>
+            <a href="#unidades" className="nav-link">Unidades</a>
+            <a href="#cloud" className="nav-link">Cloud Suite</a>
+            <a href="#socios" className="nav-link">Programa Socios</a>
+            <a
+              href="#contacto"
+              className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 text-white"
+            >
+              Contactar
+            </a>
+          </div>
         </div>
-      </div>
-    </nav>
-    {
+      </nav>
 
       {/* HERO */}
       <header
@@ -535,24 +514,19 @@ export default function TronxLanding() {
                 method="POST"
                 className="mt-6 grid grid-cols-1 gap-4"
               >
-                {/* ====== Requeridos por Zoho (ocultos) ====== */}
+                {/* Requeridos por Zoho (ocultos) */}
                 <input type="hidden" name="xnQsjsdp" value={zoho.xnQsjsdp} />
                 <input type="hidden" name="xmIwtLD" value={zoho.xmIwtLD} />
                 <input type="hidden" name="actionType" value={zoho.actionType} />
                 <input type="hidden" name="returnURL" value={zoho.returnURL} />
                 <input type="hidden" name="zc_gad" id="zc_gad" value="" />
                 {/* Honeypot */}
-                <input
-                  type="hidden"
-                  name="aG9uZXlwb3Q"
-                  value=""
-                  style={{ display: "none" }}
-                />
+                <input type="hidden" name="aG9uZXlwb3Q" value="" style={{ display: "none" }} />
                 {/* Defaults */}
                 <input type="hidden" name="LEADCF5" value={zoho.defaults.LEADCF5} />
                 <input type="hidden" name="LEADCF9" value={zoho.defaults.LEADCF9} />
 
-                {/* ====== Campos visibles (match con Zoho) ====== */}
+                {/* Campos visibles (Zoho expects exact names) */}
                 <div className="field">
                   <label className="label text-blue-50">Nombre</label>
                   <input
@@ -644,64 +618,65 @@ export default function TronxLanding() {
       </section>
 
       {/* FOOTER */}
-<footer className="mt-0 border-t border-white/10 bg-[#0C132B] text-blue-100/90">
-  <div className="section py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-    {/* Logo + derechos */}
-    <div className="flex items-center gap-3">
-      <Image
-        src="/tronxgrouplogo.png"
-        alt="Tronx Group"
-        width={24}
-        height={24}
-        className="opacity-90"
-      />
-      <span className="text-sm">
-        © 2025 Tronx Group SpA — Todos los derechos reservados
-      </span>
-    </div>
+      <footer className="mt-0 border-t border-white/10 bg-[#0C132B] text-blue-100/90">
+        <div className="section py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          {/* Logo + derechos */}
+          <div className="flex items-center gap-3">
+            <Image
+              src="/tronxgrouplogo.png"
+              alt="Tronx Group"
+              width={24}
+              height={24}
+              className="opacity-90"
+            />
+            <span className="text-sm">
+              © 2025 Tronx Group SpA — Todos los derechos reservados
+            </span>
+          </div>
 
-    {/* Redes sociales */}
-    <div className="flex items-center gap-3">
-      {/* X */}
-      <a
-        className="btn-icon border-white/15 text-white/90 hover:text-[#1DA1F2] hover:bg-white/10"
-        aria-label="X"
-        href="https://x.com/TronxGroup"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <XLogo width={18} height={18} />
-      </a>
+          {/* Redes sociales */}
+          <div className="flex items-center gap-3">
+            {/* X */}
+            <a
+              className="btn-icon border-white/15 text-white/90 hover:text-[#1DA1F2] hover:bg-white/10"
+              aria-label="X"
+              href="https://x.com/TronxGroup"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <XLogo width={18} height={18} />
+            </a>
 
-      {/* LinkedIn */}
-      <a
-        className="btn-icon border-white/15 text-white/90 hover:text-[#0A66C2] hover:bg-white/10"
-        aria-label="LinkedIn"
-        href="https://www.linkedin.com/company/tronx-group"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Linkedin size={18} />
-      </a>
+            {/* LinkedIn */}
+            <a
+              className="btn-icon border-white/15 text-white/90 hover:text-[#0A66C2] hover:bg-white/10"
+              aria-label="LinkedIn"
+              href="https://www.linkedin.com/company/tronx-group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={18} />
+            </a>
 
-      {/* WhatsApp */}
-      <a
-        className="btn-icon border-white/15 text-white/90 hover:text-[#25D366] hover:bg-white/10"
-        aria-label="WhatsApp"
-        href="https://wa.me/56920080031"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="WhatsApp"
-      >
-        <SiWhatsapp size={18} />
-      </a>
-    </div>
-  </div>
-</footer>
+            {/* WhatsApp */}
+            <a
+              className="btn-icon border-white/15 text-white/90 hover:text-[#25D366] hover:bg-white/10"
+              aria-label="WhatsApp"
+              href="https://wa.me/56920080031"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="WhatsApp"
+            >
+              <SiWhatsapp size={18} />
+            </a>
+          </div>
+        </div>
+      </footer>
 
-{/* Mejora de contraste global para labels (más claros) */}
-<style jsx global>{`
-  .label {
-    color: #e6eeff; /* títulos más claros en formularios */
-  }
-`}</style>
+      {/* Mejora de contraste global para labels */}
+      <style jsx global>{`
+        .label { color: #e6eeff; }
+      `}</style>
+    </>
+  );
+}
