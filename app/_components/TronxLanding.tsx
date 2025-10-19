@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback } from "react";
+import type { ReactNode, HTMLAttributes, FormEvent, SVGProps } from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -23,7 +24,7 @@ function Section({
   className = "",
 }: {
   id?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }) {
   return (
@@ -34,7 +35,7 @@ function Section({
 }
 
 /** Chip/pill de apoyo visual */
-function Pill({ children }: { children: React.ReactNode }) {
+function Pill({ children }: { children: ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-full bg-brand-50 text-brand-700 border border-brand-200 px-3 py-1 text-xs font-medium">
       {children}
@@ -47,7 +48,7 @@ function Card({
   children,
   className = "",
   ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+}: HTMLAttributes<HTMLDivElement>) {
   return (
     <div {...props} className={`card ${className}`}>
       {children}
@@ -56,7 +57,7 @@ function Card({
 }
 
 /** Logotipo oficial de X (Twitter) como SVG embebido */
-function XLogo(props: React.SVGProps<SVGSVGElement>) {
+function XLogo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false" {...props}>
       <path
@@ -68,7 +69,7 @@ function XLogo(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default function TronxLanding() {
-  const submitMailto = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+  const submitMailto = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget as HTMLFormElement;
     const data = new FormData(form);
@@ -93,6 +94,7 @@ export default function TronxLanding() {
               alt="Tronx Group"
               width={60}
               height={60}
+              priority
             />
             <span className="font-semibold text-white">Tronx Group</span>
           </div>
@@ -122,91 +124,92 @@ export default function TronxLanding() {
         </div>
       </nav>
 
-      {/* HERO */}
-<header
-  className="relative overflow-hidden bg-[#0B1126] text-white"
-  style={{
-    backgroundImage:
-      "radial-gradient(circle at 20% -10%, rgba(14,165,233,0.25), transparent 60%), radial-gradient(circle at 80% 0%, rgba(59,130,246,0.25), transparent 60%), linear-gradient(to bottom, #0C132B, #0A1022 80%)",
-  }}
->
-  {/* Capa de imagen suave + overlay */}
-  <div className="absolute inset-0 bg-[url('/BG_tronx_group.jpg')] bg-cover bg-center opacity-15 mix-blend-overlay" />
-  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#0C132B]/60 to-[#0A0F21]" />
+      {/* HERO (moderno/tech) */}
+      <header
+        className="relative overflow-hidden bg-[#0B1126] text-white"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% -10%, rgba(14,165,233,0.25), transparent 60%), radial-gradient(circle at 80% 0%, rgba(59,130,246,0.25), transparent 60%), linear-gradient(to bottom, #0C132B, #0A1022 80%)",
+        }}
+      >
+        {/* Capa de imagen suave + overlay */}
+        <div className="absolute inset-0 bg-[url('/BG_tronx_group.jpg')] bg-cover bg-center opacity-15 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#0C132B]/60 to-[#0A0F21]" />
 
-  <div className="relative section py-24 sm:py-32 flex flex-col items-start">
-    <div className="max-w-3xl">
-      {/* Badges con glassmorphism */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        <span className="px-3 py-1 text-xs font-medium rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-sm motion-safe:animate-pulseGlow">
-          Cloud Growth System
-        </span>
-        <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 backdrop-blur-sm">
-          Operación 100 % digital
-        </span>
-        <span className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 backdrop-blur-sm">
-          KPI driven
-        </span>
-      </div>
+        <div className="relative section py-24 sm:py-32 flex flex-col items-start">
+          <div className="max-w-3xl">
+            {/* Badges con glassmorphism */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="px-3 py-1 text-xs font-medium rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-sm motion-safe:animate-pulseGlow">
+                Cloud Growth System
+              </span>
+              <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 backdrop-blur-sm">
+                Operación 100 % digital
+              </span>
+              <span className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 backdrop-blur-sm">
+                KPI driven
+              </span>
+            </div>
 
-      {/* Título dinámico */}
-      <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
-        <span className="block text-white drop-shadow-[0_2px_8px_rgba(59,130,246,0.4)]">
-          Crecemos con sistemas,
-        </span>
-        <span className="block text-sky-400/90 font-light">
-          no con campañas.
-        </span>
-      </h1>
+            {/* Título dinámico */}
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-[0_2px_8px_rgba(59,130,246,0.4)]">
+              <span className="block">Crecemos con sistemas,</span>
+              <span className="block text-sky-400/90 font-light">
+                no con campañas.
+              </span>
+            </h1>
 
-      {/* Descripción */}
-      <p className="mt-6 text-base sm:text-lg text-blue-100/90 max-w-2xl leading-relaxed backdrop-blur-[1px]">
-        Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y automatizaciones),
-        <strong> Dekaelo Media</strong> (producción audiovisual estratégica) y
-        <strong> Tronx TV</strong> (plataforma editorial). Un solo ecosistema cloud con métricas de impacto:
-        <strong> CAC · CVR · LTV · ROAS</strong>.
-      </p>
+            {/* Descripción */}
+            <p className="mt-6 text-base sm:text-lg text-blue-100/90 max-w-2xl leading-relaxed backdrop-blur-[1px]">
+              Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y
+              automatizaciones), <strong>Dekaelo Media</strong> (producción
+              audiovisual estratégica) y <strong>Tronx TV</strong> (plataforma
+              editorial). Un solo ecosistema cloud con métricas de impacto:
+              <strong> CAC · CVR · LTV · ROAS</strong>.
+            </p>
 
-      {/* Botones */}
-      <div className="mt-10 flex flex-col sm:flex-row gap-3">
-        <a
-          href="#contacto"
-          className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20 motion-safe:animate-pressIn"
-        >
-          Iniciar conversación <ArrowRight size={18} />
-        </a>
-        <a
-          href="#unidades"
-          className="btn border border-white/30 text-white font-semibold hover:bg-white/10 backdrop-blur-md"
-        >
-          Ver unidades
-        </a>
-        <a
-          href="/catalogo/tronxgroup_catalogo_2026.pdf"
-          className="btn btn-secondary hover:bg-sky-100/90"
-          download
-        >
-          Descargar catálogo
-        </a>
-      </div>
+            {/* Botones */}
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+              <a
+                href="#contacto"
+                className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20 motion-safe:animate-pressIn"
+              >
+                Iniciar conversación <ArrowRight size={18} />
+              </a>
+              <a
+                href="#unidades"
+                className="btn border border-white/50 text-white/95 font-semibold hover:bg-white/15 backdrop-blur-md"
+              >
+                Ver unidades del holding
+              </a>
+              <a
+                href="/catalogo/tronxgroup_catalogo_2026.pdf"
+                className="btn btn-secondary hover:bg-sky-100/90"
+                download
+              >
+                Descargar catálogo
+              </a>
+            </div>
 
-      {/* Stack */}
-      <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-blue-200/75">
-        <span className="inline-flex items-center gap-1.5">
-          <Shield size={14} /> Zoho · HubSpot · Make · GA4 · GTM · Vercel · Cloudflare
-        </span>
-      </div>
-    </div>
-  </div>
+            {/* Stack */}
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-blue-200/85">
+              <span className="inline-flex items-center gap-1.5">
+                <Shield size={14} /> Zoho · HubSpot · Make · GA4 · GTM · Vercel
+                · Cloudflare
+              </span>
+            </div>
+          </div>
+        </div>
 
-  {/* Orbes decorativos con animación sutil */}
-  <div className="pointer-events-none absolute -bottom-40 right-[-60px] w-[520px] h-[520px] bg-sky-500/20 blur-[140px] rounded-full motion-safe:animate-floatSlow" />
-  <div className="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] bg-indigo-600/15 blur-[120px] rounded-full motion-safe:animate-floatSlowReverse" />
-</header>
+        {/* Orbes decorativos con animación sutil */}
+        <div className="pointer-events-none absolute -bottom-40 right-[-60px] w-[520px] h-[520px] bg-sky-500/20 blur-[140px] rounded-full motion-safe:animate-floatSlow" />
+        <div className="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] bg-indigo-600/15 blur-[120px] rounded-full motion-safe:animate-floatSlowReverse" />
+      </header>
+
       {/* DESCRIPCIÓN HOLDING */}
       <Section id="holding" className="py-16">
-        <Card className="p-6 bg-white/95">
-          <h2 className="h2">¿Qué es Tronx Group?</h2>
+        <Card className="p-6 bg-white">
+          <h2 className="h2 text-slate-900">¿Qué es Tronx Group?</h2>
           <p className="p-muted mt-3 max-w-4xl">
             Tronx Group es un{" "}
             <strong>holding creativo–tecnológico chileno</strong> que integra
@@ -233,8 +236,8 @@ export default function TronxLanding() {
       {/* ADN & PROPÓSITO */}
       <Section id="adn" className="py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card className="p-6">
-            <h3 className="h3">ADN & Propósito</h3>
+          <Card className="p-6 bg-white">
+            <h3 className="h3 text-slate-900">ADN & Propósito</h3>
             <p className="p-muted mt-2">
               <strong>Propósito</strong>: Acelerar el crecimiento de empresas e
               instituciones con creatividad, tecnología y{" "}
@@ -265,8 +268,8 @@ export default function TronxLanding() {
             </p>
           </Card>
 
-          <Card className="p-6" id="cloud">
-            <h3 className="h3">Tronx Cloud Suite (resumen)</h3>
+          <Card className="p-6 bg-white" id="cloud">
+            <h3 className="h3 text-slate-900">Tronx Cloud Suite (resumen)</h3>
             <p className="p-muted mt-2">
               Plataforma tecnológica unificada para operar WebOps, Data &
               Analytics, CRM & Automation, Ads Ops y Security en un solo
@@ -288,18 +291,18 @@ export default function TronxLanding() {
 
       {/* UNIDADES DEL HOLDING */}
       <Section id="unidades" className="py-16">
-        <h2 className="h2 text-center">Unidades de negocio</h2>
+        <h2 className="h2 text-center text-slate-900">Unidades de negocio</h2>
         <p className="p-muted text-center mt-2">Tres unidades, un solo sistema.</p>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Tronx Strategy */}
-          <Card className="p-6">
+          <Card className="p-6 bg-white">
             <div className="flex items-center gap-3">
               <div className="logo-box">
                 <span className="logo-initial">TS</span>
               </div>
               <div>
-                <h4 className="font-semibold">Tronx Strategy</h4>
+                <h4 className="font-semibold text-slate-900">Tronx Strategy</h4>
                 <p className="text-xs text-slate-600">
                   Growth B2B · CRM · Automatización
                 </p>
@@ -314,13 +317,13 @@ export default function TronxLanding() {
           </Card>
 
           {/* Dekaelo Media */}
-          <Card className="p-6">
+          <Card className="p-6 bg-white">
             <div className="flex items-center gap-3">
               <div className="logo-box">
                 <span className="logo-initial">DK</span>
               </div>
               <div>
-                <h4 className="font-semibold">Dekaelo Media</h4>
+                <h4 className="font-semibold text-slate-900">Dekaelo Media</h4>
                 <p className="text-xs text-slate-600">
                   Estudio audiovisual estratégico
                 </p>
@@ -335,13 +338,13 @@ export default function TronxLanding() {
           </Card>
 
           {/* Tronx TV */}
-          <Card className="p-6">
+          <Card className="p-6 bg-white">
             <div className="flex items-center gap-3">
               <div className="logo-box">
                 <span className="logo-initial">TV</span>
               </div>
               <div>
-                <h4 className="font-semibold">Tronx TV</h4>
+                <h4 className="font-semibold text-slate-900">Tronx TV</h4>
                 <p className="text-xs text-slate-600">Plataforma editorial</p>
               </div>
             </div>
@@ -357,8 +360,8 @@ export default function TronxLanding() {
 
       {/* PROGRAMA SOCIOS (resumen) */}
       <Section id="socios" className="py-6">
-        <Card className="p-6">
-          <h3 className="h3">Programa Socios — Revenue Share</h3>
+        <Card className="p-6 bg-white">
+          <h3 className="h3 text-slate-900">Programa Socios — Revenue Share</h3>
           <p className="p-muted mt-2">
             Tronx opera el embudo, CRM y cierre comercial; el cliente paga{" "}
             <strong>sólo por ventas efectivas</strong>. Win–win acelerado con
@@ -375,7 +378,7 @@ export default function TronxLanding() {
 
       {/* BANDA DE CONFIANZA */}
       <Section className="py-10">
-        <div className="card p-4 flex flex-wrap items-center justify-center gap-6 text-slate-500 text-xs bg-white/95">
+        <div className="card p-4 flex flex-wrap items-center justify-center gap-6 text-slate-600 text-xs bg-white">
           <span className="inline-flex items-center gap-2">
             <Users size={16} /> B2B & organizaciones
           </span>
@@ -391,8 +394,8 @@ export default function TronxLanding() {
       {/* CONTACTO */}
       <Section id="contacto" className="py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          <Card className="p-6 lg:col-span-3">
-            <h3 className="h3">Conversemos</h3>
+          <Card className="p-6 lg:col-span-3 bg-white">
+            <h3 className="h3 text-slate-900">Conversemos</h3>
             <p className="p-muted mt-2">
               Cuéntanos tu objetivo y te proponemos un sistema a medida.
             </p>
@@ -439,8 +442,8 @@ export default function TronxLanding() {
             </form>
           </Card>
 
-          <Card className="p-6 lg:col-span-2">
-            <h4 className="font-semibold">Datos corporativos</h4>
+          <Card className="p-6 lg:col-span-2 bg-white">
+            <h4 className="font-semibold text-slate-900">Datos corporativos</h4>
             <ul className="mt-3 text-sm text-slate-700 space-y-2">
               <li className="inline-flex items-center gap-2">
                 <Mail size={16} /> info@tronxgroup.com
