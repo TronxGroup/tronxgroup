@@ -12,7 +12,7 @@ import {
   Play,
   Users,
   Linkedin,
-  Twitter,
+  X,          // ⬅️ usamos el ícono de X en vez de Twitter
   Phone,
   Mail,
 } from "lucide-react";
@@ -26,7 +26,11 @@ function Section({
   children: React.ReactNode;
   className?: string;
 }) {
-  return <section id={id} className={`section ${className}`}>{children}</section>;
+  return (
+    <section id={id} className={`section ${className}`}>
+      {children}
+    </section>
+  );
 }
 
 function Pill({ children }: { children: React.ReactNode }) {
@@ -310,22 +314,25 @@ export default function TronxLanding() {
       </Section>
 
       {/* FOOTER */}
-<footer className="mt-10 border-t border-white/10 bg-[#0C132B] text-blue-100/90">
-  <div className="section py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-    <div className="flex items-center gap-3">
-      <Image src="/tronxgrouplogo.png" alt="Tronx Group" width={20} height={20} />
-      <span className="text-sm">© 2026 Tronx Group SpA — Todos los derechos reservados</span>
-    </div>
-    <div className="flex items-center gap-3">
-      <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn" href="https://www.linkedin.com/company/tronx-group" target="_blank" rel="noopener noreferrer">
-        <Linkedin size={18}/>
-      </a>
-      <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="X" href="https://x.com/TronxGroup" target="_blank" rel="noopener noreferrer">
-        <X size={18}/>
-      </a>
-      <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="WhatsApp" href="https://wa.me/56920080031" target="_blank" rel="noopener noreferrer">
-        <Phone size={18}/>
-      </a>
-    </div>
-  </div>
-</footer>
+      <footer className="mt-10 border-t border-white/10 bg-[#0C132B] text-blue-100/90">
+        <div className="section py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <Image src="/tronxgrouplogo.png" alt="Tronx Group" width={20} height={20} />
+            <span className="text-sm">© 2026 Tronx Group SpA — Todos los derechos reservados</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn" href="https://www.linkedin.com/company/tronx-group" target="_blank" rel="noopener noreferrer">
+              <Linkedin size={18}/>
+            </a>
+            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="X" href="https://x.com/TronxGroup" target="_blank" rel="noopener noreferrer">
+              <X size={18}/>
+            </a>
+            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="WhatsApp" href="https://wa.me/56920080031" target="_blank" rel="noopener noreferrer">
+              <Phone size={18}/>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
