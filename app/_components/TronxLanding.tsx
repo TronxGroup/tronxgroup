@@ -647,7 +647,7 @@ export default function TronxLanding() {
 
             {/* Enlace a Privacidad & Condiciones */}
             <Link
-              href="/privacidad/condiciones"
+              href="/condiciones-privacidad"
               className="text-xs text-blue-300/80 hover:text-white hover:underline transition"
             >
               Privacidad & Condiciones
