@@ -123,52 +123,58 @@ export default function TronxLanding() {
       </nav>
 
       {/* HERO */}
-      <header className="relative overflow-hidden hero-bg">
-        <div className="section py-20 sm:py-28">
-          <div className="max-w-3xl">
-            <div className="flex flex-wrap gap-2">
-              <Pill>Holding creativo–tecnológico</Pill>
-              <Pill>Operación 100 % cloud</Pill>
-              <Pill>Métricas & trazabilidad</Pill>
-            </div>
-            <h1 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-              Sistemas que escalan: estrategia, tecnología y narrativa con
-              resultados reales.
-            </h1>
-            <p className="hero-sub mt-6">
-              Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y
-              automatizaciones), <strong>Dekaelo Media</strong> (producción
-              audiovisual estratégica) y <strong>Tronx TV</strong> (plataforma
-              editorial), bajo una operación <strong>100 % cloud</strong> con
-              KPIs claros (CAC · CVR · LTV · ROAS).
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <a href="#contacto" className="btn btn-primary">
-                Hablemos <ArrowRight size={18} />
-              </a>
-              <a
-                href="#unidades"
-                className="btn btn-ghost border-white/30 text-white/95 hover:bg-white/10"
-              >
-                Ver unidades del holding
-              </a>
-              <a
-                href="/catalogo/tronxgroup_catalogo_2026.pdf"
-                className="btn btn-secondary"
-                download
-              >
-                Descargar catálogo
-              </a>
-            </div>
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-blue-100/80">
-              <span className="inline-flex items-center gap-1.5">
-                <Shield size={14} /> Zoho · HubSpot · Make · GA4 · GTM · Vercel
-                · Cloudflare
-              </span>
-            </div>
-          </div>
-        </div>
-      </header>
+<header
+  className="relative overflow-hidden hero-bg"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(12,19,43,0.75), rgba(12,19,43,0.85)), url('/BG_tronx_group.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  <div className="section py-20 sm:py-28">
+    <div className="max-w-3xl">
+      <div className="flex flex-wrap gap-2">
+        <Pill>Holding creativo–tecnológico</Pill>
+        <Pill>Operación 100 % cloud</Pill>
+        <Pill>Métricas & trazabilidad</Pill>
+      </div>
+      <h1 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
+        Sistemas que escalan: estrategia, tecnología y narrativa con resultados reales.
+      </h1>
+      <p className="hero-sub mt-6 text-blue-50/95 drop-shadow-sm">
+        Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y automatizaciones),
+        <strong> Dekaelo Media</strong> (producción audiovisual estratégica) y
+        <strong> Tronx TV</strong> (plataforma editorial), bajo una operación <strong>100 % cloud</strong> 
+        con KPIs claros (CAC · CVR · LTV · ROAS).
+      </p>
+      <div className="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="#contacto" className="btn btn-primary">
+          Hablemos <ArrowRight size={18} />
+        </a>
+        <a
+          href="#unidades"
+          className="btn border border-white/50 text-white font-semibold hover:bg-white/15 transition"
+        >
+          Ver unidades del holding
+        </a>
+        <a
+          href="/catalogo/tronxgroup_catalogo_2026.pdf"
+          className="btn btn-secondary"
+          download
+        >
+          Descargar catálogo
+        </a>
+      </div>
+      <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-blue-100/85">
+        <span className="inline-flex items-center gap-1.5">
+          <Shield size={14} /> Zoho · HubSpot · Make · GA4 · GTM · Vercel · Cloudflare
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
 
       {/* DESCRIPCIÓN HOLDING */}
       <Section id="holding" className="py-16">
