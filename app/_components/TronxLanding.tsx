@@ -124,58 +124,85 @@ export default function TronxLanding() {
 
       {/* HERO */}
 <header
-  className="relative overflow-hidden hero-bg"
+  className="relative overflow-hidden bg-[#0B1126] text-white"
   style={{
     backgroundImage:
-      "linear-gradient(rgba(12,19,43,0.75), rgba(12,19,43,0.85)), url('/BG_tronx_group.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
+      "radial-gradient(circle at 20% -10%, rgba(14,165,233,0.25), transparent 60%), radial-gradient(circle at 80% 0%, rgba(59,130,246,0.25), transparent 60%), linear-gradient(to bottom, #0C132B, #0A1022 80%)",
   }}
 >
-  <div className="section py-20 sm:py-28">
+  {/* Layered glow */}
+  <div className="absolute inset-0 bg-[url('/BG_tronx_group.jpg')] bg-cover bg-center opacity-15 mix-blend-overlay" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#0C132B]/60 to-[#0A0F21]" />
+
+  <div className="relative section py-24 sm:py-32 flex flex-col items-start">
     <div className="max-w-3xl">
-      <div className="flex flex-wrap gap-2">
-        <Pill>Holding creativo–tecnológico</Pill>
-        <Pill>Operación 100 % cloud</Pill>
-        <Pill>Métricas & trazabilidad</Pill>
+      {/* Badges */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        <span className="px-3 py-1 text-xs font-medium rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-sm">
+          Cloud Growth System
+        </span>
+        <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 backdrop-blur-sm">
+          Operación 100 % digital
+        </span>
+        <span className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 backdrop-blur-sm">
+          KPI driven
+        </span>
       </div>
-      <h1 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-lg">
-        Sistemas que escalan: estrategia, tecnología y narrativa con resultados reales.
+
+      {/* Title */}
+      <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        <span className="block text-white drop-shadow-[0_2px_8px_rgba(59,130,246,0.4)]">
+          Crecemos con sistemas,
+        </span>
+        <span className="block text-sky-400/90 font-light">
+          no con campañas.
+        </span>
       </h1>
-      <p className="hero-sub mt-6 text-blue-50/95 drop-shadow-sm">
+
+      {/* Description */}
+      <p className="mt-6 text-base sm:text-lg text-blue-100/90 max-w-2xl leading-relaxed backdrop-blur-sm">
         Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y automatizaciones),
         <strong> Dekaelo Media</strong> (producción audiovisual estratégica) y
-        <strong> Tronx TV</strong> (plataforma editorial), bajo una operación <strong>100 % cloud</strong> 
-        con KPIs claros (CAC · CVR · LTV · ROAS).
+        <strong> Tronx TV</strong> (plataforma editorial).  
+        Un solo ecosistema cloud con métricas de impacto: <strong>CAC · CVR · LTV · ROAS</strong>.
       </p>
-      <div className="mt-8 flex flex-col sm:flex-row gap-3">
-        <a href="#contacto" className="btn btn-primary">
-          Hablemos <ArrowRight size={18} />
+
+      {/* Buttons */}
+      <div className="mt-10 flex flex-col sm:flex-row gap-3">
+        <a
+          href="#contacto"
+          className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20 transition"
+        >
+          Iniciar conversación <ArrowRight size={18} />
         </a>
         <a
           href="#unidades"
-          className="btn border border-white/50 text-white font-semibold hover:bg-white/15 transition"
+          className="btn border border-white/30 text-white font-semibold hover:bg-white/10 backdrop-blur-md"
         >
-          Ver unidades del holding
+          Ver unidades
         </a>
         <a
           href="/catalogo/tronxgroup_catalogo_2026.pdf"
-          className="btn btn-secondary"
+          className="btn btn-secondary hover:bg-sky-100/90"
           download
         >
           Descargar catálogo
         </a>
       </div>
-      <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-blue-100/85">
+
+      {/* Stack info */}
+      <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-blue-200/75">
         <span className="inline-flex items-center gap-1.5">
           <Shield size={14} /> Zoho · HubSpot · Make · GA4 · GTM · Vercel · Cloudflare
         </span>
       </div>
     </div>
   </div>
-</header>
 
+  {/* Decorative blurred orbs */}
+  <div className="absolute -bottom-40 right-0 w-[500px] h-[500px] bg-sky-500/20 blur-[140px] rounded-full" />
+  <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full" />
+</header>
       {/* DESCRIPCIÓN HOLDING */}
       <Section id="holding" className="py-16">
         <Card className="p-6 bg-white/95">
