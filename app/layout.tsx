@@ -23,8 +23,12 @@ export const metadata: Metadata = {
     "growth B2B",
     "CRM",
     "automatización",
+    "producción audiovisual",
+    "inteligencia de datos",
     "video corporativo",
     "Chile",
+    "estrategia cloud",
+    "ecosistema digital",
   ],
   alternates: { canonical: "https://www.tronxgroup.com" },
   openGraph: {
@@ -36,10 +40,10 @@ export const metadata: Metadata = {
       "Tronx Group integra Strategy, Dekaelo Media y Tronx TV bajo un modelo 100 % cloud con métricas claras.",
     images: [
       {
-        url: "/og-tronx.jpg", // 1200x630 recomendado
+        url: "/og-tronx.jpg",
         width: 1200,
         height: 630,
-        alt: "Tronx Group",
+        alt: "Tronx Group — Growth, Media & Cloud Systems",
       },
     ],
     locale: "es_CL",
@@ -62,8 +66,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0C132B", // azul Tronx
-  colorScheme: "light",
+  themeColor: "#0C132B",
+  colorScheme: "dark light",
   width: "device-width",
   initialScale: 1,
 };
@@ -97,31 +101,48 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "@type": "Organization",
         name: "Tronx Strategy",
         url: "https://www.tronxstrategy.com/",
+        description:
+          "Unidad de estrategia y crecimiento B2B con enfoque en performance, CRM y automatización.",
       },
       {
         "@type": "Organization",
         name: "Dekaelo Media",
         url: "https://www.dekaelomedia.com/",
+        description:
+          "Estudio audiovisual estratégico: branding, institucional, ficción y performance content.",
       },
       {
         "@type": "Organization",
         name: "Tronx TV",
         url: "https://www.tronxtv.com/",
+        description:
+          "Plataforma editorial y de contenidos originales en video: reality, documental, conversación y ficción.",
       },
     ],
   };
 
   return (
-    <html lang="es" className={inter.variable} suppressHydrationWarning>
+    <html
+      lang="es"
+      className={`${inter.variable} scroll-smooth antialiased selection:bg-sky-500/20 selection:text-sky-300`}
+      suppressHydrationWarning
+    >
       <head>
-        {/* JSON-LD de organización */}
         <Script
           id="jsonld-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
-      <body className="min-h-screen antialiased bg-white text-slate-900">
+
+      <body className="relative min-h-screen bg-gradient-to-b from-[#0A0F21] via-[#0B1126] to-[#0C132B] text-slate-100 tracking-tight">
+        {/* Fondo decorativo global (brillos Tronx) */}
+        <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+          <div className="absolute top-[-200px] left-[-200px] w-[600px] h-[600px] bg-sky-500/10 blur-[160px] rounded-full motion-safe:animate-floatSlowReverse" />
+          <div className="absolute bottom-[-300px] right-[-200px] w-[700px] h-[700px] bg-indigo-500/10 blur-[180px] rounded-full motion-safe:animate-floatSlow" />
+        </div>
+
+        {/* Contenido */}
         {children}
       </body>
     </html>
