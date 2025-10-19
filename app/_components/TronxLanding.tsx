@@ -130,15 +130,15 @@ export default function TronxLanding() {
       "radial-gradient(circle at 20% -10%, rgba(14,165,233,0.25), transparent 60%), radial-gradient(circle at 80% 0%, rgba(59,130,246,0.25), transparent 60%), linear-gradient(to bottom, #0C132B, #0A1022 80%)",
   }}
 >
-  {/* Layered glow */}
+  {/* Capa de imagen suave + overlay */}
   <div className="absolute inset-0 bg-[url('/BG_tronx_group.jpg')] bg-cover bg-center opacity-15 mix-blend-overlay" />
   <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#0C132B]/60 to-[#0A0F21]" />
 
   <div className="relative section py-24 sm:py-32 flex flex-col items-start">
     <div className="max-w-3xl">
-      {/* Badges */}
+      {/* Badges con glassmorphism */}
       <div className="flex flex-wrap gap-2 mb-4">
-        <span className="px-3 py-1 text-xs font-medium rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-sm">
+        <span className="px-3 py-1 text-xs font-medium rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-sm motion-safe:animate-pulseGlow">
           Cloud Growth System
         </span>
         <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 backdrop-blur-sm">
@@ -149,7 +149,7 @@ export default function TronxLanding() {
         </span>
       </div>
 
-      {/* Title */}
+      {/* Título dinámico */}
       <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
         <span className="block text-white drop-shadow-[0_2px_8px_rgba(59,130,246,0.4)]">
           Crecemos con sistemas,
@@ -159,19 +159,19 @@ export default function TronxLanding() {
         </span>
       </h1>
 
-      {/* Description */}
-      <p className="mt-6 text-base sm:text-lg text-blue-100/90 max-w-2xl leading-relaxed backdrop-blur-sm">
+      {/* Descripción */}
+      <p className="mt-6 text-base sm:text-lg text-blue-100/90 max-w-2xl leading-relaxed backdrop-blur-[1px]">
         Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y automatizaciones),
         <strong> Dekaelo Media</strong> (producción audiovisual estratégica) y
-        <strong> Tronx TV</strong> (plataforma editorial).  
-        Un solo ecosistema cloud con métricas de impacto: <strong>CAC · CVR · LTV · ROAS</strong>.
+        <strong> Tronx TV</strong> (plataforma editorial). Un solo ecosistema cloud con métricas de impacto:
+        <strong> CAC · CVR · LTV · ROAS</strong>.
       </p>
 
-      {/* Buttons */}
+      {/* Botones */}
       <div className="mt-10 flex flex-col sm:flex-row gap-3">
         <a
           href="#contacto"
-          className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20 transition"
+          className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20 motion-safe:animate-pressIn"
         >
           Iniciar conversación <ArrowRight size={18} />
         </a>
@@ -190,7 +190,7 @@ export default function TronxLanding() {
         </a>
       </div>
 
-      {/* Stack info */}
+      {/* Stack */}
       <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-blue-200/75">
         <span className="inline-flex items-center gap-1.5">
           <Shield size={14} /> Zoho · HubSpot · Make · GA4 · GTM · Vercel · Cloudflare
@@ -199,9 +199,9 @@ export default function TronxLanding() {
     </div>
   </div>
 
-  {/* Decorative blurred orbs */}
-  <div className="absolute -bottom-40 right-0 w-[500px] h-[500px] bg-sky-500/20 blur-[140px] rounded-full" />
-  <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-indigo-600/10 blur-[120px] rounded-full" />
+  {/* Orbes decorativos con animación sutil */}
+  <div className="pointer-events-none absolute -bottom-40 right-[-60px] w-[520px] h-[520px] bg-sky-500/20 blur-[140px] rounded-full motion-safe:animate-floatSlow" />
+  <div className="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] bg-indigo-600/15 blur-[120px] rounded-full motion-safe:animate-floatSlowReverse" />
 </header>
       {/* DESCRIPCIÓN HOLDING */}
       <Section id="holding" className="py-16">
