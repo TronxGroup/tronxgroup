@@ -278,8 +278,14 @@ export default function TronxLanding() {
       <GlassCard className="p-6">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="logo-box bg-white/10 border-white/20">
-              <span className="logo-initial text-blue-100">TS</span>
+            <div className="w-10 h-10 flex items-center justify-center bg-white/10 border border-white/20 rounded-lg overflow-hidden">
+              <Image
+                src="/TronxStrategy_TronxGroup.jpg"
+                alt="Logo Tronx Strategy"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <div>
               <h4 className="font-semibold text-white">Tronx Strategy</h4>
@@ -319,8 +325,14 @@ export default function TronxLanding() {
       <GlassCard className="p-6">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="logo-box bg-white/10 border-white/20">
-              <span className="logo-initial text-blue-100">DK</span>
+            <div className="w-10 h-10 flex items-center justify-center bg-white/10 border border-white/20 rounded-lg overflow-hidden">
+              <Image
+                src="/Dekaelo_TronxGroup.jpg"
+                alt="Logo Dekaelo Media"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <div>
               <h4 className="font-semibold text-white">Dekaelo Media</h4>
@@ -364,8 +376,14 @@ export default function TronxLanding() {
       <GlassCard className="p-6">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="logo-box bg-white/10 border-white/20">
-              <span className="logo-initial text-blue-100">TV</span>
+            <div className="w-10 h-10 flex items-center justify-center bg-white/10 border border-white/20 rounded-lg overflow-hidden">
+              <Image
+                src="/TronxTV_TronxGroup.jpg"
+                alt="Logo Tronx TV"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <div>
               <h4 className="font-semibold text-white">Tronx TV</h4>
