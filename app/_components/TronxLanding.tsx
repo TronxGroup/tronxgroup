@@ -18,7 +18,6 @@ import {
   Instagram,
   Youtube,
   Facebook,
-  Tiktok,
 } from "lucide-react";
 
 /** Sección con container responsivo */
@@ -75,6 +74,18 @@ function XLogo(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+/** Logotipo TikTok como SVG embebido (para evitar la import inexistente) */
+function TikTokLogo(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 256 256" aria-hidden="true" focusable="false" {...props}>
+      <path
+        fill="currentColor"
+        d="M170.7 45.3a62.6 62.6 0 0 0 26.4 21.8c7.5 3.4 15.6 5.4 23.9 5.8v33.5c-16.7-.5-33-6.1-46.7-16.1v62.5c0 53.5-57.4 86.5-104.3 60.1-18.1-10.4-29.3-29.5-29.3-50.4 0-43 43.1-72.6 82.7-56.6v35.4c-9.7-6.4-22.6-5.7-31.5 2.1-12.4 10.7-11.2 30.4 2.5 39.3 19 12.6 45.6-1.9 45.6-23.9V24h29.7c0 7.6.9 14.2 2.9 21.3z"
+      />
+    </svg>
+  );
+}
+
 export default function TronxLanding() {
   const submitMailto = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -120,7 +131,7 @@ export default function TronxLanding() {
         </div>
       </nav>
 
-      {/* HERO (igual que tenías) */}
+      {/* HERO (igual) */}
       <header
         className="relative overflow-hidden bg-[#0B1126] text-white"
         style={{
@@ -175,9 +186,7 @@ export default function TronxLanding() {
         <div className="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] bg-indigo-600/15 blur-[120px] rounded-full" />
       </header>
 
-      {/* ====== TODAS LAS SECCIONES ABAJO EN FONDO AZUL OSCURO Y TEXTO CLARO ====== */}
-
-      {/* DESCRIPCIÓN HOLDING */}
+      {/* HOLDING */}
       <section
         id="holding"
         className="py-16 text-blue-50"
@@ -204,7 +213,7 @@ export default function TronxLanding() {
         </Section>
       </section>
 
-      {/* ADN & PROPÓSITO + CLOUD SUITE (ambas glass) */}
+      {/* ADN + CLOUD */}
       <section
         id="adn"
         className="py-16 text-blue-50"
@@ -251,7 +260,7 @@ export default function TronxLanding() {
         </Section>
       </section>
 
-      {/* UNIDADES DEL HOLDING (glass + RRSS por marca) */}
+      {/* UNIDADES + RRSS */}
       <section
         id="unidades"
         className="py-16 text-blue-50"
@@ -359,7 +368,7 @@ export default function TronxLanding() {
                 </a>
                 <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="TikTok"
                    href="https://tiktok.com/@tronxtv" target="_blank" rel="noopener noreferrer">
-                  <Tiktok size={18}/>
+                  <TikTokLogo width={18} height={18}/>
                 </a>
                 <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Facebook"
                    href="https://web.facebook.com/tronxtv" target="_blank" rel="noopener noreferrer">
@@ -371,7 +380,7 @@ export default function TronxLanding() {
         </Section>
       </section>
 
-      {/* PROGRAMA SOCIOS (resumen) */}
+      {/* PROGRAMA SOCIOS */}
       <section
         id="socios"
         className="py-16 text-blue-50"
@@ -400,10 +409,7 @@ export default function TronxLanding() {
       {/* BANDA DE CONFIANZA */}
       <section
         className="py-10 text-blue-50"
-        style={{
-          background:
-            "linear-gradient(180deg, #0C132B 0%, #0E1633 100%)",
-        }}
+        style={{ background: "linear-gradient(180deg, #0C132B 0%, #0E1633 100%)" }}
       >
         <Section>
           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-4 flex flex-wrap items-center justify-center gap-6 text-xs">
