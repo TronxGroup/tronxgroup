@@ -95,3 +95,15 @@ body{ background:#fff; color:#0f172a; }
   .motion-safe\:animate-pulseGlow         { animation: pulseGlow 3.6s ease-in-out infinite; }
   .motion-safe\:animate-pressIn:hover     { animation: pressIn .6s ease-in-out 1; }
 }
+
+/* Texto con buen contraste en fondos oscuros */
+.on-dark-heading { color: rgba(255,255,255,0.98); }  /* títulos */
+.on-dark-body    { color: rgba(226,232,240,0.92); }  /* slate-200 aprox */
+.on-dark-muted   { color: rgba(191,219,254,0.85); }  /* blue-200 aprox */
+
+/* Cards claras con tipografía consistente */
+.card { color: #0f172a; }         /* slate-900 para títulos por defecto */
+.p-muted { color: #334155; }      /* slate-700 */
+
+/* Chips/badges más legibles en fondo claro */
+.badge { color: #0f172a; border-color: #e2e8f0; background: #fff; } /* slate-200 */
