@@ -536,7 +536,7 @@ export default function TronxLanding() {
         <div className="section py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Image src="/tronxgrouplogo.png" alt="Tronx Group" width={24} height={24} />
-            <span className="text-sm">© 2026 Tronx Group SpA — Todos los derechos reservados</span>
+            <span className="text-sm">© 2025 Tronx Group SpA — Todos los derechos reservados</span>
           </div>
           <div className="flex items-center gap-3">
             <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn"
