@@ -85,39 +85,28 @@ export default function TronxLanding() {
 
   return (
     <>
+      {/* ANCLA SUPERIOR */}
+      <div id="top" />
+
       {/* NAV */}
       <nav className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[rgba(12,19,43,0.80)] bg-[rgba(12,19,43,0.92)] border-b border-white/10">
         <div className="section flex items-center justify-between py-3">
-          <div className="flex items-center gap-3">
+          <a href="#top" aria-label="Volver al inicio" className="flex items-center">
             <Image
               src="/tronxgrouplogo.png"
               alt="Tronx Group"
-              width={60}
-              height={60}
+              width={72}
+              height={72}
               priority
             />
-            <span className="font-semibold text-white">Tronx Group</span>
-          </div>
+          </a>
           <div className="hidden md:flex items-center gap-5 text-sm">
-            <a href="#holding" className="nav-link">
-              Holding
-            </a>
-            <a href="#adn" className="nav-link">
-              ADN & Propósito
-            </a>
-            <a href="#unidades" className="nav-link">
-              Unidades
-            </a>
-            <a href="#cloud" className="nav-link">
-              Cloud Suite
-            </a>
-            <a href="#socios" className="nav-link">
-              Programa Socios
-            </a>
-            <a
-              href="#contacto"
-              className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 text-white"
-            >
+            <a href="#holding" className="nav-link">Holding</a>
+            <a href="#adn" className="nav-link">ADN & Propósito</a>
+            <a href="#unidades" className="nav-link">Unidades</a>
+            <a href="#cloud" className="nav-link">Cloud Suite</a>
+            <a href="#socios" className="nav-link">Programa Socios</a>
+            <a href="#contacto" className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 text-white">
               Contactar
             </a>
           </div>
@@ -140,7 +129,7 @@ export default function TronxLanding() {
           <div className="max-w-3xl">
             {/* Badges con glassmorphism */}
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 text-xs font-medium rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-sm motion-safe:animate-pulseGlow">
+              <span className="px-3 py-1 text-xs font-medium rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-sm">
                 Cloud Growth System
               </span>
               <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 backdrop-blur-sm">
@@ -160,7 +149,7 @@ export default function TronxLanding() {
             </h1>
 
             {/* Descripción */}
-            <p className="mt-6 text-base sm:text-lg text-blue-100/90 max-w-2xl leading-relaxed backdrop-blur-[1px]">
+            <p className="mt-6 text-base sm:text-lg text-blue-100/90 max-w-2xl leading-relaxed">
               Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y
               automatizaciones), <strong>Dekaelo Media</strong> (producción
               audiovisual estratégica) y <strong>Tronx TV</strong> (plataforma
@@ -172,7 +161,7 @@ export default function TronxLanding() {
             <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <a
                 href="#contacto"
-                className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20 motion-safe:animate-pressIn"
+                className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20"
               >
                 Iniciar conversación <ArrowRight size={18} />
               </a>
@@ -201,14 +190,14 @@ export default function TronxLanding() {
           </div>
         </div>
 
-        {/* Orbes decorativos con animación sutil */}
-        <div className="pointer-events-none absolute -bottom-40 right-[-60px] w-[520px] h-[520px] bg-sky-500/20 blur-[140px] rounded-full motion-safe:animate-floatSlow" />
-        <div className="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] bg-indigo-600/15 blur-[120px] rounded-full motion-safe:animate-floatSlowReverse" />
+        {/* Orbes decorativos */}
+        <div className="pointer-events-none absolute -bottom-40 right-[-60px] w-[520px] h-[520px] bg-sky-500/20 blur-[140px] rounded-full" />
+        <div className="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] bg-indigo-600/15 blur-[120px] rounded-full" />
       </header>
 
       {/* DESCRIPCIÓN HOLDING */}
       <Section id="holding" className="py-16">
-        <Card className="p-6 bg-white">
+        <Card className="p-6 bg-white/95">
           <h2 className="h2 text-slate-900">¿Qué es Tronx Group?</h2>
           <p className="p-muted mt-3 max-w-4xl">
             Tronx Group es un{" "}
@@ -236,7 +225,7 @@ export default function TronxLanding() {
       {/* ADN & PROPÓSITO */}
       <Section id="adn" className="py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card className="p-6 bg-white">
+          <Card className="p-6 bg-white/95">
             <h3 className="h3 text-slate-900">ADN & Propósito</h3>
             <p className="p-muted mt-2">
               <strong>Propósito</strong>: Acelerar el crecimiento de empresas e
@@ -268,7 +257,7 @@ export default function TronxLanding() {
             </p>
           </Card>
 
-          <Card className="p-6 bg-white" id="cloud">
+          <Card className="p-6 bg-white/95" id="cloud">
             <h3 className="h3 text-slate-900">Tronx Cloud Suite (resumen)</h3>
             <p className="p-muted mt-2">
               Plataforma tecnológica unificada para operar WebOps, Data &
@@ -289,78 +278,89 @@ export default function TronxLanding() {
         </div>
       </Section>
 
-      {/* UNIDADES DEL HOLDING */}
-      <Section id="unidades" className="py-16">
-        <h2 className="h2 text-center text-slate-900">Unidades de negocio</h2>
-        <p className="p-muted text-center mt-2">Tres unidades, un solo sistema.</p>
+      {/* UNIDADES DEL HOLDING (FONDO AZUL, TEXTO CLARO) */}
+      <section
+        id="unidades"
+        className="py-16 text-blue-50"
+        style={{
+          background:
+            "radial-gradient(800px 500px at 10% -10%, rgba(59,130,246,0.15), transparent 60%), linear-gradient(180deg, #0C132B 0%, #0E1633 100%)",
+        }}
+      >
+        <div className="section">
+          <h2 className="h2 text-center text-white">Unidades de negocio</h2>
+          <p className="text-center mt-2 text-blue-100/90">
+            Tres unidades, un solo sistema.
+          </p>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Tronx Strategy */}
-          <Card className="p-6 bg-white">
-            <div className="flex items-center gap-3">
-              <div className="logo-box">
-                <span className="logo-initial">TS</span>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Tronx Strategy */}
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6">
+              <div className="flex items-center gap-3">
+                <div className="logo-box bg-white/10 border-white/20">
+                  <span className="logo-initial text-blue-100">TS</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white">Tronx Strategy</h4>
+                  <p className="text-xs text-blue-200/90">
+                    Growth B2B · CRM · Automatización
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-slate-900">Tronx Strategy</h4>
-                <p className="text-xs text-slate-600">
-                  Growth B2B · CRM · Automatización
-                </p>
-              </div>
+              <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
+                <li>WebOps & Landings optimizadas</li>
+                <li>Zoho/HubSpot + Make (nurturing y pipelines)</li>
+                <li>Ads Ops con reporting CAC · CVR · LTV · ROAS</li>
+                <li>Programa Socios (Revenue Share)</li>
+              </ul>
             </div>
-            <ul className="mt-4 text-sm space-y-2 text-slate-700">
-              <li>WebOps & Landings optimizadas</li>
-              <li>Zoho/HubSpot + Make (nurturing y pipelines)</li>
-              <li>Ads Ops con reporting CAC · CVR · LTV · ROAS</li>
-              <li>Programa Socios (Revenue Share)</li>
-            </ul>
-          </Card>
 
-          {/* Dekaelo Media */}
-          <Card className="p-6 bg-white">
-            <div className="flex items-center gap-3">
-              <div className="logo-box">
-                <span className="logo-initial">DK</span>
+            {/* Dekaelo Media */}
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6">
+              <div className="flex items-center gap-3">
+                <div className="logo-box bg-white/10 border-white/20">
+                  <span className="logo-initial text-blue-100">DK</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white">Dekaelo Media</h4>
+                  <p className="text-xs text-blue-200/90">
+                    Estudio audiovisual estratégico
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-slate-900">Dekaelo Media</h4>
-                <p className="text-xs text-slate-600">
-                  Estudio audiovisual estratégico
-                </p>
-              </div>
+              <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
+                <li>Producción institucional y corporativa</li>
+                <li>Vodcast/cápsulas B2B · Performance content</li>
+                <li>Pipeline 4K HDR · Cine digital Super 35 mm</li>
+                <li>Modelos mensuales: Basic · Standard · Premium</li>
+              </ul>
             </div>
-            <ul className="mt-4 text-sm space-y-2 text-slate-700">
-              <li>Producción institucional y corporativa</li>
-              <li>Vodcast/cápsulas B2B · Performance content</li>
-              <li>Pipeline 4K HDR · Cine digital Super 35 mm</li>
-              <li>Modelos mensuales: Basic · Standard · Premium</li>
-            </ul>
-          </Card>
 
-          {/* Tronx TV */}
-          <Card className="p-6 bg-white">
-            <div className="flex items-center gap-3">
-              <div className="logo-box">
-                <span className="logo-initial">TV</span>
+            {/* Tronx TV */}
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6">
+              <div className="flex items-center gap-3">
+                <div className="logo-box bg-white/10 border-white/20">
+                  <span className="logo-initial text-blue-100">TV</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white">Tronx TV</h4>
+                  <p className="text-xs text-blue-200/90">Plataforma editorial</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-slate-900">Tronx TV</h4>
-                <p className="text-xs text-slate-600">Plataforma editorial</p>
-              </div>
+              <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
+                <li>Línea original: reality, documental, conversación, ficción</li>
+                <li>Formato digital 4K · distribución multiplataforma</li>
+                <li>Vitrina narrativa y reputacional</li>
+                <li>Alianzas editoriales y sponsorships</li>
+              </ul>
             </div>
-            <ul className="mt-4 text-sm space-y-2 text-slate-700">
-              <li>Línea original: reality, documental, conversación, ficción</li>
-              <li>Formato digital 4K · distribución multiplataforma</li>
-              <li>Vitrina narrativa y reputacional</li>
-              <li>Alianzas editoriales y sponsorships</li>
-            </ul>
-          </Card>
+          </div>
         </div>
-      </Section>
+      </section>
 
       {/* PROGRAMA SOCIOS (resumen) */}
       <Section id="socios" className="py-6">
-        <Card className="p-6 bg-white">
+        <Card className="p-6 bg-white/95">
           <h3 className="h3 text-slate-900">Programa Socios — Revenue Share</h3>
           <p className="p-muted mt-2">
             Tronx opera el embudo, CRM y cierre comercial; el cliente paga{" "}
@@ -378,7 +378,7 @@ export default function TronxLanding() {
 
       {/* BANDA DE CONFIANZA */}
       <Section className="py-10">
-        <div className="card p-4 flex flex-wrap items-center justify-center gap-6 text-slate-600 text-xs bg-white">
+        <div className="card p-4 flex flex-wrap items-center justify-center gap-6 text-slate-600 text-xs bg-white/95">
           <span className="inline-flex items-center gap-2">
             <Users size={16} /> B2B & organizaciones
           </span>
@@ -394,7 +394,7 @@ export default function TronxLanding() {
       {/* CONTACTO */}
       <Section id="contacto" className="py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          <Card className="p-6 lg:col-span-3 bg-white">
+          <Card className="p-6 lg:col-span-3 bg-white/95">
             <h3 className="h3 text-slate-900">Conversemos</h3>
             <p className="p-muted mt-2">
               Cuéntanos tu objetivo y te proponemos un sistema a medida.
@@ -442,7 +442,7 @@ export default function TronxLanding() {
             </form>
           </Card>
 
-          <Card className="p-6 lg:col-span-2 bg-white">
+          <Card className="p-6 lg:col-span-2 bg-white/95">
             <h4 className="font-semibold text-slate-900">Datos corporativos</h4>
             <ul className="mt-3 text-sm text-slate-700 space-y-2">
               <li className="inline-flex items-center gap-2">
@@ -503,8 +503,8 @@ export default function TronxLanding() {
             <Image
               src="/tronxgrouplogo.png"
               alt="Tronx Group"
-              width={20}
-              height={20}
+              width={24}
+              height={24}
             />
             <span className="text-sm">
               © 2026 Tronx Group SpA — Todos los derechos reservados
