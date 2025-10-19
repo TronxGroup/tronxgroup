@@ -161,60 +161,97 @@ export default function TronxLanding() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <header
-        className="relative overflow-hidden bg-[#0B1126] text-white"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% -10%, rgba(14,165,233,0.25), transparent 60%), radial-gradient(circle at 80% 0%, rgba(59,130,246,0.25), transparent 60%), linear-gradient(to bottom, #0C132B, #0A1022 80%)",
-        }}
-      >
-        <div className="absolute inset-0 bg-[url('/BG_tronx_group.jpg')] bg-cover bg-center opacity-15 mix-blend-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#0C132B]/60 to-[#0A0F21]" />
+      {/* HERO (mejorado) */}
+<header
+  className="relative overflow-hidden bg-[#0B1126] text-white"
+  style={{
+    backgroundImage:
+      "radial-gradient(circle at 20% -10%, rgba(14,165,233,0.28), transparent 60%), radial-gradient(circle at 80% 0%, rgba(59,130,246,0.28), transparent 60%), linear-gradient(to bottom, #0C132B, #0A1022 80%)",
+  }}
+>
+  {/* Fondo imagen + overlay */}
+  <div className="absolute inset-0 bg-[url('/BG_tronx_group.jpg')] bg-cover bg-center opacity-15 mix-blend-overlay" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#0C132B]/60 to-[#0A0F21]" />
+  {/* Grain muy sutil para evitar banding (puedes cambiar por /noise.png si tienes uno) */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 opacity-[0.035] mix-blend-overlay"
+    style={{
+      backgroundImage:
+        "radial-gradient(#ffffff 1px, transparent 1px), radial-gradient(#ffffff 1px, transparent 1px)",
+      backgroundSize: "3px 3px, 5px 5px",
+      backgroundPosition: "0 0, 10px 10px",
+    }}
+  />
 
-        <div className="relative section py-24 sm:py-32 flex flex-col items-start">
-          <div className="max-w-3xl">
-            <div className="flex flex-wrap gap-2 mb-4">
-              <Pill>Cloud Growth System</Pill>
-              <Pill>Operación 100 % digital</Pill>
-              <Pill>KPI driven</Pill>
-            </div>
+  <div className="relative section py-24 sm:py-32 lg:py-36 flex flex-col items-start">
+    <div className="max-w-3xl">
+      {/* Chips */}
+      <div className="flex flex-wrap gap-2 mb-5">
+        <Pill>Cloud Growth System</Pill>
+        <Pill>Operación 100 % digital</Pill>
+        <Pill>KPI driven</Pill>
+      </div>
 
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-[0_2px_8px_rgba(59,130,246,0.4)]">
-              <span className="block">Crecemos con sistemas,</span>
-              <span className="block text-sky-400/90 font-light">no con campañas.</span>
-            </h1>
+      {/* Título con mejor contraste y gradiente sutil en la segunda línea */}
+      <h1 className="text-[2.75rem] sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        <span className="block drop-shadow-[0_2px_10px_rgba(59,130,246,0.35)]">
+          Crecemos con sistemas,
+        </span>
+        <span className="block font-light bg-gradient-to-r from-sky-300 via-sky-400 to-cyan-300 bg-clip-text text-transparent">
+          no con campañas.
+        </span>
+      </h1>
 
-            <p className="mt-6 text-base sm:text-lg text-blue-100/90 max-w-2xl leading-relaxed">
-              Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y automatizaciones),
-              <strong> Dekaelo Media</strong> (producción audiovisual estratégica) y
-              <strong> Tronx TV</strong> (plataforma editorial). Un solo ecosistema cloud con métricas de impacto:
-              <strong> CAC · CVR · LTV · ROAS</strong>.
-            </p>
+      {/* Subtítulo más legible */}
+      <p className="mt-6 text-[1.05rem] sm:text-lg text-blue-100/95 max-w-3xl leading-relaxed">
+        Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y automatizaciones),
+        <strong> Dekaelo Media</strong> (producción audiovisual estratégica) y
+        <strong> Tronx TV</strong> (plataforma editorial). Un solo ecosistema cloud con métricas de impacto:
+        <strong> CAC · CVR · LTV · ROAS</strong>.
+      </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-3">
-              <a href="#contacto" className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20">
-                Iniciar conversación <ArrowRight size={18} />
-              </a>
-              <a href="#unidades" className="btn border border-white/50 text-white/95 font-semibold hover:bg-white/15 backdrop-blur-md">
-                Ver unidades del holding
-              </a>
-              <a href="/catalogo/tronxgroup_catalogo_2026.pdf" className="btn btn-secondary hover:bg-sky-100/90" download>
-                Descargar catálogo
-              </a>
-            </div>
+      {/* CTAs con focus-ring accesible */}
+      <div className="mt-10 flex flex-col sm:flex-row gap-3">
+        <a
+          href="#contacto"
+          className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 shadow-lg shadow-sky-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-400 focus-visible:ring-offset-[#0B1126]"
+          aria-label="Ir a contacto para iniciar conversación"
+        >
+          Iniciar conversación <ArrowRight size={18} />
+        </a>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-blue-200/85">
-              <span className="inline-flex items-center gap-1.5">
-                <Shield size={14} /> Zoho · HubSpot · Make · GA4 · GTM · Vercel · Cloudflare
-              </span>
-            </div>
-          </div>
-        </div>
+        <a
+          href="#unidades"
+          className="btn border border-white/50 text-white/95 font-semibold hover:bg-white/15 backdrop-blur-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white/50 focus-visible:ring-offset-[#0B1126]"
+          aria-label="Ver unidades del holding"
+        >
+          Ver unidades del holding
+        </a>
 
-        <div className="pointer-events-none absolute -bottom-40 right-[-60px] w-[520px] h-[520px] bg-sky-500/20 blur-[140px] rounded-full" />
-        <div className="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] bg-indigo-600/15 blur-[120px] rounded-full" />
-      </header>
+        <a
+          href="/catalogo/tronxgroup_catalogo_2026.pdf"
+          className="btn btn-secondary hover:bg-sky-100/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-200 focus-visible:ring-offset-[#0B1126]"
+          download
+          aria-label="Descargar catálogo Tronx Group 2026"
+        >
+          Descargar catálogo
+        </a>
+      </div>
+
+      {/* Tech stack (ligero ajuste de contraste y espaciado) */}
+      <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-blue-200/90">
+        <span className="inline-flex items-center gap-1.5">
+          <Shield size={14} aria-hidden="true" /> Zoho · HubSpot · Make · GA4 · GTM · Vercel · Cloudflare
+        </span>
+      </div>
+    </div>
+  </div>
+
+  {/* Blobs decorativos (se mantienen, con motion-reduce) */}
+  <div className="pointer-events-none absolute -bottom-40 right-[-60px] w-[520px] h-[520px] bg-sky-500/20 blur-[140px] rounded-full motion-reduce:blur-none motion-reduce:bg-sky-500/10" />
+  <div className="pointer-events-none absolute -top-24 -left-24 w-[380px] h-[380px] bg-indigo-600/15 blur-[120px] rounded-full motion-reduce:blur-none motion-reduce:bg-indigo-600/10" />
+</header>
 
       {/* HOLDING */}
       <section
