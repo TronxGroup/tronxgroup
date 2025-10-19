@@ -40,11 +40,13 @@ function Pill({ children }: { children: React.ReactNode }) {
 function Card({
   children,
   className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return <div className={`card ${className}`}>{children}</div>;
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div {...props} className={`card ${className}`}>
+      {children}
+    </div>
+  );
 }
 
 export default function TronxLanding() {
