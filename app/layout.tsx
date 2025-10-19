@@ -1,15 +1,20 @@
+// /app/layout.tsx
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+import Script from "next/script";
+
+const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tronxgroup.com"),
   applicationName: "Tronx Group",
   title: {
-    default: "Tronx Group — Sistemas que escalan",
+    default: "Tronx Group SpA",
     template: "%s | Tronx Group",
   },
   description:
-    "Holding creativo–tecnológico: Strategy (growth B2B), Dekaelo Media (audiovisual) y Tronx TV (plataforma editorial). Operación 100 % cloud con métricas.",
+    "Holding creativo–tecnológico: estrategia digital, producción audiovisual y plataforma editorial operadas 100 % en la nube.",
   keywords: [
     "Tronx Group",
     "Tronx Strategy",
@@ -18,55 +23,105 @@ export const metadata: Metadata = {
     "growth B2B",
     "CRM",
     "automatización",
-    "embudos",
     "video corporativo",
     "Chile",
   ],
-  alternates: { canonical: "https://www.tronxgroup.com/" },
+  alternates: { canonical: "https://www.tronxgroup.com" },
   openGraph: {
-    title: "Tronx Group — Sistemas que escalan",
-    description:
-      "Creatividad, tecnología y narrativa integradas en un solo sistema cloud.",
-    url: "https://www.tronxgroup.com/",
-    siteName: "Tronx Group",
     type: "website",
-    images: ["/og-tronx.jpg"], // coloca /public/og-tronx.jpg (1200x630)
+    url: "https://www.tronxgroup.com",
+    siteName: "Tronx Group",
+    title: "Tronx Group — Creatividad, tecnología y crecimiento real",
+    description:
+      "Tronx Group integra Strategy, Dekaelo Media y Tronx TV bajo un modelo 100 % cloud con métricas claras.",
+    images: [
+      {
+        url: "/og-tronx.jpg", // 1200x630 recomendado
+        width: 1200,
+        height: 630,
+        alt: "Tronx Group",
+      },
+    ],
     locale: "es_CL",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tronx Group — Sistemas que escalan",
-    description:
-      "Holding creativo–tecnológico con estrategia, audiovisual y medios.",
-    images: ["/og-tronx.jpg"],
     creator: "@TronxGroup",
+    title: "Tronx Group — Creatividad, tecnología y crecimiento real",
+    description:
+      "Holding creativo–tecnológico: Strategy, Dekaelo Media y Tronx TV. Operación 100 % cloud.",
+    images: ["/og-tronx.jpg"],
   },
+  robots: { index: true, follow: true },
   icons: {
     icon: "/favicon_tronxgroup.png",
     shortcut: "/favicon_tronxgroup.png",
     apple: "/favicon_tronxgroup.png",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  category: "business",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0EA5E9",      // azul Tronx
-  colorScheme: "light",       // sitio en modo claro
+  themeColor: "#0C132B", // azul Tronx
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Tronx Group SpA",
+    url: "https://www.tronxgroup.com",
+    logo: "https://www.tronxgroup.com/tronxgrouplogo.png",
+    sameAs: [
+      "https://x.com/TronxGroup",
+      "https://www.linkedin.com/company/tronx-group",
+      "https://www.tronxstrategy.com/",
+      "https://www.dekaelomedia.com/",
+      "https://www.tronxtv.com/",
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+56-9-2008-0031",
+        email: "info@tronxgroup.com",
+        contactType: "customer service",
+        areaServed: "CL",
+        availableLanguage: ["es", "en"],
+      },
+    ],
+    department: [
+      {
+        "@type": "Organization",
+        name: "Tronx Strategy",
+        url: "https://www.tronxstrategy.com/",
+      },
+      {
+        "@type": "Organization",
+        name: "Dekaelo Media",
+        url: "https://www.dekaelomedia.com/",
+      },
+      {
+        "@type": "Organization",
+        name: "Tronx TV",
+        url: "https://www.tronxtv.com/",
+      },
+    ],
+  };
+
   return (
-    <html lang="es">
-      <body className="min-h-screen bg-white text-slate-900 antialiased">
+    <html lang="es" className={inter.variable} suppressHydrationWarning>
+      <head>
+        {/* JSON-LD de organización */}
+        <Script
+          id="jsonld-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+      </head>
+      <body className="min-h-screen antialiased bg-white text-slate-900">
         {children}
       </body>
     </html>
