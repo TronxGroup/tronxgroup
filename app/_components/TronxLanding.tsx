@@ -3,23 +3,47 @@
 import Image from "next/image";
 import { useCallback } from "react";
 import {
-  ArrowRight, CheckCircle2, Shield, Layers, LineChart, Rocket, Play, Users,
-  Linkedin, Twitter, Phone, Mail
+  ArrowRight,
+  CheckCircle2,
+  Shield,
+  Layers,
+  LineChart,
+  Rocket,
+  Play,
+  Users,
+  Linkedin,
+  Twitter,
+  Phone,
+  Mail,
 } from "lucide-react";
 
-function Section({ id, children, className = "" }: { id?: string; children: React.ReactNode; className?: string }) {
+function Section({
+  id,
+  children,
+  className = "",
+}: {
+  id?: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
   return <section id={id} className={`section ${className}`}>{children}</section>;
 }
 
 function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-brand-50 text-brand-300 border border-brand-200 px-3 py-1 text-xs font-medium">
+    <span className="inline-flex items-center rounded-full bg-brand-50 text-brand-700 border border-brand-200 px-3 py-1 text-xs font-medium">
       {children}
     </span>
   );
 }
 
-function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function Card({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return <div className={`card ${className}`}>{children}</div>;
 }
 
@@ -38,26 +62,26 @@ export default function TronxLanding() {
 
   return (
     <>
-      {/* NAV simple */}
-      <nav className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-brand-900/70 bg-brand-900/90 border-b border-white/10">
+      {/* NAV */}
+      <nav className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[rgba(12,19,43,0.80)] bg-[rgba(12,19,43,0.92)] border-b border-white/10">
         <div className="section flex items-center justify-between py-3">
           <div className="flex items-center gap-3">
             <Image src="/tronxgrouplogo.png" alt="Tronx Group" width={28} height={28} />
-            <span className="font-semibold text-white/90">Tronx Group</span>
+            <span className="font-semibold text-white">Tronx Group</span>
           </div>
           <div className="hidden md:flex items-center gap-5 text-sm">
-            <a href="#holding" className="nav-link">Holding</a>
-            <a href="#adn" className="nav-link">ADN & Propósito</a>
-            <a href="#unidades" className="nav-link">Unidades</a>
-            <a href="#cloud" className="nav-link">Cloud Suite</a>
-            <a href="#socios" className="nav-link">Programa Socios</a>
-            <a href="#contacto" className="btn btn-primary">Contactar</a>
+            <a href="#holding" className="text-white/90 hover:text-white transition">Holding</a>
+            <a href="#adn" className="text-white/90 hover:text-white transition">ADN & Propósito</a>
+            <a href="#unidades" className="text-white/90 hover:text-white transition">Unidades</a>
+            <a href="#cloud" className="text-white/90 hover:text-white transition">Cloud Suite</a>
+            <a href="#socios" className="text-white/90 hover:text-white transition">Programa Socios</a>
+            <a href="#contacto" className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 text-white">Contactar</a>
           </div>
         </div>
       </nav>
 
       {/* HERO */}
-      <header className="relative overflow-hidden hero-bg">
+      <header className="relative overflow-hidden bg-gradient-to-b from-[#0C132B] via-[#0E1633] to-[#0F1A3D]">
         <div className="section py-20 sm:py-28">
           <div className="max-w-3xl">
             <div className="flex flex-wrap gap-2">
@@ -68,17 +92,16 @@ export default function TronxLanding() {
             <h1 className="mt-5 text-4xl md:text-5xl font-extrabold tracking-tight text-white">
               Sistemas que escalan: estrategia, tecnología y narrativa con resultados reales.
             </h1>
-            <p className="hero-sub mt-6">
+            <p className="mt-6 text-blue-100/90">
               Tronx Group integra <strong>Tronx Strategy</strong> (growth B2B y automatizaciones),
               <strong> Dekaelo Media</strong> (producción audiovisual estratégica) y
-              <strong> Tronx TV</strong> (plataforma editorial), bajo una operación <strong>100 % cloud</strong>
-              con KPIs claros (CAC · CVR · LTV · ROAS).
+              <strong> Tronx TV</strong> (plataforma editorial), bajo una operación <strong>100 % cloud</strong> con KPIs claros (CAC · CVR · LTV · ROAS).
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a href="#contacto" className="btn btn-primary">
                 Hablemos <ArrowRight size={18} />
               </a>
-              <a href="#unidades" className="btn btn-ghost">
+              <a href="#unidades" className="btn btn-ghost border-white/20 text-white hover:bg-white/10">
                 Ver unidades del holding
               </a>
               <a href="/catalogo/tronxgroup_catalogo_2026.pdf" className="btn btn-secondary" download>
@@ -122,16 +145,16 @@ export default function TronxLanding() {
               <strong> construimos sistemas que escalan</strong>.
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-700">
-              <li className="inline-flex items-start gap-2"><CheckCircle2 className="text-brand-500" size={18}/> ⚡ Velocidad: entregables rápidos y decisiones basadas en datos.</li>
-              <li className="inline-flex items-start gap-2"><CheckCircle2 className="text-brand-500" size={18}/> 🎯 Trazabilidad: cada acción tiene métrica y retorno claro.</li>
-              <li className="inline-flex items-start gap-2"><CheckCircle2 className="text-brand-500" size={18}/> 💡 Propósito: crecer con sentido y visión de largo plazo.</li>
-              <li className="inline-flex items-start gap-2"><CheckCircle2 className="text-brand-500" size={18}/> 🧩 Excelencia: precisión operativa y estándar internacional.</li>
+              <li className="inline-flex items-start gap-2"><CheckCircle2 className="text-brand-600" size={18}/> ⚡ Velocidad: entregables rápidos y decisiones basadas en datos.</li>
+              <li className="inline-flex items-start gap-2"><CheckCircle2 className="text-brand-600" size={18}/> 🎯 Trazabilidad: cada acción tiene métrica y retorno claro.</li>
+              <li className="inline-flex items-start gap-2"><CheckCircle2 className="text-brand-600" size={18}/> 💡 Propósito: crecer con sentido y visión de largo plazo.</li>
+              <li className="inline-flex items-start gap-2"><CheckCircle2 className="text-brand-600" size={18}/> 🧩 Excelencia: precisión operativa y estándar internacional.</li>
             </ul>
             <p className="mt-4 italic text-slate-600">
               “Tronx convierte la estrategia en historia, y la historia en resultados reales.”
             </p>
           </Card>
-          <Card className="p-6">
+          <Card className="p-6" id="cloud">
             <h3 className="h3">Tronx Cloud Suite (resumen)</h3>
             <p className="p-muted mt-2">
               Plataforma tecnológica unificada para operar WebOps, Data & Analytics, CRM & Automation, Ads Ops y Security
@@ -285,20 +308,20 @@ export default function TronxLanding() {
       </Section>
 
       {/* FOOTER */}
-      <footer className="mt-10 border-t border-white/10 bg-brand-900 text-blue-100/90">
+      <footer className="mt-10 border-t border-white/10 bg-[#0C132B] text-blue-100/90">
         <div className="section py-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Image src="/tronxgrouplogo.png" alt="Tronx Group" width={20} height={20} />
             <span className="text-sm">© 2026 Tronx Group SpA — Todos los derechos reservados</span>
           </div>
           <div className="flex items-center gap-3">
-            <a className="btn-icon" aria-label="LinkedIn" href="https://www.linkedin.com/company/tronx-group" target="_blank" rel="noopener noreferrer">
+            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn" href="https://www.linkedin.com/company/tronx-group" target="_blank" rel="noopener noreferrer">
               <Linkedin size={18}/>
             </a>
-            <a className="btn-icon" aria-label="X (Twitter)" href="https://x.com/TronxGroup" target="_blank" rel="noopener noreferrer">
+            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="X (Twitter)" href="https://x.com/TronxGroup" target="_blank" rel="noopener noreferrer">
               <Twitter size={18}/>
             </a>
-            <a className="btn-icon" aria-label="WhatsApp" href="https://wa.me/56920080031" target="_blank" rel="noopener noreferrer">
+            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="WhatsApp" href="https://wa.me/56920080031" target="_blank" rel="noopener noreferrer">
               <Phone size={18}/>
             </a>
           </div>
