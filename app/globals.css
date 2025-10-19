@@ -66,3 +66,32 @@ body{ background:#fff; color:#0f172a; }
   @apply h-10 w-10 rounded-lg bg-sky-50 border border-sky-200 grid place-items-center;
 }
 .logo-initial{ @apply text-xs font-bold text-sky-700; }
+
+/* ======== Animaciones suaves (solo motion-safe) ======== */
+@keyframes floatSlow {
+  0%   { transform: translateY(0) translateX(0); }
+  50%  { transform: translateY(-14px) translateX(6px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+@keyframes floatSlowReverse {
+  0%   { transform: translateY(0) translateX(0); }
+  50%  { transform: translateY(12px) translateX(-8px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(14,165,233,0.0); }
+  50%      { box-shadow: 0 0 36px 0 rgba(14,165,233,0.25); }
+}
+@keyframes pressIn {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-1.5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Clases utilitarias (prefijo motion-safe para respetar preferencias) */
+@media (prefers-reduced-motion: no-preference) {
+  .motion-safe\:animate-floatSlow         { animation: floatSlow 16s ease-in-out infinite; }
+  .motion-safe\:animate-floatSlowReverse  { animation: floatSlowReverse 18s ease-in-out infinite; }
+  .motion-safe\:animate-pulseGlow         { animation: pulseGlow 3.6s ease-in-out infinite; }
+  .motion-safe\:animate-pressIn:hover     { animation: pressIn .6s ease-in-out 1; }
+}
