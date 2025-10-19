@@ -261,124 +261,160 @@ export default function TronxLanding() {
       </section>
 
       {/* UNIDADES + RRSS */}
-      <section
-        id="unidades"
-        className="py-16 text-blue-50"
-        style={{
-          background:
-            "radial-gradient(800px 500px at 10% -10%, rgba(59,130,246,0.15), transparent 60%), linear-gradient(180deg, #0C132B 0%, #0E1633 100%)",
-        }}
-      >
-        <Section>
-          <h2 className="h2 text-center text-white">Unidades de negocio</h2>
-          <p className="text-center mt-2 text-blue-100/90">Tres unidades, un solo sistema.</p>
+<section
+  id="unidades"
+  className="py-16 text-blue-50"
+  style={{
+    background:
+      "radial-gradient(800px 500px at 10% -10%, rgba(59,130,246,0.15), transparent 60%), linear-gradient(180deg, #0C132B 0%, #0E1633 100%)",
+  }}
+>
+  <Section>
+    <h2 className="h2 text-center text-white">Unidades de negocio</h2>
+    <p className="text-center mt-2 text-blue-100/90">Tres unidades, un solo sistema.</p>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Tronx Strategy */}
-            <GlassCard className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="logo-box bg-white/10 border-white/20">
-                  <span className="logo-initial text-blue-100">TS</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Tronx Strategy</h4>
-                  <p className="text-xs text-blue-200/90">Growth B2B · CRM · Automatización</p>
-                </div>
-              </div>
-              <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
-                <li>WebOps & Landings optimizadas</li>
-                <li>Zoho/HubSpot + Make (nurturing y pipelines)</li>
-                <li>Ads Ops con reporting CAC · CVR · LTV · ROAS</li>
-                <li>Programa Socios (Revenue Share)</li>
-              </ul>
-              <div className="mt-5 flex items-center gap-3">
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn"
-                   href="https://www.linkedin.com/company/tronx-strategy" target="_blank" rel="noopener noreferrer">
-                  <Linkedin size={18}/>
-                </a>
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Instagram"
-                   href="https://instagram.com/tronxstrategy" target="_blank" rel="noopener noreferrer">
-                  <Instagram size={18}/>
-                </a>
-              </div>
-            </GlassCard>
-
-            {/* Dekaelo Media */}
-            <GlassCard className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="logo-box bg-white/10 border-white/20">
-                  <span className="logo-initial text-blue-100">DK</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Dekaelo Media</h4>
-                  <p className="text-xs text-blue-200/90">Estudio audiovisual estratégico</p>
-                </div>
-              </div>
-              <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
-                <li>Producción institucional y corporativa</li>
-                <li>Vodcast/cápsulas B2B · Performance content</li>
-                <li>Pipeline 4K HDR · Cine digital Super 35 mm</li>
-                <li>Modelos mensuales: Basic · Standard · Premium</li>
-              </ul>
-              <div className="mt-5 flex items-center gap-3">
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn"
-                   href="https://www.linkedin.com/company/dekaelo-media" target="_blank" rel="noopener noreferrer">
-                  <Linkedin size={18}/>
-                </a>
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Instagram"
-                   href="https://instagram.com/dekaelo_media" target="_blank" rel="noopener noreferrer">
-                  <Instagram size={18}/>
-                </a>
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="YouTube"
-                   href="https://youtube.com/@dekaelo_media" target="_blank" rel="noopener noreferrer">
-                  <Youtube size={18}/>
-                </a>
-              </div>
-            </GlassCard>
-
-            {/* Tronx TV */}
-            <GlassCard className="p-6">
-              <div className="flex items-center gap-3">
-                <div className="logo-box bg-white/10 border-white/20">
-                  <span className="logo-initial text-blue-100">TV</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">Tronx TV</h4>
-                  <p className="text-xs text-blue-200/90">Plataforma editorial</p>
-                </div>
-              </div>
-              <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
-                <li>Línea original: reality, documental, conversación, ficción</li>
-                <li>Formato digital 4K · distribución multiplataforma</li>
-                <li>Vitrina narrativa y reputacional</li>
-                <li>Alianzas editoriales y sponsorships</li>
-              </ul>
-              <div className="mt-5 flex items-center gap-3">
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="YouTube"
-                   href="https://youtube.com/@TronxTV" target="_blank" rel="noopener noreferrer">
-                  <Youtube size={18}/>
-                </a>
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Instagram"
-                   href="https://instagram.com/tronxtv" target="_blank" rel="noopener noreferrer">
-                  <Instagram size={18}/>
-                </a>
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="X"
-                   href="https://x.com/tronx_tv" target="_blank" rel="noopener noreferrer">
-                  <XLogo width={18} height={18}/>
-                </a>
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="TikTok"
-                   href="https://tiktok.com/@tronxtv" target="_blank" rel="noopener noreferrer">
-                  <TikTokLogo width={18} height={18}/>
-                </a>
-                <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Facebook"
-                   href="https://web.facebook.com/tronxtv" target="_blank" rel="noopener noreferrer">
-                  <Facebook size={18}/>
-                </a>
-              </div>
-            </GlassCard>
+    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Tronx Strategy */}
+      <GlassCard className="p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="logo-box bg-white/10 border-white/20">
+              <span className="logo-initial text-blue-100">TS</span>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white">Tronx Strategy</h4>
+              <p className="text-xs text-blue-200/90">Growth B2B · CRM · Automatización</p>
+            </div>
           </div>
-        </Section>
-      </section>
+          <a
+            href="https://www.tronxstrategy.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold px-3 py-1 rounded-lg border border-white/20 text-white/90 hover:bg-white/10"
+          >
+            Visitar sitio
+          </a>
+        </div>
+
+        <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
+          <li>WebOps & Landings optimizadas</li>
+          <li>Zoho/HubSpot + Make (nurturing y pipelines)</li>
+          <li>Ads Ops con reporting CAC · CVR · LTV · ROAS</li>
+          <li>Programa Socios (Revenue Share)</li>
+        </ul>
+
+        <div className="mt-5 flex items-center gap-3">
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn"
+             href="https://www.linkedin.com/company/tronx-strategy" target="_blank" rel="noopener noreferrer">
+            <Linkedin size={18}/>
+          </a>
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Instagram"
+             href="https://instagram.com/tronxstrategy" target="_blank" rel="noopener noreferrer">
+            <Instagram size={18}/>
+          </a>
+        </div>
+      </GlassCard>
+
+      {/* Dekaelo Media */}
+      <GlassCard className="p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="logo-box bg-white/10 border-white/20">
+              <span className="logo-initial text-blue-100">DK</span>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white">Dekaelo Media</h4>
+              <p className="text-xs text-blue-200/90">Estudio audiovisual estratégico</p>
+            </div>
+          </div>
+          <a
+            href="https://www.dekaelomedia.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold px-3 py-1 rounded-lg border border-white/20 text-white/90 hover:bg-white/10"
+          >
+            Visitar sitio
+          </a>
+        </div>
+
+        <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
+          <li>Producción institucional y corporativa</li>
+          <li>Vodcast/cápsulas B2B · Performance content</li>
+          <li>Pipeline 4K HDR · Cine digital Super 35 mm</li>
+          <li>Modelos mensuales: Basic · Standard · Premium</li>
+        </ul>
+
+        <div className="mt-5 flex items-center gap-3">
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn"
+             href="https://www.linkedin.com/company/dekaelo-media" target="_blank" rel="noopener noreferrer">
+            <Linkedin size={18}/>
+          </a>
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Instagram"
+             href="https://instagram.com/dekaelo_media" target="_blank" rel="noopener noreferrer">
+            <Instagram size={18}/>
+          </a>
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="YouTube"
+             href="https://youtube.com/@dekaelo_media" target="_blank" rel="noopener noreferrer">
+            <Youtube size={18}/>
+          </a>
+        </div>
+      </GlassCard>
+
+      {/* Tronx TV */}
+      <GlassCard className="p-6">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="logo-box bg-white/10 border-white/20">
+              <span className="logo-initial text-blue-100">TV</span>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white">Tronx TV</h4>
+              <p className="text-xs text-blue-200/90">Plataforma editorial</p>
+            </div>
+          </div>
+          <a
+            href="https://www.tronxtv.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold px-3 py-1 rounded-lg border border-white/20 text-white/90 hover:bg-white/10"
+          >
+            Visitar sitio
+          </a>
+        </div>
+
+        <ul className="mt-4 text-sm space-y-2 text-blue-100/90">
+          <li>Línea original: reality, documental, conversación, ficción</li>
+          <li>Formato digital 4K · distribución multiplataforma</li>
+          <li>Vitrina narrativa y reputacional</li>
+          <li>Alianzas editoriales y sponsorships</li>
+        </ul>
+
+        <div className="mt-5 flex items-center gap-3">
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="YouTube"
+             href="https://youtube.com/@TronxTV" target="_blank" rel="noopener noreferrer">
+            <Youtube size={18}/>
+          </a>
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Instagram"
+             href="https://instagram.com/tronxtv" target="_blank" rel="noopener noreferrer">
+            <Instagram size={18}/>
+          </a>
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="X"
+             href="https://x.com/tronx_tv" target="_blank" rel="noopener noreferrer">
+            <XLogo width={18} height={18}/>
+          </a>
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="TikTok"
+             href="https://tiktok.com/@tronxtv" target="_blank" rel="noopener noreferrer">
+            <TikTokLogo width={18} height={18}/>
+          </a>
+          <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="Facebook"
+             href="https://web.facebook.com/tronxtv" target="_blank" rel="noopener noreferrer">
+            <Facebook size={18}/>
+          </a>
+        </div>
+      </GlassCard>
+    </div>
+  </Section>
+</section>
 
       {/* PROGRAMA SOCIOS */}
       <section
