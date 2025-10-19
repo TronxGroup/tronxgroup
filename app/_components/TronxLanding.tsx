@@ -91,8 +91,8 @@ export default function TronxLanding() {
             <Image
               src="/tronxgrouplogo.png"
               alt="Tronx Group"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
             />
             <span className="font-semibold text-white">Tronx Group</span>
           </div>
