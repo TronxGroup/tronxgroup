@@ -20,6 +20,7 @@ import {
   Youtube,
   Facebook,
 } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 
 /** Sección con container responsivo */
 function Section({
@@ -675,16 +676,16 @@ export default function TronxLanding() {
             </a>
 
             {/* WhatsApp */}
-            <a
-              className="btn-icon border-white/15 text-white/90 hover:bg-white/10"
-              aria-label="WhatsApp"
-              href="https://wa.me/56920080031"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="WhatsApp"
-            >
-              <WhatsAppLogo width={18} height={18} />
-            </a>
+<a
+  className="btn-icon border-white/15 text-white/90 hover:bg-white/10"
+  aria-label="WhatsApp"
+  href="https://wa.me/56920080031"
+  target="_blank"
+  rel="noopener noreferrer"
+  title="WhatsApp"
+>
+  <SiWhatsapp size={18} />
+</a>
           </div>
         </div>
       </footer>
