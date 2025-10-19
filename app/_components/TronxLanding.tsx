@@ -365,7 +365,7 @@ export default function TronxLanding() {
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="logo-box bg-white/10 border-white/20">
-              <span className="logo-initial text-blue-100">TV</span>
+              <span className="TronxTV_TronxGroup.jpg">TV</span>
             </div>
             <div>
               <h4 className="font-semibold text-white">Tronx TV</h4>
