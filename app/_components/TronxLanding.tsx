@@ -102,34 +102,40 @@ export default function TronxLanding() {
   }, []);
 
   return (
-    <>
-      {/* ANCLA SUPERIOR */}
-      <div id="top" />
+  <>
+    {/* ANCLA SUPERIOR */}
+    <div id="top" />
 
-      {/* NAV */}
-      <nav className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[rgba(12,19,43,0.80)] bg-[rgba(12,19,43,0.92)] border-b border-white/10">
-        <div className="section flex items-center justify-between py-3">
-          <a href="#top" aria-label="Volver al inicio" className="flex items-center">
-            <Image
-              src="/tronxgrouplogo.png"
-              alt="Tronx Group"
-              width={72}
-              height={72}
-              priority
-            />
+    {/* NAV */}
+    <nav className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[rgba(12,19,43,0.80)] bg-[rgba(12,19,43,0.92)] border-b border-white/10">
+      <div className="section flex items-center justify-between py-3">
+        <a href="#top" aria-label="Volver al inicio" className="flex items-center">
+          <Image
+            src="/tronxgrouplogo.png"
+            alt="Tronx Group"
+            width={72}
+            height={72}
+            priority
+          />
+        </a>
+
+        <div className="hidden md:flex items-center gap-5 text-sm">
+          <a href="#holding" className="nav-link">Holding</a>
+          <a href="#adn" className="nav-link">ADN &amp; Propósito</a>
+          <a href="#unidades" className="nav-link">Unidades</a>
+          <a href="#cloud" className="nav-link">Cloud Suite</a>
+          <a href="#socios" className="nav-link">Programa Socios</a>
+          <a
+            href="#contacto"
+            className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 text-white"
+          >
+            Contactar
           </a>
-          <div className="hidden md:flex items-center gap-5 text-sm">
-            <a href="#holding" className="nav-link">Holding</a>
-            <a href="#adn" className="nav-link">ADN & Propósito</a>
-            <a href="#unidades" className="nav-link">Unidades</a>
-            <a href="#cloud" className="nav-link">Cloud Suite</a>
-            <a href="#socios" className="nav-link">Programa Socios</a>
-            <a href="#contacto" className="btn btn-primary !bg-sky-600 hover:!bg-sky-500 text-white">
-              Contactar
-            </a>
-          </div>
         </div>
-      </nav>
+      </div>
+    </nav>
+  </>
+);
 
       {/* HERO (igual) */}
       <header
