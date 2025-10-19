@@ -532,28 +532,48 @@ export default function TronxLanding() {
       </section>
 
       {/* FOOTER */}
-      <footer className="mt-0 border-t border-white/10 bg-[#0C132B] text-blue-100/90">
-        <div className="section py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Image src="/tronxgrouplogo.png" alt="Tronx Group" width={24} height={24} />
-            <span className="text-sm">© 2025 Tronx Group SpA — Todos los derechos reservados</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="LinkedIn"
-               href="https://www.linkedin.com/company/tronx-group" target="_blank" rel="noopener noreferrer">
-              <Linkedin size={18}/>
-            </a>
-            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="X"
-               href="https://x.com/TronxGroup" target="_blank" rel="noopener noreferrer">
-              <XLogo width={18} height={18}/>
-            </a>
-            <a className="btn-icon border-white/15 text-white/90 hover:bg-white/10" aria-label="WhatsApp"
-               href="https://wa.me/56920080031" target="_blank" rel="noopener noreferrer">
-              <Phone size={18}/>
-            </a>
-          </div>
-        </div>
-      </footer>
-    </>
-  );
-}
+<footer className="mt-0 border-t border-white/10 bg-[#0C132B] text-blue-100/90">
+  <div className="section py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div className="flex items-center gap-3">
+      <Image src="/tronxgrouplogo.png" alt="Tronx Group" width={24} height={24} />
+      <span className="text-sm">
+        © 2025 Tronx Group SpA — Todos los derechos reservados
+      </span>
+    </div>
+
+    <div className="flex items-center gap-3">
+      {/* X */}
+      <a
+        className="btn-icon border-white/15 text-white/90 hover:bg-white/10"
+        aria-label="X"
+        href="https://x.com/TronxGroup"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <XLogo width={18} height={18} />
+      </a>
+
+      {/* LinkedIn */}
+      <a
+        className="btn-icon border-white/15 text-white/90 hover:bg-white/10"
+        aria-label="LinkedIn"
+        href="https://www.linkedin.com/company/tronx-group"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Linkedin size={18} />
+      </a>
+
+      {/* WhatsApp */}
+      <a
+        className="btn-icon border-white/15 text-white/90 hover:bg-white/10"
+        aria-label="WhatsApp"
+        href="https://wa.me/56920080031"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaWhatsapp size={18} /> {/* Usa este si importas desde react-icons/fa */}
+      </a>
+    </div>
+  </div>
+</footer>
