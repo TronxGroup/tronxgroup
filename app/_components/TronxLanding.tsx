@@ -21,6 +21,7 @@ import {
   Youtube,
   Facebook,
 } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 
 /** Sección con container responsivo */
 function Section({
@@ -687,7 +688,7 @@ export default function TronxLanding() {
               rel="noopener noreferrer"
               title="WhatsApp"
             >
-              <WhatsAppLogo width={18} height={18} />
+              <SiWhatsapp size={18} />
             </a>
           </div>
         </div>
