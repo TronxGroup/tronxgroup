@@ -31,7 +31,7 @@ export default function RootLayout({
           <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
             <Link href="#top" className="flex items-center gap-2">
               {/* Reemplaza este bloque por tu logo real en /public si quieres */}
-              <div className="h-7 w-7 rounded-lg bg-cyan-400/80 blur-[1px]" />
+              <div className="h-7 w-7 rounded-lg bg-sky-400/80 blur-[1px]" />
               <div className="flex flex-col leading-tight">
                 <span className="text-sm font-semibold tracking-[0.22em] uppercase text-slate-400">
                   Tronx Group
@@ -42,19 +42,19 @@ export default function RootLayout({
               </div>
             </Link>
             <div className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
-              <a href="#unidades" className="hover:text-cyan-300">
+              <a href="#servicios" className="hover:text-sky-300">
+                Servicios
+              </a>
+              <a href="#unidades" className="hover:text-sky-300">
                 Unidades
               </a>
-              <a href="#modelo" className="hover:text-cyan-300">
+              <a href="#modelo" className="hover:text-sky-300">
                 Modelo Cloud
               </a>
-              <a href="#domo" className="hover:text-cyan-300">
-                DOMO
+              <a href="#iniciativas" className="hover:text-sky-300">
+                Iniciativas
               </a>
-              <a href="#sanraval" className="hover:text-cyan-300">
-                SANRAVAL
-              </a>
-              <a href="#contacto" className="hover:text-cyan-300">
+              <a href="#contacto" className="hover:text-sky-300">
                 Contacto
               </a>
             </div>
@@ -78,7 +78,7 @@ export default function RootLayout({
               <p>
                 <a
                   href="mailto:info@tronxgroup.com"
-                  className="text-cyan-300 hover:text-cyan-200"
+                  className="text-sky-300 hover:text-sky-200"
                 >
                   info@tronxgroup.com
                 </a>{" "}
@@ -89,7 +89,7 @@ export default function RootLayout({
                   href="https://x.com/TronxGroup"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-slate-400 hover:text-cyan-300"
+                  className="inline-flex items-center gap-1 text-slate-400 hover:text-sky-300"
                 >
                   <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-slate-600 text-[10px] leading-none">
                     X
