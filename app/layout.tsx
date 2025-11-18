@@ -22,13 +22,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const currentYear = new Date().getFullYear();
+
   return (
     <html lang="es">
       <body className="bg-tronx-bg text-slate-100">
         <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-black/60 backdrop-blur">
           <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
             <Link href="#top" className="flex items-center gap-2">
-              {/* Reemplaza /tronxgroup-logo.png por el nombre real de tu archivo en /public */}
+              {/* Reemplaza este bloque por tu logo real en /public si quieres */}
               <div className="h-7 w-7 rounded-lg bg-cyan-400/80 blur-[1px]" />
               <div className="flex flex-col leading-tight">
                 <span className="text-sm font-semibold tracking-[0.22em] uppercase text-slate-400">
@@ -45,9 +47,6 @@ export default function RootLayout({
               </a>
               <a href="#modelo" className="hover:text-cyan-300">
                 Modelo Cloud
-              </a>
-              <a href="#finanzas" className="hover:text-cyan-300">
-                Finanzas
               </a>
               <a href="#domo" className="hover:text-cyan-300">
                 DOMO
@@ -67,23 +66,38 @@ export default function RootLayout({
             </a>
           </nav>
         </header>
+
         <main id="top">{children}</main>
+
         <footer className="border-t border-slate-800/70 mt-12">
           <div className="section py-8 text-xs flex flex-col sm:flex-row gap-3 sm:items-center justify-between text-slate-400">
             <p>
-              © {new Date().getFullYear()} Tronx Group SpA. Todos los derechos
-              reservados.
+              © {currentYear} Tronx Group SpA. Todos los derechos reservados.
             </p>
-            <p>
-              RUT 78.297.435-1 · Providencia, Santiago de Chile ·{" "}
-              <a
-                href="mailto:info@tronxgroup.com"
-                className="text-cyan-300 hover:text-cyan-200"
-              >
-                info@tronxgroup.com
-              </a>{" "}
-              · +56 9 2008 0031
-            </p>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <p>
+                <a
+                  href="mailto:info@tronxgroup.com"
+                  className="text-cyan-300 hover:text-cyan-200"
+                >
+                  info@tronxgroup.com
+                </a>{" "}
+                · +56 9 2008 0031
+              </p>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://x.com/TronxGroup"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-slate-400 hover:text-cyan-300"
+                >
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-slate-600 text-[10px] leading-none">
+                    X
+                  </span>
+                  <span>@TronxGroup</span>
+                </a>
+              </div>
+            </div>
           </div>
         </footer>
       </body>
