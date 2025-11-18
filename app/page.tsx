@@ -5,9 +5,9 @@ const UNIDADES = [
     name: "Dekaelo Media / Dekaelo Pictures",
     role: "Producción audiovisual estratégica y cinematográfica.",
     bullets: [
-      "Vodcasts corporativos, documentales e institucionales.",
-      "Planes de contenido para marcas y organizaciones.",
-      "Producción de largometrajes: DOMO (2026) y Las Horribles (2027)."
+      "Vodcasts y contenido corporativo con estética cinematográfica.",
+      "Planes de contenido para marcas e instituciones.",
+      "Desarrollo de largometrajes y proyectos de autor."
     ],
     link: "https://www.dekaelomedia.com"
   },
@@ -15,29 +15,29 @@ const UNIDADES = [
     name: "Tronx Strategy",
     role: "Estudio de desarrollo web y operación digital B2B.",
     bullets: [
-      "Sitios en Next.js sobre Vercel + Cloudflare.",
-      "SEO, WebOps y medición con GA4 + Search Console.",
-      "Integración con Zoho CRM, HubSpot y automatizaciones Make/Zapier."
+      "Sitios en Next.js desplegados sobre Vercel + Cloudflare.",
+      "SEO, WebOps y medición con analítica moderna.",
+      "Integración con CRM y automatizaciones para equipos comerciales."
     ],
     link: "https://www.tronxstrategy.com"
   },
   {
     name: "Tronx TV",
-    role: "Medio audiovisual y editorial con identidad cinematográfica.",
+    role: "Medio audiovisual y editorial del holding.",
     bullets: [
-      "Formatos documentales, conversación e historias del territorio.",
+      "Formatos documentales, entrevistas y crónicas del territorio.",
       "Proyecto insignia: Reality Day (2025–2030).",
-      "Plataforma para marcas, personas y proyectos del Chile Central."
+      "Espacio para marcas, personas y proyectos del Chile Central."
     ],
     link: "https://www.tronxtv.com"
   },
   {
     name: "SANRAVAL",
-    role: "Directorio territorial y plataforma editorial del eje Santiago–Rancagua–Valparaíso.",
+    role: "Guía territorial del eje Santiago–Rancagua–Valparaíso.",
     bullets: [
-      "Guía de empresas, pymes, turismo, gastronomía y servicios.",
-      "Cobertura de proyectos urbanos, movilidad e infraestructura.",
-      "Activo territorial, comercial y editorial del holding."
+      "Directorio de empresas, pymes y servicios por comuna.",
+      "Cobertura de turismo, gastronomía y proyectos urbanos.",
+      "Plataforma editorial del Chile Central."
     ],
     link: "https://www.sanraval.cl"
   }
@@ -46,103 +46,152 @@ const UNIDADES = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="section pt-16 lg:pt-20">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-center">
+      {/* HERO MÁS CORPORATIVO */}
+      <section className="section pt-16 lg:pt-24">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-center">
           <div>
-            <p className="section-header-eyebrow">Holding creativo-tecnológico</p>
+            <p className="text-xs font-semibold tracking-[0.26em] uppercase text-slate-400">
+              Holding creativo-tecnológico
+            </p>
             <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-50 tracking-tight">
-              Tronx Group
+              Tronx Group SpA
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl">
-              Holding chileno que integra{" "}
+              Holding chileno que une{" "}
               <span className="text-cyan-300">
                 producción audiovisual, desarrollo web, medios editoriales y
                 plataformas territoriales
               </span>{" "}
-              para empresas, instituciones y proyectos del Chile Central y
-              Latinoamérica.
+              bajo una misma visión: contar historias que también operan como
+              sistemas.
+            </p>
+            <p className="mt-3 text-sm text-slate-400 max-w-xl">
+              Desde Chile Central hacia LATAM, ayudamos a empresas, marcas e
+              instituciones a alinear su presencia digital, su narrativa y su
+              operación sobre una arquitectura cloud ligera y escalable.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#contacto" className="btn-primary">
-                Conversemos un proyecto
+              <a href="#unidades" className="btn-primary">
+                Explorar unidades del holding
               </a>
-              <a href="#unidades" className="btn-ghost">
-                Ver unidades del holding
+              <a href="#contacto" className="btn-ghost">
+                Coordinar una reunión
               </a>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-4 text-xs text-slate-400">
-              <span>Industria: Audiovisual · Web · Medios · Territorio</span>
             </div>
           </div>
 
+          {/* LADO DERECHO: EN VEZ DE KPIs, UNA “MAPA” DEL ECOSISTEMA */}
           <div className="relative">
             <div className="card p-6">
               <p className="text-xs font-semibold tracking-[0.24em] uppercase text-slate-400">
-                Cómo operamos
+                Ecosistema Tronx
               </p>
               <p className="mt-3 text-sm text-slate-200">
-                Operamos{" "}
-                <span className="text-cyan-300">100% en la nube</span> sobre
-                Vercel, Cloudflare, GitHub, Zoho y GA4, lo que nos permite
-                desplegar sitios, campañas y contenidos de forma rápida,
-                segura y escalable, sin estructura pesada.
+                Cuatro unidades conectadas, un solo lenguaje:{" "}
+                <span className="text-cyan-300">
+                  estrategia, imagen y territorio
+                </span>
+                .
               </p>
-              <ul className="mt-5 space-y-2 text-xs text-slate-300">
-                <li>• Modelo lean, sin deuda bancaria.</li>
-                <li>• Enfoque en proyectos B2B, territoriales y editoriales.</li>
-                <li>• Capacidad de integrar marcas al ecosistema Tronx.</li>
-              </ul>
+              <div className="mt-5 grid gap-3 text-xs text-slate-300">
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                  <div>
+                    <p className="font-semibold text-slate-100">
+                      Imagen & relato
+                    </p>
+                    <p className="mt-1">
+                      Dekaelo Media y Tronx TV construyen la capa audiovisual:
+                      vodcasts, documentales, largometrajes y formatos editoriales.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                  <div>
+                    <p className="font-semibold text-slate-100">
+                      Infraestructura & operación
+                    </p>
+                    <p className="mt-1">
+                      Tronx Strategy diseña y opera sitios web, analítica y
+                      automatizaciones para equipos comerciales y proyectos B2B.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                  <div>
+                    <p className="font-semibold text-slate-100">
+                      Territorio & comunidad
+                    </p>
+                    <p className="mt-1">
+                      SANRAVAL conecta empresas, turismo y ciudad en el eje
+                      Santiago–Rancagua–Valparaíso, como plataforma territorial
+                      de largo plazo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p className="mt-4 text-[11px] text-slate-500">
+                Operamos 100% en la nube sobre Vercel, Cloudflare, GitHub, Zoho
+                CRM y analítica moderna, con foco en eficiencia y escalabilidad.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* IDENTIDAD */}
+      {/* IDENTIDAD / QUÉ HACEMOS, SIN TANTA INFO FINANCIERA */}
       <section className="section border-t border-slate-800/70">
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <div>
-            <p className="section-header-eyebrow">Identidad y propósito</p>
+            <p className="text-xs font-semibold tracking-[0.26em] uppercase text-slate-400">
+              Identidad y propósito
+            </p>
             <h2 className="section-title">
-              Tecnología creativa con foco en territorio y empresas reales.
+              Historias que también son sistemas de operación.
             </h2>
             <p className="section-subtitle">
-              Desarrollamos sitios web, contenido audiovisual y medios
-              editoriales que se miden en reputación, crecimiento y
-              posicionamiento. Combinamos estética cinematográfica, datos y una
-              arquitectura cloud replicable en cualquier ciudad.
+              Tronx Group nace de la mezcla entre cine, desarrollo web y proyectos
+              territoriales. La misma lógica que guía un rodaje –preproducción,
+              estructura, montaje– se aplica a cómo diseñamos sitios, medios y
+              plataformas para empresas e instituciones.
             </p>
           </div>
           <div className="grid gap-4 text-sm">
             <div className="card p-5">
               <h3 className="text-sm font-semibold text-slate-50">Misión</h3>
               <p className="mt-2 text-slate-300">
-                Potenciar empresas, instituciones y proyectos mediante
-                tecnología creativa, conectando desarrollo web, audiovisual y
-                medios editoriales con impacto medible en negocio y comunidad.
+                Potenciar organizaciones reales mediante tecnología creativa:
+                sitios web, contenido audiovisual y medios que se miden en
+                reputación, posicionamiento y relación con el territorio.
               </p>
             </div>
             <div className="card p-5">
               <h3 className="text-sm font-semibold text-slate-50">
-                Visión 2030
+                Cómo trabajamos
               </h3>
               <p className="mt-2 text-slate-300">
-                Ser un referente latinoamericano en producción audiovisual
-                moderna, desarrollo web premium, narrativa territorial y
-                contenido editorial con identidad propia.
+                Operamos con equipos pequeños, infraestructura cloud y una red
+                de colaboradores, para mantener estructura liviana y capacidad de
+                respuesta rápida ante proyectos corporativos, institucionales o
+                urbanos.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* UNIDADES */}
+      {/* UNIDADES DEL HOLDING */}
       <section id="unidades" className="section border-t border-slate-800/70">
-        <p className="section-header-eyebrow">Estructura del holding</p>
-        <h2 className="section-title">Cuatro unidades, un solo ecosistema.</h2>
+        <p className="text-xs font-semibold tracking-[0.26em] uppercase text-slate-400">
+          Unidades del holding
+        </p>
+        <h2 className="section-title">Cuatro marcas, un mismo lenguaje.</h2>
         <p className="section-subtitle">
-          Cada unidad opera con autonomía creativa, pero comparte la misma
-          infraestructura tecnológica y visión territorial de Tronx Group.
+          Cada unidad tiene su foco, pero todas comparten la misma visión:
+          estética cuidada, tecnología actualizada y lectura territorial del
+          Chile Central.
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -175,92 +224,91 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* MODELO CLOUD */}
+      {/* MODELO CLOUD, MÁS SINTÉTICO */}
       <section
         id="modelo"
         className="section border-t border-slate-800/70 bg-gradient-to-b from-tronx-bg to-black/60"
       >
-        <p className="section-header-eyebrow">Modelo operativo</p>
-        <h2 className="section-title">Arquitectura cloud Tronx.</h2>
+        <p className="text-xs font-semibold tracking-[0.26em] uppercase text-slate-400">
+          Modelo operativo
+        </p>
+        <h2 className="section-title">Arquitectura cloud como estándar, no como extra.</h2>
         <p className="section-subtitle">
-          Infraestructura ligera, segura y replicable para desplegar proyectos
-          web, campañas y medios con la lógica de un SaaS global adaptado al
-          contexto local.
+          Los proyectos del holding comparten una base técnica común: sitios
+          rápidos, seguros y medibles, con flujos de datos conectados a CRM y
+          herramientas de reporting.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3 text-sm">
           <div className="card p-5">
             <h3 className="text-sm font-semibold text-slate-50">Web & DevOps</h3>
             <ul className="mt-3 space-y-1.5 text-slate-300">
-              <li>Vercel — hosting serverless y CI/CD.</li>
-              <li>Cloudflare — DNS, CDN, WAF y SSL.</li>
-              <li>GitHub — repositorios y despliegue.</li>
+              <li>Despliegues sobre Vercel y Cloudflare.</li>
+              <li>Repositorios en GitHub y CI/CD.</li>
+              <li>Diseño pensado para mantenimiento simple.</li>
             </ul>
           </div>
           <div className="card p-5">
             <h3 className="text-sm font-semibold text-slate-50">
-              Datos & Automatización
+              Datos & Relación
             </h3>
             <ul className="mt-3 space-y-1.5 text-slate-300">
-              <li>Zoho CRM — leads, ventas y automatización.</li>
-              <li>Make + HubSpot (APCC) — integraciones gremiales.</li>
-              <li>GA4 + Search Console — métricas y SEO.</li>
+              <li>Zoho CRM y herramientas afines según cada proyecto.</li>
+              <li>Analítica con GA4 y Search Console.</li>
+              <li>Automatizaciones con Make/Zapier cuando tiene sentido.</li>
             </ul>
           </div>
           <div className="card p-5">
             <h3 className="text-sm font-semibold text-slate-50">
-              Ventajas operativas
+              Criterios de diseño
             </h3>
             <ul className="mt-3 space-y-1.5 text-slate-300">
-              <li>Operación 100% digital y remota.</li>
-              <li>Capacidad de responder rápido a nuevas marcas y proyectos.</li>
-              <li>Modelo lean, pensado para escalar sin burocracia.</li>
+              <li>Infraestructura ligera, auditable y documentada.</li>
+              <li>Evitar sobre-complejidad técnica innecesaria.</li>
+              <li>Preparado para crecer por capas, no por peso.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* DOMO */}
+      {/* DOMO, SIN NÚMEROS */}
       <section
         id="domo"
         className="section border-t border-slate-800/70 bg-tronx-bg"
       >
-        <p className="section-header-eyebrow">
+        <p className="text-xs font-semibold tracking-[0.26em] uppercase text-slate-400">
           Proyecto cinematográfico · Dekaelo Pictures
         </p>
-        <h2 className="section-title">DOMO — Largometraje 2026.</h2>
+        <h2 className="section-title">DOMO — Largometraje en desarrollo.</h2>
         <p className="section-subtitle">
-          Primer largometraje de ficción del holding. DOMO posiciona a Tronx
-          Group en la industria audiovisual de alto nivel y fortalece la
-          identidad narrativa de Dekaelo y Tronx TV.
+          DOMO es el primer largometraje de ficción del holding. Un proyecto de
+          Dekaelo Pictures que conecta cine de género, producción eficiente y
+          una ruta de festivales y plataformas digitales.
         </p>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] text-sm">
           <div className="card p-5">
             <h3 className="text-sm font-semibold text-slate-50">
-              Ficha estratégica
+              Ficha general
             </h3>
             <ul className="mt-3 space-y-1.5 text-slate-300">
-              <li>Largometraje de ficción de 70–90 minutos.</li>
-              <li>Rodaje previsto para 2026.</li>
+              <li>Largometraje de ficción chileno, 70–90 minutos.</li>
+              <li>Rodaje programado para 2026.</li>
               <li>
-                Ruta de festivales: BARS Buenos Aires y otros certámenes
-                regionales e internacionales.
-              </li>
-              <li>
-                Objetivo de distribución: cines independientes y plataformas
-                digitales internacionales.
+                Ruta prevista: festivales internacionales, cines independientes y
+                plataformas OTT.
               </li>
             </ul>
           </div>
           <div className="card p-5">
             <h3 className="text-sm font-semibold text-slate-50">
-              Rol dentro del ecosistema Tronx
+              Rol dentro de Tronx Group
             </h3>
             <p className="mt-3 text-slate-300">
-              DOMO genera propiedad intelectual, visibilidad internacional y
-              contenido derivado para Tronx TV, consolidando el perfil
-              cinematográfico del holding y habilitando futuras coproducciones.
+              DOMO consolida a Dekaelo Pictures como unidad cinematográfica,
+              fortalece el posicionamiento de Tronx Group en la industria
+              audiovisual y alimenta Tronx TV con contenido derivado
+              (teasers, making-of, conversaciones).
             </p>
           </div>
         </div>
@@ -271,50 +319,44 @@ export default function HomePage() {
         id="sanraval"
         className="section border-t border-slate-800/70 bg-gradient-to-b from-black/70 to-tronx-bg"
       >
-        <p className="section-header-eyebrow">
+        <p className="text-xs font-semibold tracking-[0.26em] uppercase text-slate-400">
           Plataforma territorial · SANRAVAL
         </p>
         <h2 className="section-title">
           SANRAVAL — Guía del eje Santiago · Rancagua · Valparaíso.
         </h2>
         <p className="section-subtitle">
-          Directorio territorial y plataforma editorial que articula la
-          macrozona cordillera–valle–mar. Un activo digital de largo plazo para
-          empresas, turistas y ciudades.
+          SANRAVAL es un directorio y plataforma editorial que entiende la
+          macrozona cordillera–valle–mar como un solo sistema urbano. Empresas,
+          turismo, cultura y proyectos urbanos en una misma referencia.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3 text-sm">
           <div className="card p-5">
             <h3 className="text-sm font-semibold text-slate-50">
-              Qué ofrece
+              Para personas
             </h3>
             <ul className="mt-3 space-y-1.5 text-slate-300">
-              <li>Fichas de empresas y pymes por comuna y región.</li>
-              <li>Cobertura de turismo, gastronomía, servicios y cultura.</li>
-              <li>Noticias y reportajes del eje central.</li>
+              <li>Buscar negocios y servicios por comuna y región.</li>
+              <li>Explorar rutas, barrios y experiencias del eje central.</li>
             </ul>
           </div>
           <div className="card p-5">
             <h3 className="text-sm font-semibold text-slate-50">
-              Enfoque territorial
+              Para empresas
             </h3>
             <ul className="mt-3 space-y-1.5 text-slate-300">
-              <li>Macrozona SANRAVAL: Santiago, Rancagua, Valparaíso.</li>
-              <li>
-                Microzonas: litoral creativo, polos productivos del valle,
-                corredores de servicios.
-              </li>
-              <li>Infraestructura: rutas, ferrocarriles y puertos clave.</li>
+              <li>Presencia en un entorno editorial cuidado.</li>
+              <li>Posibilidad de aparecer en especiales y contenidos.</li>
             </ul>
           </div>
           <div className="card p-5">
             <h3 className="text-sm font-semibold text-slate-50">
-              Rol para Tronx Group
+              Para el holding
             </h3>
             <p className="mt-3 text-slate-300">
-              SANRAVAL diversifica el holding hacia territorio, turismo,
-              comercio local y proyectos urbanos, creando un activo editorial y
-              comercial propio, escalable a otras macrozonas.
+              SANRAVAL es un activo territorial y editorial propio de Tronx Group
+              que permite unir marcas, ciudades y proyectos a largo plazo.
             </p>
             <a
               href="https://www.sanraval.cl"
@@ -333,13 +375,16 @@ export default function HomePage() {
         id="contacto"
         className="section border-t border-slate-800/70 pb-20"
       >
-        <p className="section-header-eyebrow">Contacto</p>
+        <p className="text-xs font-semibold tracking-[0.26em] uppercase text-slate-400">
+          Contacto
+        </p>
         <h2 className="section-title">
-          Conversemos cómo Tronx puede operar tu próximo proyecto.
+          Conversemos el siguiente proyecto del ecosistema Tronx.
         </h2>
         <p className="section-subtitle">
-          Escríbenos y coordinamos una reunión para revisar tu caso: web,
-          audiovisual, territorial o una combinación del ecosistema Tronx.
+          Desarrollo web, producción audiovisual, medios editoriales o
+          iniciativas territoriales. Podemos trabajar cada unidad por separado o
+          diseñar una solución integrada.
         </p>
 
         <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
@@ -393,7 +438,7 @@ export default function HomePage() {
             </div>
             <div>
               <label className="block text-xs text-slate-300 mb-1">
-                ¿En qué podemos ayudarte?
+                ¿Qué te interesa explorar?
               </label>
               <select
                 name="interest"
@@ -434,24 +479,23 @@ export default function HomePage() {
           <div className="space-y-4 text-sm text-slate-300">
             <div className="card p-5">
               <h3 className="text-sm font-semibold text-slate-50">
-                Cómo trabajamos
+                Qué puedes esperar de Tronx
               </h3>
               <p className="mt-3 text-xs text-slate-300">
-                Trabajamos con una lógica de estudio boutique: pocos proyectos a
-                la vez, alta dedicación y coordinación directa con quien toma
-                decisiones. Combinamos sesiones remotas, visitas puntuales y un
-                stack digital que deja todo documentado.
+                Un equipo pequeño, especializado y conectado a una red de
+                colaboradores. Menos estructura pesada, más enfoque en hacer que
+                los proyectos funcionen y duren en el tiempo.
               </p>
             </div>
             <div className="card p-5">
               <h3 className="text-sm font-semibold text-slate-50">
-                Un holding diseñado para durar
+                Una empresa pensada a largo plazo
               </h3>
               <p className="mt-3 text-xs text-slate-300">
-                Tronx Group está pensado para crecer con baja fricción y alto
-                valor: arquitectura cloud, propiedad intelectual audiovisual,
-                plataforma territorial y servicios web replicables en cualquier
-                ciudad de Chile y Latinoamérica.
+                Tronx Group no es solo una suma de marcas. Es una forma de
+                trabajar donde cada proyecto –un sitio, una serie, un directorio
+                territorial– se diseña como un activo que puede seguir creciendo
+                más allá de un solo encargo.
               </p>
             </div>
           </div>
