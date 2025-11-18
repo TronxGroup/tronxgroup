@@ -26,7 +26,7 @@ export default function RootLayout({
 
   return (
     <html lang="es">
-      <body className="bg-tronx-bg text-slate-100">
+      <body className="bg-slate-950 text-slate-100">
         <header className="sticky top-0 z-30 border-b border-slate-800/70 bg-black/60 backdrop-blur">
           <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
             <Link href="#top" className="flex items-center gap-2">
