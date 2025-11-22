@@ -37,7 +37,7 @@ export default function RootLayout({
       {/* Logo real */}
       <div className="relative h-8 w-8">
         <Image
-          src="/logo_tronx_web.jpg"
+          src="/logo_tronx_web.png"
           alt="Tronx Group"
           fill
           className="object-contain"
