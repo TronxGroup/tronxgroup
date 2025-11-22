@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";  // ← IMPORT NECESARIO
 
 export const metadata: Metadata = {
   title: "Tronx Group SpA — Holding creativo-tecnológico",
