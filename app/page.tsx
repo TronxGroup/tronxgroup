@@ -1,13 +1,14 @@
 // app/page.tsx
 import Link from "next/link";
 import Image from "next/image";
+
 import {
   FaInstagram,
   FaFacebookF,
   FaYoutube,
   FaLinkedinIn,
-  FaTwitter,
 } from "react-icons/fa";
+import { FaXTwitter, FaTiktok } from "react-icons/fa6";
 
 export default function Home() {
   return (
@@ -272,7 +273,7 @@ export default function Home() {
                 </Link>
                 <div className="flex items-center gap-2 text-slate-500">
                   <a
-                    href="https://instagram.com/"
+                    href="https://www.instagram.com/dekaelo_media/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
@@ -281,7 +282,7 @@ export default function Home() {
                     <FaInstagram className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://linkedin.com/"
+                    href="https://www.linkedin.com/company/dekaelo-media/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
@@ -333,22 +334,22 @@ export default function Home() {
                 </Link>
                 <div className="flex items-center gap-2 text-slate-500">
                   <a
-                    href="https://instagram.com/"
+                    href="https://www.linkedin.com/company/tronx-strategy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
+                    aria-label="LinkedIn Tronx Strategy"
+                  >
+                    <FaLinkedinIn className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/tronxstrategy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="Instagram Tronx Strategy"
                   >
                     <FaInstagram className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://facebook.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="Facebook Tronx Strategy"
-                  >
-                    <FaFacebookF className="h-4 w-4" />
                   </a>
                 </div>
               </div>
@@ -394,7 +395,7 @@ export default function Home() {
                 </Link>
                 <div className="flex flex-wrap items-center gap-2 text-slate-500">
                   <a
-                    href="https://youtube.com/"
+                    href="https://youtube.com/@tronxtv"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
@@ -403,7 +404,7 @@ export default function Home() {
                     <FaYoutube className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://instagram.com/"
+                    href="https://www.instagram.com/tronxtv/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
@@ -412,7 +413,7 @@ export default function Home() {
                     <FaInstagram className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://facebook.com/"
+                    href="https://web.facebook.com/tronxtv"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
@@ -421,18 +422,23 @@ export default function Home() {
                     <FaFacebookF className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://x.com/"
+                    href="https://x.com/tronx_tv"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="X / Twitter Tronx TV"
+                    aria-label="X (Twitter) Tronx TV"
                   >
-                    <FaTwitter className="h-4 w-4" />
+                    <FaXTwitter className="h-4 w-4" />
                   </a>
-                  {/* TikTok: placeholder de texto por ahora */}
-                  <span className="p-1 rounded-full border border-slate-200 text-[10px] leading-none">
-                    TT
-                  </span>
+                  <a
+                    href="https://www.tiktok.com/@tronxtv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
+                    aria-label="TikTok Tronx TV"
+                  >
+                    <FaTiktok className="h-4 w-4" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -477,7 +483,7 @@ export default function Home() {
                 </Link>
                 <div className="flex flex-wrap items-center gap-2 text-slate-500">
                   <a
-                    href="https://instagram.com/"
+                    href="https://www.instagram.com/sanraval.cl"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
@@ -486,7 +492,7 @@ export default function Home() {
                     <FaInstagram className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://facebook.com/"
+                    href="https://web.facebook.com/sanraval.cl"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
@@ -495,7 +501,7 @@ export default function Home() {
                     <FaFacebookF className="h-4 w-4" />
                   </a>
                   <a
-                    href="https://youtube.com/"
+                    href="https://youtube.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
