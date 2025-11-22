@@ -6,8 +6,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #050814;
-  color: #e5e7eb;
+  background: #f9fafb; /* gris muy claro, estilo corporativo */
+  color: #020617;      /* slate-950 */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
 }
@@ -16,32 +16,36 @@ body {
   min-height: 100vh;
 }
 
+/* Layout de sección reutilizable */
 .section {
   @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16;
 }
 
+/* Títulos de sección */
 .section-header-eyebrow {
-  @apply text-xs tracking-[0.25em] uppercase text-slate-400 font-semibold;
+  @apply text-xs tracking-[0.25em] uppercase text-slate-500 font-semibold;
 }
 
 .section-title {
-  @apply mt-3 text-2xl sm:text-3xl font-semibold text-slate-50;
+  @apply mt-3 text-2xl sm:text-3xl font-semibold text-slate-900;
 }
 
 .section-subtitle {
-  @apply mt-4 text-sm sm:text-base text-slate-300 max-w-3xl;
+  @apply mt-4 text-sm sm:text-base text-slate-600 max-w-3xl;
 }
 
+/* Botones reutilizables: paleta Tronx holding */
 .btn-primary {
   @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium
-    bg-cyan-400 text-slate-900 hover:bg-cyan-300 transition-colors;
+    bg-sky-600 text-white hover:bg-sky-500 transition-colors;
 }
 
 .btn-ghost {
   @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium
-    border border-slate-600/70 text-slate-100 hover:border-cyan-400/70 hover:text-cyan-300 transition-colors;
+    border border-slate-300 text-slate-700 hover:border-sky-500 hover:text-sky-700 transition-colors bg-white;
 }
 
+/* Tarjetas genéricas (usadas en soluciones, ecosistema, etc.) */
 .card {
-  @apply rounded-2xl bg-tronx-card/80 border border-slate-800/80 backdrop-blur shadow-soft;
+  @apply rounded-2xl bg-white border border-slate-200 shadow-sm;
 }
