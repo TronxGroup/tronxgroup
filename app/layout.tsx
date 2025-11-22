@@ -28,71 +28,81 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="bg-slate-50 text-slate-900">
-        {/* HEADER */}
-        <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-          <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-            {/* Marca Tronx */}
-            <Link href="#top" className="flex items-center gap-2">
-              {/* Placeholder logo (reemplazar por SVG en /public cuando esté listo) */}
-              <div className="h-7 w-7 rounded-md border border-sky-600/40 bg-sky-600/10" />
-              <div className="flex flex-col leading-tight">
-                <span className="text-[11px] font-semibold tracking-[0.24em] uppercase text-slate-500">
-                  TRONX GROUP
-                </span>
-                <span className="text-[11px] text-slate-400">
-                  Creative-Tech Holding
-                </span>
-              </div>
-            </Link>
+       {/* HEADER */}
+<header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
+  <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
 
-            {/* Menú principal desktop */}
-            <div className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600">
-              <a
-                href="#servicios"
-                className="group relative inline-flex items-center gap-1 hover:text-sky-700 transition-colors"
-              >
-                <span>Soluciones</span>
-                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-              </a>
-              <a
-                href="#unidades"
-                className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
-              >
-                <span>Holding</span>
-                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-              </a>
-              <a
-                href="#modelo"
-                className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
-              >
-                <span>Modelo cloud</span>
-                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-              </a>
-              <a
-                href="#iniciativas"
-                className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
-              >
-                <span>Proyectos propios</span>
-                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-              </a>
-              <a
-                href="#contacto"
-                className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
-              >
-                <span>Contacto</span>
-                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-              </a>
-            </div>
+    {/* Marca Tronx */}
+    <Link href="#top" className="flex items-center gap-3">
+      {/* Logo real */}
+      <div className="relative h-8 w-8">
+        <Image
+          src="/logo_tronx_web.jpg"
+          alt="Tronx Group"
+          fill
+          className="object-contain"
+        />
+      </div>
 
-            {/* CTA */}
-            <a
-              href="#contacto"
-              className="hidden sm:inline-flex items-center rounded-full border border-sky-600/60 bg-sky-600 px-3 py-1.5 text-[11px] font-medium text-white hover:bg-sky-500 hover:border-sky-500 transition-colors"
-            >
-              Hablar con Tronx
-            </a>
-          </nav>
-        </header>
+      {/* Texto único */}
+      <span className="text-[11px] font-semibold tracking-[0.20em] uppercase text-slate-600">
+        Creative-Tech Holding
+      </span>
+    </Link>
+
+    {/* Menú principal desktop */}
+    <div className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600">
+      <a
+        href="#servicios"
+        className="group relative inline-flex items-center gap-1 hover:text-sky-700 transition-colors"
+      >
+        <span>Soluciones</span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+      </a>
+
+      <a
+        href="#unidades"
+        className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
+      >
+        <span>Holding</span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+      </a>
+
+      <a
+        href="#modelo"
+        className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
+      >
+        <span>Modelo cloud</span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+      </a>
+
+      <a
+        href="#iniciativas"
+        className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
+      >
+        <span>Proyectos propios</span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+      </a>
+
+      <a
+        href="#contacto"
+        className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
+      >
+        <span>Contacto</span>
+        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+      </a>
+    </div>
+
+    {/* CTA */}
+    <a
+      href="#contacto"
+      className="hidden sm:inline-flex items-center rounded-full border border-sky-600/60 bg-sky-600 px-3 py-1.5 text-[11px] font-medium text-white hover:bg-sky-500 hover:border-sky-500 transition-colors"
+    >
+      Hablar con Tronx
+    </a>
+
+  </nav>
+</header>
 
         {/* CONTENIDO */}
         <main id="top">{children}</main>
