@@ -2,13 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  IconBrandInstagram,
-  IconBrandFacebook,
-  IconBrandYoutube,
-  IconBrandLinkedin,
-  IconBrandX,
-  IconBrandTiktok,
-} from "@tabler/icons-react";
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -279,7 +278,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="Instagram Dekaelo"
                   >
-                    <IconBrandInstagram className="h-4 w-4" />
+                    <FaInstagram className="h-4 w-4" />
                   </a>
                   <a
                     href="https://linkedin.com/"
@@ -288,7 +287,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="LinkedIn Dekaelo"
                   >
-                    <IconBrandLinkedin className="h-4 w-4" />
+                    <FaLinkedinIn className="h-4 w-4" />
                   </a>
                 </div>
               </div>
@@ -340,7 +339,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="Instagram Tronx Strategy"
                   >
-                    <IconBrandInstagram className="h-4 w-4" />
+                    <FaInstagram className="h-4 w-4" />
                   </a>
                   <a
                     href="https://facebook.com/"
@@ -349,7 +348,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="Facebook Tronx Strategy"
                   >
-                    <IconBrandFacebook className="h-4 w-4" />
+                    <FaFacebookF className="h-4 w-4" />
                   </a>
                 </div>
               </div>
@@ -401,7 +400,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="YouTube Tronx TV"
                   >
-                    <IconBrandYoutube className="h-4 w-4" />
+                    <FaYoutube className="h-4 w-4" />
                   </a>
                   <a
                     href="https://instagram.com/"
@@ -410,7 +409,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="Instagram Tronx TV"
                   >
-                    <IconBrandInstagram className="h-4 w-4" />
+                    <FaInstagram className="h-4 w-4" />
                   </a>
                   <a
                     href="https://facebook.com/"
@@ -419,26 +418,21 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="Facebook Tronx TV"
                   >
-                    <IconBrandFacebook className="h-4 w-4" />
+                    <FaFacebookF className="h-4 w-4" />
                   </a>
                   <a
                     href="https://x.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="X Tronx TV"
+                    aria-label="X / Twitter Tronx TV"
                   >
-                    <IconBrandX className="h-4 w-4" />
+                    <FaTwitter className="h-4 w-4" />
                   </a>
-                  <a
-                    href="https://tiktok.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="TikTok Tronx TV"
-                  >
-                    <IconBrandTiktok className="h-4 w-4" />
-                  </a>
+                  {/* TikTok: placeholder de texto por ahora */}
+                  <span className="p-1 rounded-full border border-slate-200 text-[10px] leading-none">
+                    TT
+                  </span>
                 </div>
               </div>
             </div>
@@ -489,7 +483,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="Instagram SANRAVAL"
                   >
-                    <IconBrandInstagram className="h-4 w-4" />
+                    <FaInstagram className="h-4 w-4" />
                   </a>
                   <a
                     href="https://facebook.com/"
@@ -498,7 +492,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="Facebook SANRAVAL"
                   >
-                    <IconBrandFacebook className="h-4 w-4" />
+                    <FaFacebookF className="h-4 w-4" />
                   </a>
                   <a
                     href="https://youtube.com/"
@@ -507,7 +501,7 @@ export default function Home() {
                     className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
                     aria-label="YouTube SANRAVAL"
                   >
-                    <IconBrandYoutube className="h-4 w-4" />
+                    <FaYoutube className="h-4 w-4" />
                   </a>
                 </div>
               </div>
