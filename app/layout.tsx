@@ -35,8 +35,8 @@ export default function RootLayout({
 
     {/* Marca Tronx */}
     <Link href="#top" className="flex items-center gap-3">
-      {/* Logo real */}
-      <div className="relative h-8 w-8">
+      {/* Logo real más grande */}
+      <div className="relative h-10 w-10 md:h-12 md:w-12">
         <Image
           src="/logo_tronx_web.png"
           alt="Tronx Group"
@@ -45,8 +45,8 @@ export default function RootLayout({
         />
       </div>
 
-      {/* Texto único */}
-      <span className="text-[11px] font-semibold tracking-[0.20em] uppercase text-slate-600">
+      {/* Texto más pequeño */}
+      <span className="text-[10px] md:text-[10px] font-semibold tracking-[0.18em] uppercase text-slate-600">
         Creative-Tech Holding
       </span>
     </Link>
