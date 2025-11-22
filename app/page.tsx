@@ -21,7 +21,7 @@ export default function Home() {
         >
           <div className="space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-              Holding creativo-tecnológico · Chile Central
+              Holding creativo-tecnológico · Chile
             </p>
             <h1 className="text-3xl md:text-4xl font-semibold leading-tight text-slate-900">
               Tronx Group SpA —
