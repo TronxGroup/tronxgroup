@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaLinkedinIn,
   FaTwitter,
+  FaTikTok,
 } from "react-icons/fa";
 
 export default function Home() {
