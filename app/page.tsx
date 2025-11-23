@@ -460,7 +460,7 @@ export default function Home() {
         {/* PROYECTOS INSIGNIA / INICIATIVAS */}
 <section id="iniciativas" className="space-y-6">
   <h2 className="text-xl font-semibold text-slate-900">
-    Proyectos insignia
+    Iniciativas estratégicas
   </h2>
 
   <div className="grid gap-4 md:grid-cols-2 text-sm">
