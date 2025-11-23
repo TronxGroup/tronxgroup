@@ -32,7 +32,7 @@ export default function Home() {
             <p className="text-sm text-slate-600 max-w-xl">
               Holding chileno que integra producción audiovisual, desarrollo web
               y medios editoriales para empresas, bancos, cámaras y
-              organizaciones del Chile Central. Acompañamos proyectos
+              organizaciones de Chile. Acompañamos proyectos
               corporativos desde su presencia digital hasta la producción de
               contenido y plataformas territoriales.
             </p>
