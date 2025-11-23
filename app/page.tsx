@@ -222,298 +222,201 @@ export default function Home() {
         </section>
 
         {/* UNIDADES DEL HOLDING */}
-        <section id="unidades" className="space-y-6">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-slate-900">
-              Unidades del holding
-            </h2>
-            <p className="text-xs text-slate-500 max-w-md">
-              Cuatro marcas con un mismo lenguaje. Tecnología actualizada,
-              narrativa cuidada y una lectura territorial del Chile Central.
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 text-sm">
-            {/* Dekaelo */}
-            <div className="card p-4 flex flex-col justify-between overflow-hidden">
-              <div className="space-y-3">
-                <div className="h-24 w-full rounded-xl overflow-hidden mb-2 bg-slate-100">
-                  <Image
-                    src="/images/unidades/dekaelo-set.jpg"
-                    alt="Dekaelo Media"
-                    width={600}
-                    height={160}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex items-center justify-between gap-2">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      Dekaelo Media / Dekaelo Pictures
-                    </p>
-                    <p className="text-sm font-semibold text-slate-900">
-                      Producción audiovisual estratégica y cinematográfica.
-                    </p>
-                  </div>
-                  <Image
-                    src="/logos/dekaelo.svg"
-                    alt="Dekaelo Media"
-                    width={140}
-                    height={40}
-                    className="h-10 w-auto"
-                  />
-                </div>
-                <ul className="space-y-1 text-slate-600">
-                  <li>· Vodcasts y contenido corporativo para bancos y empresas.</li>
-                  <li>· Piezas audiovisuales para comunicación interna y externa.</li>
-                </ul>
-              </div>
-              <div className="mt-4 flex items-center justify-between text-xs">
-                <Link href="#" className="text-sky-700 hover:underline">
-                  Visitar sitio →
-                </Link>
-                <div className="flex items-center gap-2 text-slate-500">
-                  <a
-                    href="https://www.instagram.com/dekaelo_media/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="Instagram Dekaelo"
-                  >
-                    <FaInstagram className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/dekaelo-media/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="LinkedIn Dekaelo"
-                  >
-                    <FaLinkedinIn className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
+<section id="unidades" className="space-y-6">
+  <div className="flex items-baseline justify-between gap-4">
+    <h2 className="text-xl font-semibold text-slate-900">
+      Unidades del holding
+    </h2>
+    <p className="text-xs text-slate-500 max-w-md">
+      Cuatro marcas con un mismo lenguaje. Tecnología actualizada,
+      narrativa cuidada y una lectura territorial del Chile Central.
+    </p>
+  </div>
 
-            {/* Tronx Strategy */}
-            <div className="card p-4 flex flex-col justify-between overflow-hidden">
-              <div className="space-y-3">
-                <div className="h-24 w-full rounded-xl overflow-hidden mb-2 bg-slate-100">
-                  <Image
-                    src="/images/unidades/tronx-strategy-webops.jpg"
-                    alt="Tronx Strategy"
-                    width={600}
-                    height={160}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex items-center justify-between gap-2">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      Tronx Strategy
-                    </p>
-                    <p className="text-sm font-semibold text-slate-900">
-                      Estudio de desarrollo web y operación digital B2B.
-                    </p>
-                  </div>
-                  <Image
-                    src="/logos/tronx-strategy.svg"
-                    alt="Tronx Strategy"
-                    width={140}
-                    height={40}
-                    className="h-10 w-auto"
-                  />
-                </div>
-                <ul className="space-y-1 text-slate-600">
-                  <li>· Sitios corporativos en Next.js sobre Vercel + Cloudflare.</li>
-                  <li>· Integración con CRM y automatizaciones comerciales.</li>
-                </ul>
-              </div>
-              <div className="mt-4 flex items-center justify-between text-xs">
-                <Link href="#" className="text-sky-700 hover:underline">
-                  Visitar sitio →
-                </Link>
-                <div className="flex items-center gap-2 text-slate-500">
-                  <a
-                    href="https://www.linkedin.com/company/tronx-strategy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="LinkedIn Tronx Strategy"
-                  >
-                    <FaLinkedinIn className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/tronxstrategy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="Instagram Tronx Strategy"
-                  >
-                    <FaInstagram className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
+  <div className="grid gap-4 md:grid-cols-2 text-sm">
 
-            {/* Tronx TV */}
-            <div className="card p-4 flex flex-col justify-between overflow-hidden">
-              <div className="space-y-3">
-                <div className="h-24 w-full rounded-xl overflow-hidden mb-2 bg-slate-100">
-                  <Image
-                    src="/images/unidades/tronx-tv-reality-day.jpg"
-                    alt="Tronx TV"
-                    width={600}
-                    height={160}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex items-center justify-between gap-2">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      Tronx TV
-                    </p>
-                    <p className="text-sm font-semibold text-slate-900">
-                      Medio audiovisual y editorial del holding.
-                    </p>
-                  </div>
-                  <Image
-                    src="/logos/tronx-tv.svg"
-                    alt="Tronx TV"
-                    width={140}
-                    height={40}
-                    className="h-10 w-auto"
-                  />
-                </div>
-                <ul className="space-y-1 text-slate-600">
-                  <li>· Documentales, entrevistas y contenido de conversación.</li>
-                  <li>· Proyecto insignia: Reality Day.</li>
-                </ul>
-              </div>
-              <div className="mt-4 flex items-center justify-between text-xs">
-                <Link href="#" className="text-sky-700 hover:underline">
-                  Visitar sitio →
-                </Link>
-                <div className="flex flex-wrap items-center gap-2 text-slate-500">
-                  <a
-                    href="https://youtube.com/@tronxtv"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="YouTube Tronx TV"
-                  >
-                    <FaYoutube className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/tronxtv/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="Instagram Tronx TV"
-                  >
-                    <FaInstagram className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://web.facebook.com/tronxtv"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="Facebook Tronx TV"
-                  >
-                    <FaFacebookF className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://x.com/tronx_tv"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="X (Twitter) Tronx TV"
-                  >
-                    <FaXTwitter className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@tronxtv"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="TikTok Tronx TV"
-                  >
-                    <FaTiktok className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
+    {/* DEKAELO */}
+    <div className="card p-4 flex flex-col justify-between hover:border-sky-500/60 transition">
+      
+      {/* Imagen uniforme */}
+      <div className="h-28 w-full rounded-xl overflow-hidden mb-3 bg-slate-100">
+        <Image
+          src="/images/unidades/dekaelo-set.jpg"
+          alt="Dekaelo Media"
+          width={600}
+          height={112}
+          className="h-full w-full object-cover"
+        />
+      </div>
 
-            {/* SANRAVAL */}
-            <div className="card p-4 flex flex-col justify-between overflow-hidden">
-              <div className="space-y-3">
-                <div className="h-24 w-full rounded-xl overflow-hidden mb-2 bg-slate-100">
-                  <Image
-                    src="/images/unidades/sanraval-mapa.jpg"
-                    alt="SANRAVAL"
-                    width={600}
-                    height={160}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="flex items-center justify-between gap-2">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                      SANRAVAL
-                    </p>
-                    <p className="text-sm font-semibold text-slate-900">
-                      Guía territorial del eje Santiago–Rancagua–Valparaíso.
-                    </p>
-                  </div>
-                  <Image
-                    src="/logos/sanraval.svg"
-                    alt="SANRAVAL"
-                    width={140}
-                    height={40}
-                    className="h-10 w-auto"
-                  />
-                </div>
-                <ul className="space-y-1 text-slate-600">
-                  <li>· Directorio de empresas, servicios y proyectos del Chile Central.</li>
-                  <li>· Cobertura editorial de turismo, ciudad y movilidad.</li>
-                </ul>
-              </div>
-              <div className="mt-4 flex items-center justify-between text-xs">
-                <Link href="#" className="text-sky-700 hover:underline">
-                  Visitar sitio →
-                </Link>
-                <div className="flex flex-wrap items-center gap-2 text-slate-500">
-                  <a
-                    href="https://www.instagram.com/sanraval.cl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="Instagram SANRAVAL"
-                  >
-                    <FaInstagram className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://web.facebook.com/sanraval.cl"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="Facebook SANRAVAL"
-                  >
-                    <FaFacebookF className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="https://youtube.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition"
-                    aria-label="YouTube SANRAVAL"
-                  >
-                    <FaYoutube className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+          Dekaelo Media / Dekaelo Pictures
+        </p>
+        <p className="text-sm font-semibold text-slate-900">
+          Producción audiovisual estratégica y cinematográfica.
+        </p>
+        <ul className="space-y-1 text-slate-600">
+          <li>· Vodcasts y contenido corporativo para bancos y empresas.</li>
+          <li>· Producción y dirección cinematográfica.</li>
+        </ul>
+      </div>
+
+      <div className="mt-4 flex items-center justify-between text-xs">
+        <Link href="https://www.dekaelomedia.com" target="_blank" className="text-sky-700 hover:underline">
+          Visitar sitio →
+        </Link>
+        <div className="flex items-center gap-2 text-slate-500">
+          <a href="https://www.instagram.com/dekaelo_media/" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaInstagram className="h-4 w-4" />
+          </a>
+          <a href="https://www.linkedin.com/company/dekaelo-media/" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaLinkedinIn className="h-4 w-4" />
+          </a>
+          <a href="https://www.youtube.com/@dekaelo_media" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaYoutube className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* TRONX STRATEGY */}
+    <div className="card p-4 flex flex-col justify-between hover:border-sky-500/60 transition">
+      
+      <div className="h-28 w-full rounded-xl overflow-hidden mb-3 bg-slate-100">
+        <Image
+          src="/images/unidades/tronx-strategy-webops.jpg"
+          alt="Tronx Strategy"
+          width={600}
+          height={112}
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+          Tronx Strategy
+        </p>
+        <p className="text-sm font-semibold text-slate-900">
+          Estudio de desarrollo web y operación digital B2B.
+        </p>
+        <ul className="space-y-1 text-slate-600">
+          <li>· Sitios corporativos en Next.js sobre Vercel + Cloudflare.</li>
+          <li>· CRM, WebOps y automatizaciones.</li>
+        </ul>
+      </div>
+
+      <div className="mt-4 flex items-center justify-between text-xs">
+        <Link href="https://www.tronxstrategy.com" target="_blank" className="text-sky-700 hover:underline">
+          Visitar sitio →
+        </Link>
+        <div className="flex items-center gap-2 text-slate-500">
+          <a href="https://www.linkedin.com/company/tronx-strategy" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaLinkedinIn className="h-4 w-4" />
+          </a>
+          <a href="https://www.instagram.com/tronxstrategy" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaInstagram className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* TRONX TV */}
+    <div className="card p-4 flex flex-col justify-between hover:border-sky-500/60 transition">
+      
+      <div className="h-28 w-full rounded-xl overflow-hidden mb-3 bg-slate-100">
+        <Image
+          src="/images/unidades/tronx-tv-reality-day.jpg"
+          alt="Tronx TV"
+          width={600}
+          height={112}
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+          Tronx TV
+        </p>
+        <p className="text-sm font-semibold text-slate-900">
+          Medio audiovisual y editorial del holding.
+        </p>
+        <ul className="space-y-1 text-slate-600">
+          <li>· Documentales, entrevistas y programas originales.</li>
+          <li>· Proyecto insignia: Reality Day.</li>
+        </ul>
+      </div>
+
+      <div className="mt-4 flex items-center justify-between text-xs">
+        <Link href="https://www.tronxtv.com" target="_blank" className="text-sky-700 hover:underline">
+          Visitar sitio →
+        </Link>
+        <div className="flex items-center gap-2 text-slate-500">
+          <a href="https://youtube.com/@tronxtv" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaYoutube className="h-4 w-4" />
+          </a>
+          <a href="https://www.instagram.com/tronxtv/" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaInstagram className="h-4 w-4" />
+          </a>
+          <a href="https://web.facebook.com/tronxtv" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaFacebookF className="h-4 w-4" />
+          </a>
+          <a href="https://x.com/tronx_tv" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaXTwitter className="h-4 w-4" />
+          </a>
+          <a href="https://www.tiktok.com/@tronxtv" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaTiktok className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* SANRAVAL */}
+    <div className="card p-4 flex flex-col justify-between hover:border-sky-500/60 transition">
+      
+      <div className="h-28 w-full rounded-xl overflow-hidden mb-3 bg-slate-100">
+        <Image
+          src="/images/unidades/sanraval-mapa.jpg"
+          alt="SANRAVAL"
+          width={600}
+          height={112}
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      <div className="space-y-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+          SANRAVAL
+        </p>
+        <p className="text-sm font-semibold text-slate-900">
+          Guía territorial del eje Santiago–Rancagua–Valparaíso.
+        </p>
+        <ul className="space-y-1 text-slate-600">
+          <li>· Directorio territorial del Chile Central.</li>
+          <li>· Editorial de turismo, ciudad e infraestructura.</li>
+        </ul>
+      </div>
+
+      <div className="mt-4 flex items-center justify-between text-xs">
+        <Link href="https://www.sanraval.cl" target="_blank" className="text-sky-700 hover:underline">
+          Visitar sitio →
+        </Link>
+        <div className="flex items-center gap-2 text-slate-500">
+          <a href="https://www.instagram.com/sanraval.cl" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaInstagram className="h-4 w-4" />
+          </a>
+          <a href="https://web.facebook.com/sanraval.cl" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaFacebookF className="h-4 w-4" />
+          </a>
+          <a href="https://youtube.com" target="_blank" className="p-1 rounded-full border border-slate-200 hover:border-sky-500 hover:text-sky-600 transition">
+            <FaYoutube className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
         {/* MODELO OPERATIVO */}
         <section id="modelo" className="space-y-6">
