@@ -465,32 +465,32 @@ export default function Home() {
 
   <div className="grid gap-4 md:grid-cols-2 text-sm">
     {/* DOMO — Largometraje */}
-    <div
-      className="card relative p-4 flex flex-col justify-between bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/proyecto_domo.jpg')" }}
-    >
-      {/* Overlay oscuro para legibilidad */}
-      <div className="absolute inset-0 bg-black/45" />
+<div
+  className="card relative p-4 flex flex-col justify-between bg-cover bg-center overflow-hidden"
+  style={{ backgroundImage: "url('/proyecto_domo.jpg')" }}
+>
+  {/* Overlay leve */}
+  <div className="absolute inset-0 bg-black/20" />
 
-      <div className="relative space-y-2 z-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-200">
-          Proyecto cinematográfico · Dekaelo Pictures
-        </p>
-        <p className="text-sm font-semibold text-white">
-          DOMO — Largometraje en desarrollo.
-        </p>
-        <p className="text-slate-200">
-          Primer largometraje de ficción del holding. Propiedad intelectual
-          de largo plazo, con foco en festivales, salas independientes y
-          plataformas de streaming.
-        </p>
-        <p className="text-xs text-slate-300 mt-1">
-          Rol dentro del holding: consolida la identidad audiovisual de Tronx
-          Group y alimenta Tronx TV con teasers, making-of y conversaciones en
-          profundidad.
-        </p>
-      </div>
-    </div>
+  <div className="relative space-y-2 z-10">
+    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-100">
+      Proyecto cinematográfico · Dekaelo Pictures
+    </p>
+    <p className="text-sm font-semibold text-white">
+      DOMO — Largometraje en desarrollo.
+    </p>
+    <p className="text-slate-100">
+      Primer largometraje de ficción del holding. Propiedad intelectual
+      de largo plazo, con foco en festivales, salas independientes y
+      plataformas de streaming.
+    </p>
+    <p className="text-xs text-slate-200 mt-1">
+      Rol dentro del holding: consolida la identidad audiovisual de Tronx
+      Group y alimenta Tronx TV con teasers, making-of y conversaciones en
+      profundidad.
+    </p>
+  </div>
+</div>
 
     {/* SANRAVAL — Guía territorial */}
     <div
