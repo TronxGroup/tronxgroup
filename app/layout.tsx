@@ -2,13 +2,17 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";  // ← IMPORT NECESARIO
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Tronx Group SpA — Holding creativo-tecnológico",
   description:
     "Tronx Group SpA es un holding creativo-tecnológico chileno que integra producción audiovisual, desarrollo web, medios editoriales y plataformas territoriales.",
   metadataBase: new URL("https://www.tronxgroup.com"),
+  icons: {
+    icon: "/favicon_tronx_web.png",
+    apple: "/favicon_tronx_web.png"
+  },
   openGraph: {
     title: "Tronx Group SpA — Holding creativo-tecnológico",
     description:
@@ -29,81 +33,62 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="bg-slate-50 text-slate-900">
-       {/* HEADER */}
-<header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-  <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
 
-    {/* Marca Tronx */}
-    <Link href="#top" className="flex items-center gap-3">
-      {/* Logo real más grande */}
-      <div className="relative h-10 w-10 md:h-12 md:w-12">
-        <Image
-          src="/logo_tronx_web.png"
-          alt="Tronx Group"
-          fill
-          className="object-contain"
-        />
-      </div>
+        {/* HEADER */}
+        <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
+          <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
 
-      {/* Texto más pequeño */}
-      <span className="text-[10px] md:text-[10px] font-semibold tracking-[0.18em] uppercase text-slate-600">
-        Creative-Tech Holding
-      </span>
-    </Link>
+            {/* Marca Tronx */}
+            <Link href="#top" className="flex items-center gap-3">
+              <div className="relative h-10 w-10 md:h-12 md:w-12">
+                <Image
+                  src="/logo_tronx_web.png"
+                  alt="Tronx Group"
+                  fill
+                  className="object-contain"
+                />
+              </div>
 
-    {/* Menú principal desktop */}
-    <div className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600">
-      <a
-        href="#servicios"
-        className="group relative inline-flex items-center gap-1 hover:text-sky-700 transition-colors"
-      >
-        <span>Soluciones</span>
-        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-      </a>
+              <span className="text-[10px] md:text-[10px] font-semibold tracking-[0.18em] uppercase text-slate-600">
+                Creative-Tech Holding
+              </span>
+            </Link>
 
-      <a
-        href="#unidades"
-        className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
-      >
-        <span>Holding</span>
-        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-      </a>
+            {/* Menú principal */}
+            <div className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600">
+              <a href="#servicios" className="group relative inline-flex items-center gap-1 hover:text-sky-700 transition-colors">
+                <span>Soluciones</span>
+                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+              </a>
 
-      <a
-        href="#modelo"
-        className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
-      >
-        <span>Modelo cloud</span>
-        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-      </a>
+              <a href="#unidades" className="group relative inline-flex items-center hover:text-sky-700 transition-colors">
+                <span>Holding</span>
+                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+              </a>
 
-      <a
-        href="#iniciativas"
-        className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
-      >
-        <span>Proyectos propios</span>
-        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-      </a>
+              <a href="#modelo" className="group relative inline-flex items-center hover:text-sky-700 transition-colors">
+                <span>Modelo cloud</span>
+                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+              </a>
 
-      <a
-        href="#contacto"
-        className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
-      >
-        <span>Contacto</span>
-        <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
-      </a>
-    </div>
+              <a href="#iniciativas" className="group relative inline-flex items-center hover:text-sky-700 transition-colors">
+                <span>Proyectos propios</span>
+                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+              </a>
 
-    {/* CTA */}
-    <a
-      href="#contacto"
-      className="hidden sm:inline-flex items-center rounded-full border border-sky-600/60 bg-sky-600 px-3 py-1.5 text-[11px] font-medium text-white hover:bg-sky-500 hover:border-sky-500 transition-colors"
-    >
-      Hablar con Tronx
-    </a>
+              <a href="#contacto" className="group relative inline-flex items-center hover:text-sky-700 transition-colors">
+                <span>Contacto</span>
+                <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
+              </a>
+            </div>
 
-  </nav>
-</header>
+            {/* CTA */}
+            <a href="#contacto" className="hidden sm:inline-flex items-center rounded-full border border-sky-600/60 bg-sky-600 px-3 py-1.5 text-[11px] font-medium text-white hover:bg-sky-500 hover:border-sky-500 transition-colors">
+              Hablar con Tronx
+            </a>
+
+          </nav>
+        </header>
 
         {/* CONTENIDO */}
         <main id="top">{children}</main>
@@ -111,19 +96,16 @@ export default function RootLayout({
         {/* FOOTER */}
         <footer className="border-t border-slate-200 mt-12 bg-white">
           <div className="section py-7 text-xs flex flex-col sm:flex-row gap-3 sm:items-center justify-between text-slate-500">
-            <p>
-              © {currentYear} Tronx Group SpA. Todos los derechos reservados.
-            </p>
+            <p>© {currentYear} Tronx Group SpA. Todos los derechos reservados.</p>
+
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
               <p>
-                <a
-                  href="mailto:info@tronxgroup.com"
-                  className="text-sky-700 hover:text-sky-600"
-                >
+                <a href="mailto:info@tronxgroup.com" className="text-sky-700 hover:text-sky-600">
                   info@tronxgroup.com
                 </a>{" "}
                 · +56 9 2008 0031
               </p>
+
               <div className="flex items-center gap-2">
                 <a
                   href="https://x.com/TronxGroup"
@@ -140,6 +122,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+
       </body>
     </html>
   );
