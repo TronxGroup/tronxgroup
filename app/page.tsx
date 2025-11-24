@@ -525,119 +525,87 @@ export default function Home() {
           <h2 className="text-xl font-semibold text-slate-900">
             Contacto · Conversemos el próximo proyecto corporativo
           </h2>
-          <div className="grid gap-8 md:grid-cols-[1.2fr,1fr] text-sm">
-            <form className="space-y-3">
-              <div className="grid gap-3 md:grid-cols-2">
-                <div>
-                  <label className="block text-xs text-slate-500 mb-1">
-                    Nombre y apellido
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 outline-none focus:border-sky-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs text-slate-500 mb-1">
-                    Empresa / institución
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 outline-none focus:border-sky-500"
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-3 md:grid-cols-2">
-                <div>
-                  <label className="block text-xs text-slate-500 mb-1">
-                    Correo
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 outline-none focus:border-sky-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs text-slate-500 mb-1">
-                    Teléfono / WhatsApp
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 outline-none focus:border-sky-500"
-                  />
-                </div>
-              </div>
-
+          <div className="grid gap-6 md:grid-cols-2 text-sm items-stretch">
+            {/* Datos de contacto directos */}
+            <div className="card p-4 flex flex-col justify-between">
               <div>
-                <label className="block text-xs text-slate-500 mb-1">
-                  ¿Qué tipo de proyecto quieres revisar?
-                </label>
-                <select className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 outline-none focus:border-sky-500">
-                  <option>Sitio corporativo / portal gremial</option>
-                  <option>Serie audiovisual / vodcast</option>
-                  <option>Plataforma territorial / directorio</option>
-                  <option>Otro proyecto</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs text-slate-500 mb-1">
-                  Cuéntanos brevemente de tu proyecto
-                </label>
-                <textarea
-                  rows={4}
-                  className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 outline-none focus:border-sky-500"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="btn-primary text-xs px-6 py-2"
-              >
-                Enviar mensaje
-              </button>
-            </form>
-
-            <div className="space-y-4 text-sm">
-              <div className="card p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
                   Contacto directo
                 </p>
-                <p className="mt-2 text-slate-700 text-sm">
-                  También puedes escribir a{" "}
-                  <a
-                    href="mailto:info@tronxgroup.com"
-                    className="text-sky-700 hover:underline"
-                  >
-                    info@tronxgroup.com
-                  </a>{" "}
-                  o por WhatsApp al{" "}
-                  <span className="text-sky-700">+56 9 2008 0031</span>.
+                <p className="mt-3 text-slate-700 text-sm">
+                  Escríbenos por correo o WhatsApp y coordinamos una breve
+                  reunión para entender tu proyecto y ver si somos el equipo
+                  adecuado.
+                </p>
+
+                <div className="mt-4 space-y-2 text-sm">
+                  <p>
+                    <span className="font-semibold text-slate-800">
+                      Correo:&nbsp;
+                    </span>
+                    <a
+                      href="mailto:info@tronxgroup.com"
+                      className="text-sky-700 hover:underline"
+                    >
+                      info@tronxgroup.com
+                    </a>
+                  </p>
+                  <p>
+                    <span className="font-semibold text-slate-800">
+                      WhatsApp:&nbsp;
+                    </span>
+                    <a
+                      href="https://wa.me/56920080031"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-700 hover:underline"
+                    >
+                      +56 9 2008 0031
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="mailto:info@tronxgroup.com"
+                  className="btn-primary text-xs px-6 py-2"
+                >
+                  Escribir un correo
+                </a>
+                <a
+                  href="https://wa.me/56920080031"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost text-xs px-6 py-2"
+                >
+                  Abrir WhatsApp
+                </a>
+              </div>
+            </div>
+
+            {/* Contexto de trabajo (texto solo, sin formulario) */}
+            <div className="card p-4 space-y-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  Forma de trabajo
+                </p>
+                <p className="mt-1 text-slate-600 text-xs">
+                  Proyectos definidos con etapas claras, responsables directos y
+                  entregables concretos. Podemos integrarnos al equipo interno o
+                  trabajar como célula externa especializada.
                 </p>
               </div>
-              <div className="card p-4 space-y-3">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                    Forma de trabajo
-                  </p>
-                  <p className="mt-1 text-slate-600 text-xs">
-                    Proyectos definidos con etapas claras, responsables directos
-                    y entregables concretos. Podemos integrarnos al equipo
-                    interno o trabajar como célula externa especializada.
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                    Enfoque corporativo
-                  </p>
-                  <p className="mt-1 text-slate-600 text-xs">
-                    Experiencia con bancos, cámaras, asociaciones y marcas
-                    personales ejecutivas. Procesos documentados y base
-                    tecnológica alineada con estándares actuales del mundo
-                    corporativo.
-                  </p>
-                </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                  Enfoque corporativo
+                </p>
+                <p className="mt-1 text-slate-600 text-xs">
+                  Experiencia con bancos, cámaras, asociaciones y marcas
+                  personales ejecutivas. Procesos documentados y base
+                  tecnológica alineada con estándares actuales del mundo
+                  corporativo.
+                </p>
               </div>
             </div>
           </div>
