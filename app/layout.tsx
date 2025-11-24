@@ -1,8 +1,9 @@
-// app/layout.tsx
+// tronxgroup/app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Tronx Group SpA — Holding creativo-tecnológico",
@@ -32,6 +33,23 @@ export default function RootLayout({
 
   return (
     <html lang="es">
+      <head>
+        {/* --- Google Analytics (gtag.js) Tronx Group --- */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-3ZXV73VV96"
+        />
+        <Script id="ga-tronx" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3ZXV73VV96');
+          `}
+        </Script>
+        {/* --- End GA --- */}
+      </head>
+
       <body className="bg-slate-50 text-slate-900">
 
         {/* HEADER */}
@@ -56,34 +74,52 @@ export default function RootLayout({
 
             {/* Menú principal */}
             <div className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-600">
-              <a href="#servicios" className="group relative inline-flex items-center gap-1 hover:text-sky-700 transition-colors">
+              <a
+                href="#servicios"
+                className="group relative inline-flex items-center gap-1 hover:text-sky-700 transition-colors"
+              >
                 <span>Soluciones</span>
                 <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
               </a>
 
-              <a href="#unidades" className="group relative inline-flex items-center hover:text-sky-700 transition-colors">
+              <a
+                href="#unidades"
+                className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
+              >
                 <span>Holding</span>
                 <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
               </a>
 
-              <a href="#modelo" className="group relative inline-flex items-center hover:text-sky-700 transition-colors">
+              <a
+                href="#modelo"
+                className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
+              >
                 <span>Modelo cloud</span>
                 <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
               </a>
 
-              <a href="#iniciativas" className="group relative inline-flex items-center hover:text-sky-700 transition-colors">
+              <a
+                href="#iniciativas"
+                className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
+              >
                 <span>Proyectos propios</span>
                 <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
               </a>
 
-              <a href="#contacto" className="group relative inline-flex items-center hover:text-sky-700 transition-colors">
+              <a
+                href="#contacto"
+                className="group relative inline-flex items-center hover:text-sky-700 transition-colors"
+              >
                 <span>Contacto</span>
                 <span className="pointer-events-none absolute inset-x-0 -bottom-1 h-px scale-x-0 bg-sky-500/70 transition-transform duration-200 origin-center group-hover:scale-x-100" />
               </a>
             </div>
 
             {/* CTA */}
-            <a href="#contacto" className="hidden sm:inline-flex items-center rounded-full border border-sky-600/60 bg-sky-600 px-3 py-1.5 text-[11px] font-medium text-white hover:bg-sky-500 hover:border-sky-500 transition-colors">
+            <a
+              href="#contacto"
+              className="hidden sm:inline-flex items-center rounded-full border border-sky-600/60 bg-sky-600 px-3 py-1.5 text-[11px] font-medium text-white hover:bg-sky-500 hover:border-sky-500 transition-colors"
+            >
               Hablar con Tronx
             </a>
 
@@ -100,7 +136,10 @@ export default function RootLayout({
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
               <p>
-                <a href="mailto:info@tronxgroup.com" className="text-sky-700 hover:text-sky-600">
+                <a
+                  href="mailto:info@tronxgroup.com"
+                  className="text-sky-700 hover:text-sky-600"
+                >
                   info@tronxgroup.com
                 </a>{" "}
                 · +56 9 2008 0031
