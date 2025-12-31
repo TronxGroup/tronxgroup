@@ -55,6 +55,8 @@ function Card({
   imageAlt: string;
   socials?: Array<{ href: string; icon: React.ReactNode; label: string }>;
 }) {
+  const isExternal = /^https?:\/\//i.test(href);
+
   return (
     <div className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-sky-500/60 hover:shadow-sm">
       <div className="h-28 w-full overflow-hidden rounded-xl bg-slate-100">
@@ -82,13 +84,23 @@ function Card({
       </div>
 
       <div className="mt-4 flex items-center justify-between gap-3 text-xs">
-        <Link
-          href={href}
-          target="_blank"
-          className="font-semibold text-sky-700 hover:underline"
-        >
-          {cta} →
-        </Link>
+        {isExternal ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-sky-700 hover:underline"
+          >
+            {cta} →
+          </a>
+        ) : (
+          <Link
+            href={href as any}
+            className="font-semibold text-sky-700 hover:underline"
+          >
+            {cta} →
+          </Link>
+        )}
 
         {socials?.length ? (
           <div className="flex items-center gap-2 text-slate-500">
