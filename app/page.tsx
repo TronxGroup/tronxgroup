@@ -624,26 +624,5 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FOOTER simple */}
-        <footer className="border-t border-slate-200 pt-8 text-xs text-slate-500">
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <p>© {new Date().getFullYear()} Tronx Group SpA · Operación cloud · Chile</p>
-            <div className="flex flex-wrap items-center gap-2">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="hover:text-slate-700">
-                LinkedIn
-              </a>
-              <span className="text-slate-300">·</span>
-              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="hover:text-slate-700">
-                Instagram
-              </a>
-              <span className="text-slate-300">·</span>
-              <a href="mailto:info@tronxgroup.com" className="hover:text-slate-700">
-                Email
-              </a>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </main>
-  );
+        
 }
