@@ -1,6 +1,7 @@
 // app/page.tsx
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import type { ReactNode } from "react";
 import {
   FaInstagram,
   FaFacebookF,
@@ -9,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter, FaTiktok } from "react-icons/fa6";
 
-function Pill({ children }: { children: React.ReactNode }) {
+function Pill({ children }: { children: ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-[0.7rem] font-semibold tracking-[0.14em] text-slate-600">
       {children}
@@ -17,13 +18,7 @@ function Pill({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Stat({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
+function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4">
       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
@@ -33,6 +28,28 @@ function Stat({
     </div>
   );
 }
+
+function SectionHeader({
+  title,
+  desc,
+  right,
+}: {
+  title: string;
+  desc?: string;
+  right?: ReactNode;
+}) {
+  return (
+    <div className="flex items-baseline justify-between gap-4">
+      <div className="space-y-1">
+        <h2 className="text-xl font-semibold text-slate-900">{title}</h2>
+        {desc ? <p className="max-w-md text-xs text-slate-500">{desc}</p> : null}
+      </div>
+      {right ? <div className="hidden sm:block">{right}</div> : null}
+    </div>
+  );
+}
+
+type Social = { href: string; icon: ReactNode; label: string };
 
 function Card({
   eyebrow,
@@ -53,7 +70,7 @@ function Card({
   cta: string;
   imageSrc: string;
   imageAlt: string;
-  socials?: Array<{ href: string; icon: React.ReactNode; label: string }>;
+  socials?: Social[];
 }) {
   const isExternal = /^https?:\/\//i.test(href);
 
@@ -95,7 +112,7 @@ function Card({
           </a>
         ) : (
           <Link
-            href={href as any}
+            href={href as unknown as any}
             className="font-semibold text-sky-700 hover:underline"
           >
             {cta} →
@@ -127,8 +144,8 @@ function Card({
 export default function Home() {
   return (
     <main className="bg-slate-50">
-      <div className="mx-auto max-w-6xl px-4 pb-16 pt-10 space-y-20">
-        {/* HERO — posicionamiento de FIRMA (no holding) */}
+      <div className="mx-auto max-w-6xl space-y-20 px-4 pb-16 pt-10">
+        {/* HERO */}
         <section className="grid items-center gap-10 md:grid-cols-[1.15fr,1fr]">
           <div className="space-y-6">
             <div className="flex flex-wrap gap-2">
@@ -146,7 +163,8 @@ export default function Home() {
             </h1>
 
             <p className="max-w-xl text-sm text-slate-600">
-              Trabajamos como <span className="font-semibold text-slate-800">célula experta</span>:
+              Trabajamos como{" "}
+              <span className="font-semibold text-slate-800">célula experta</span>:
               menos capas, más criterio y ejecución directa. Entregamos sitios y sistemas
               conectados a CRM, y producimos contenido con estándar cinematográfico para
               equipos internos y marca empleadora.
@@ -186,11 +204,11 @@ export default function Home() {
             </div>
 
             <p className="text-xs text-slate-500">
-              * Tronx Group SpA es la razón social de facturación. Las marcas son líneas de solución.
+              * Tronx Group SpA es la razón social de facturación. Las marcas operan como líneas de solución.
             </p>
           </div>
 
-          {/* Panel derecho: hero visual + prueba social breve */}
+          {/* Hero visual */}
           <div className="relative h-72 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 md:h-[22rem]">
             <Image
               src="/images/hero/tronx-hero.jpg"
@@ -219,16 +237,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SERVICIOS — paquetes claros (evita sensación “holding”) */}
+        {/* SERVICIOS */}
         <section id="servicios" className="space-y-6">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-slate-900">
-              Qué hacemos (en simple)
-            </h2>
-            <p className="max-w-md text-xs text-slate-500">
-              Tres líneas principales, con entregables claros y operación medible.
-            </p>
-          </div>
+          <SectionHeader
+            title="Qué hacemos (en simple)"
+            desc="Tres líneas principales, con entregables claros y operación medible."
+            right={
+              <a
+                href="#contacto"
+                className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm transition hover:border-sky-500 hover:text-sky-700"
+              >
+                Pedir propuesta
+              </a>
+            }
+          />
 
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
@@ -245,7 +267,10 @@ export default function Home() {
                 <li>· Optimización de performance</li>
               </ul>
               <div className="mt-4">
-                <a href="#contacto" className="text-xs font-semibold text-sky-700 hover:underline">
+                <a
+                  href="#contacto"
+                  className="text-xs font-semibold text-sky-700 hover:underline"
+                >
                   Cotizar WebOps →
                 </a>
               </div>
@@ -265,7 +290,10 @@ export default function Home() {
                 <li>· Post y color consistente</li>
               </ul>
               <div className="mt-4">
-                <a href="#contacto" className="text-xs font-semibold text-sky-700 hover:underline">
+                <a
+                  href="#contacto"
+                  className="text-xs font-semibold text-sky-700 hover:underline"
+                >
                   Cotizar audiovisual →
                 </a>
               </div>
@@ -285,7 +313,10 @@ export default function Home() {
                 <li>· Guion, rodaje, edición</li>
               </ul>
               <div className="mt-4">
-                <a href="#unidades" className="text-xs font-semibold text-sky-700 hover:underline">
+                <a
+                  href="#unidades"
+                  className="text-xs font-semibold text-sky-700 hover:underline"
+                >
                   Ver formatos →
                 </a>
               </div>
@@ -293,29 +324,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* POR QUÉ TRONX — elimina “holding vibes” y sube confianza */}
+        {/* POR QUÉ */}
         <section id="porque" className="space-y-6">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-slate-900">
-              Por qué funciona
-            </h2>
-            <p className="max-w-md text-xs text-slate-500">
-              Diseñado para organizaciones que necesitan velocidad, claridad y un estándar alto.
-            </p>
-          </div>
+          <SectionHeader
+            title="Por qué funciona"
+            desc="Diseñado para organizaciones que necesitan velocidad, claridad y un estándar alto."
+          />
 
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
               <h3 className="text-sm font-semibold text-slate-900">Ejecución directa</h3>
               <p className="mt-2 text-sm text-slate-600">
-                Menos intermediarios. Proyectos con etapas claras, responsables directos y entregables concretos.
+                Menos intermediarios. Etapas claras, responsables directos y entregables concretos.
               </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
               <h3 className="text-sm font-semibold text-slate-900">Operación trazable</h3>
               <p className="mt-2 text-sm text-slate-600">
-                CRM, medición y flujos cuando aportan control real. Lo que se hace, se puede medir y repetir.
+                CRM, medición y flujos cuando aportan control real. Lo hecho se puede medir y repetir.
               </p>
             </div>
 
@@ -328,16 +355,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* UNIDADES — renombrar para que no sea “holding”: “Líneas de trabajo” */}
+        {/* LÍNEAS */}
         <section id="unidades" className="space-y-6">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-slate-900">
-              Líneas de trabajo
-            </h2>
-            <p className="max-w-md text-xs text-slate-500">
-              Marcas con foco específico. Una sola operación y un mismo estándar de ejecución.
-            </p>
-          </div>
+          <SectionHeader
+            title="Líneas de trabajo"
+            desc="Marcas con foco específico. Una sola operación y un mismo estándar de ejecución."
+          />
 
           <div className="grid gap-4 md:grid-cols-2">
             <Card
@@ -354,9 +377,21 @@ export default function Home() {
               imageSrc="/images/unidades/dekaelo-set.jpg"
               imageAlt="Dekaelo Media"
               socials={[
-                { href: "https://www.instagram.com/dekaelo_media/", icon: <FaInstagram className="h-4 w-4" />, label: "Instagram Dekaelo" },
-                { href: "https://www.linkedin.com/company/dekaelo-media/", icon: <FaLinkedinIn className="h-4 w-4" />, label: "LinkedIn Dekaelo" },
-                { href: "https://www.youtube.com/@dekaelo_media", icon: <FaYoutube className="h-4 w-4" />, label: "YouTube Dekaelo" },
+                {
+                  href: "https://www.instagram.com/dekaelo_media/",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram Dekaelo",
+                },
+                {
+                  href: "https://www.linkedin.com/company/dekaelo-media/",
+                  icon: <FaLinkedinIn className="h-4 w-4" />,
+                  label: "LinkedIn Dekaelo",
+                },
+                {
+                  href: "https://www.youtube.com/@dekaelo_media",
+                  icon: <FaYoutube className="h-4 w-4" />,
+                  label: "YouTube Dekaelo",
+                },
               ]}
             />
 
@@ -374,8 +409,16 @@ export default function Home() {
               imageSrc="/images/unidades/tronx-strategy-webops.jpg"
               imageAlt="Tronx Strategy"
               socials={[
-                { href: "https://www.linkedin.com/company/tronx-strategy", icon: <FaLinkedinIn className="h-4 w-4" />, label: "LinkedIn Tronx Strategy" },
-                { href: "https://www.instagram.com/tronxstrategy", icon: <FaInstagram className="h-4 w-4" />, label: "Instagram Tronx Strategy" },
+                {
+                  href: "https://www.linkedin.com/company/tronx-strategy",
+                  icon: <FaLinkedinIn className="h-4 w-4" />,
+                  label: "LinkedIn Tronx Strategy",
+                },
+                {
+                  href: "https://www.instagram.com/tronxstrategy",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram Tronx Strategy",
+                },
               ]}
             />
 
@@ -393,11 +436,31 @@ export default function Home() {
               imageSrc="/images/unidades/tronx-tv-reality-day.jpg"
               imageAlt="Tronx TV"
               socials={[
-                { href: "https://youtube.com/@tronxtv", icon: <FaYoutube className="h-4 w-4" />, label: "YouTube Tronx TV" },
-                { href: "https://www.instagram.com/tronxtv/", icon: <FaInstagram className="h-4 w-4" />, label: "Instagram Tronx TV" },
-                { href: "https://web.facebook.com/tronxtv", icon: <FaFacebookF className="h-4 w-4" />, label: "Facebook Tronx TV" },
-                { href: "https://x.com/tronx_tv", icon: <FaXTwitter className="h-4 w-4" />, label: "X Tronx TV" },
-                { href: "https://www.tiktok.com/@tronxtv", icon: <FaTiktok className="h-4 w-4" />, label: "TikTok Tronx TV" },
+                {
+                  href: "https://youtube.com/@tronxtv",
+                  icon: <FaYoutube className="h-4 w-4" />,
+                  label: "YouTube Tronx TV",
+                },
+                {
+                  href: "https://www.instagram.com/tronxtv/",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram Tronx TV",
+                },
+                {
+                  href: "https://web.facebook.com/tronxtv",
+                  icon: <FaFacebookF className="h-4 w-4" />,
+                  label: "Facebook Tronx TV",
+                },
+                {
+                  href: "https://x.com/tronx_tv",
+                  icon: <FaXTwitter className="h-4 w-4" />,
+                  label: "X Tronx TV",
+                },
+                {
+                  href: "https://www.tiktok.com/@tronxtv",
+                  icon: <FaTiktok className="h-4 w-4" />,
+                  label: "TikTok Tronx TV",
+                },
               ]}
             />
 
@@ -415,24 +478,27 @@ export default function Home() {
               imageSrc="/images/unidades/sanraval-mapa.jpg"
               imageAlt="SANRAVAL"
               socials={[
-                { href: "https://www.instagram.com/sanraval.cl", icon: <FaInstagram className="h-4 w-4" />, label: "Instagram SANRAVAL" },
-                { href: "https://web.facebook.com/sanraval.cl", icon: <FaFacebookF className="h-4 w-4" />, label: "Facebook SANRAVAL" },
-                { href: "https://youtube.com", icon: <FaYoutube className="h-4 w-4" />, label: "YouTube SANRAVAL" },
+                {
+                  href: "https://www.instagram.com/sanraval.cl",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram SANRAVAL",
+                },
+                {
+                  href: "https://web.facebook.com/sanraval.cl",
+                  icon: <FaFacebookF className="h-4 w-4" />,
+                  label: "Facebook SANRAVAL",
+                },
               ]}
             />
           </div>
         </section>
 
-        {/* MODELO OPERATIVO — mantener pero simplificar el tono */}
+        {/* MODELO */}
         <section id="modelo" className="space-y-6">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-slate-900">
-              Cómo operamos (cloud + simple)
-            </h2>
-            <p className="max-w-md text-xs text-slate-500">
-              Infraestructura liviana, segura y documentada. Complejidad solo cuando agrega valor.
-            </p>
-          </div>
+          <SectionHeader
+            title="Cómo operamos (cloud + simple)"
+            desc="Infraestructura liviana, segura y documentada. Complejidad solo cuando agrega valor."
+          />
 
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
@@ -462,16 +528,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* INICIATIVAS — mantener, pero quitar “holding” del copy */}
+        {/* INICIATIVAS */}
         <section id="iniciativas" className="space-y-6">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-slate-900">
-              Activos propios (largo plazo)
-            </h2>
-            <p className="max-w-md text-xs text-slate-500">
-              Proyectos que fortalecen identidad, reputación y oportunidades futuras.
-            </p>
-          </div>
+          <SectionHeader
+            title="Activos propios (largo plazo)"
+            desc="Proyectos que fortalecen identidad, reputación y oportunidades futuras."
+          />
 
           <div className="grid gap-4 md:grid-cols-2">
             <div
@@ -514,16 +576,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CONTACTO — CTA más “premium” y menos “equipo grande” */}
+        {/* CONTACTO */}
         <section id="contacto" className="space-y-6">
-          <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-xl font-semibold text-slate-900">
-              Contacto
-            </h2>
-            <p className="max-w-md text-xs text-slate-500">
-              Escríbenos y coordinamos una reunión breve para entender el proyecto y confirmar encaje.
-            </p>
-          </div>
+          <SectionHeader
+            title="Contacto"
+            desc="Escríbenos y coordinamos una reunión breve para entender el proyecto y confirmar encaje."
+          />
 
           <div className="grid gap-6 md:grid-cols-2 items-stretch">
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
@@ -555,7 +613,10 @@ export default function Home() {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="mailto:info@tronxgroup.com" className="btn-primary text-xs px-6 py-2">
+                <a
+                  href="mailto:info@tronxgroup.com"
+                  className="btn-primary text-xs px-6 py-2"
+                >
                   Escribir un correo
                 </a>
                 <a
@@ -624,5 +685,31 @@ export default function Home() {
           </div>
         </section>
 
-        
+        {/* CIERRE */}
+        <section className="rounded-2xl border border-slate-200 bg-white p-6">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div className="space-y-1">
+              <p className="text-sm font-semibold text-slate-900">
+                ¿Tienes un proyecto en mente?
+              </p>
+              <p className="text-sm text-slate-600">
+                Coordinemos una reunión breve y te decimos el mejor camino (y si hace sentido trabajar juntos).
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <a href="#contacto" className="btn-primary text-xs px-6 py-2">
+                Agendar reunión
+              </a>
+              <a
+                href="mailto:info@tronxgroup.com"
+                className="btn-ghost text-xs px-6 py-2"
+              >
+                Escribir ahora
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
 }
