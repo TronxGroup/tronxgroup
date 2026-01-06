@@ -1,13 +1,8 @@
 // app/page.tsx
 import Image from "next/image";
 import type { ReactNode } from "react";
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaYoutube,
-  FaLinkedinIn,
-} from "react-icons/fa";
-import { FaXTwitter, FaTiktok } from "react-icons/fa6";
+import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa6";
 
 type Social = { href: string; icon: ReactNode; label: string };
 
@@ -57,8 +52,7 @@ function SectionHeader({
 }
 
 /**
- * Next typed routes can reject generic string href for <Link/>.
- * For a one-page landing (anchors) + external URLs, <a> is correct and reliable.
+ * One-page sections + external URLs: keep <a> to avoid Next typed route constraints.
  */
 function SmartLink({
   href,
@@ -75,24 +69,15 @@ function SmartLink({
   const isHash = href.startsWith("#");
   const isMailOrTel = /^(mailto:|tel:)/i.test(href);
 
-  if (isExternal || isHash || isMailOrTel) {
-    return (
-      <a
-        href={href}
-        aria-label={ariaLabel}
-        className={className}
-        {...(isExternal
-          ? { target: "_blank", rel: "noopener noreferrer" }
-          : {})}
-      >
-        {children}
-      </a>
-    );
-  }
-
-  // For future internal routes ("/legal"), keep <a> to avoid typed route issues.
   return (
-    <a href={href} aria-label={ariaLabel} className={className}>
+    <a
+      href={href}
+      aria-label={ariaLabel}
+      className={className}
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      {...(isMailOrTel ? {} : {})}
+      {...(isHash ? {} : {})}
+    >
       {children}
     </a>
   );
@@ -222,63 +207,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50">
       {/* Top glow */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[22rem] bg-gradient-to-b from-sky-100/55 via-slate-50 to-slate-50" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[18rem] bg-gradient-to-b from-sky-100/55 via-slate-50 to-slate-50" />
 
       <div className="mx-auto max-w-6xl space-y-16 px-4 pb-16 pt-10">
-        {/* NAV */}
-        <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <div className="grid h-10 w-10 place-items-center rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <span className="text-sm font-semibold tracking-tight text-slate-900">
-                TG
-              </span>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Tronx Group</p>
-              <p className="text-xs text-slate-500">
-                Firma especializada · Audiovisual &amp; WebOps
-              </p>
-            </div>
-          </div>
-
-          <nav className="flex flex-wrap items-center gap-2 text-xs">
-            <a
-              href="#servicios"
-              className="rounded-full px-3 py-2 font-semibold text-slate-700 hover:text-sky-700"
-            >
-              Soluciones
-            </a>
-            <a
-              href="#unidades"
-              className="rounded-full px-3 py-2 font-semibold text-slate-700 hover:text-sky-700"
-            >
-              Líneas
-            </a>
-            <a
-              href="#modelo"
-              className="rounded-full px-3 py-2 font-semibold text-slate-700 hover:text-sky-700"
-            >
-              Modelo cloud
-            </a>
-            <a
-              href="#activos"
-              className="rounded-full px-3 py-2 font-semibold text-slate-700 hover:text-sky-700"
-            >
-              Activos propios
-            </a>
-            <a
-              href="#contacto"
-              className="rounded-full px-3 py-2 font-semibold text-slate-700 hover:text-sky-700"
-            >
-              Contacto
-            </a>
-
-            <AnchorButton href="#contacto" variant="primary">
-              Agendar reunión
-            </AnchorButton>
-          </nav>
-        </header>
-
         {/* HERO */}
         <section className="grid items-center gap-10 md:grid-cols-[1.08fr,1fr]">
           <div className="space-y-6">
@@ -289,7 +220,8 @@ export default function Home() {
               <Pill>Chile</Pill>
             </div>
 
-            <h1 className="text-3xl font-semibold leading-tight text-slate-900 md:text-5xl md:leading-[1.05]">
+            {/* Smaller hero type */}
+            <h1 className="text-2xl font-semibold leading-tight text-slate-900 md:text-4xl md:leading-[1.1]">
               Tronx Group —{" "}
               <span className="text-slate-800">
                 ejecución directa para comunicación audiovisual y operación digital.
@@ -347,7 +279,7 @@ export default function Home() {
 
           {/* Hero visual */}
           <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm">
-            <div className="relative h-80 md:h-[26rem]">
+            <div className="relative h-80 md:h-[24rem]">
               <Image
                 src="/images/hero/tronx-hero.jpg"
                 alt="Tronx Group · Producción y operación digital"
@@ -363,8 +295,8 @@ export default function Home() {
                 Entrega rápida · Criterio senior
               </p>
               <p className="mt-2 text-sm text-slate-100">
-                Arquitectura cloud (Vercel, Cloudflare, GitHub), CRM y analítica moderna
-                para operar liviano, con trazabilidad y documentación.
+                Arquitectura cloud (Vercel, Cloudflare, GitHub), CRM y analítica
+                moderna para operar liviano, con trazabilidad y documentación.
               </p>
 
               <div className="mt-4 grid grid-cols-3 gap-2">
@@ -613,11 +545,7 @@ export default function Home() {
                   icon: <FaFacebookF className="h-4 w-4" />,
                   label: "Facebook Tronx TV",
                 },
-                {
-                  href: "https://x.com/tronx_tv",
-                  icon: <FaXTwitter className="h-4 w-4" />,
-                  label: "X Tronx TV",
-                },
+                // X eliminado por solicitud
                 {
                   href: "https://www.tiktok.com/@tronxtv",
                   icon: <FaTiktok className="h-4 w-4" />,
@@ -871,7 +799,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CIERRE */}
+        {/* CTA FINAL (sin footer) */}
         <section className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="space-y-1">
@@ -897,41 +825,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <footer className="space-y-3 pb-2 text-center">
-          <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} Tronx Group SpA. Todos los derechos reservados.
-          </p>
-
-          <p className="text-xs text-slate-500">
-            Tronx Group SpA es la razón social de facturación. Las marcas operan como
-            líneas de solución.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
-            <a href="mailto:info@tronxgroup.com" className="hover:text-sky-700">
-              info@tronxgroup.com
-            </a>
-            <span aria-hidden>·</span>
-            <a
-              href="https://wa.me/56920080031"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-sky-700"
-            >
-              +56 9 2008 0031
-            </a>
-            <span aria-hidden>·</span>
-            <a
-              href="https://x.com/TronxGroup"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-sky-700"
-            >
-              X @TronxGroup
-            </a>
-          </div>
-        </footer>
       </div>
     </main>
   );
