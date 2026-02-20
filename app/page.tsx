@@ -129,7 +129,7 @@ export default function Home() {
         <section className="grid items-center gap-16 md:grid-cols-[1.1fr,1fr]">
           <div className="space-y-8">
             <div className="flex flex-wrap gap-2">
-              <Pill>Holding corporativo independiente</Pill>
+              <Pill>Grupo corporativo independiente</Pill>
               <Pill>Infraestructura estratégica</Pill>
               <Pill>Activos propios</Pill>
             </div>
