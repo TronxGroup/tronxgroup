@@ -253,27 +253,32 @@ export default function Home() {
             />
 
             <BrandBlock
-              title="Tronx TV"
-              description="Desarrollo de formatos audiovisuales y plataformas culturales."
-              url="https://www.tronxtv.com"
-              socials={[
-                {
-                  href: "https://www.instagram.com/tronxtv/",
-                  icon: <FaInstagram className="h-4 w-4" />,
-                  label: "Instagram",
-                },
-                {
-                  href: "https://www.tiktok.com/@tronxtv",
-                  icon: <FaTiktok className="h-4 w-4" />,
-                  label: "TikTok",
-                },
-                {
-                  href: "https://web.facebook.com/tronxtv/",
-                  icon: <FaFacebook className="h-4 w-4" />,
-                  label: "Facebook",
-                },
-              ]}
-            />
+  title="Tronx TV"
+  description="Desarrollo de formatos audiovisuales y plataformas culturales."
+  url="https://www.tronxtv.com"
+  socials={[
+    {
+      href: "https://youtube.com/@tronxtv",
+      icon: <FaYoutube className="h-4 w-4" />,
+      label: "YouTube",
+    },
+    {
+      href: "https://www.instagram.com/tronxtv/",
+      icon: <FaInstagram className="h-4 w-4" />,
+      label: "Instagram",
+    },
+    {
+      href: "https://www.tiktok.com/@tronxtv",
+      icon: <FaTiktok className="h-4 w-4" />,
+      label: "TikTok",
+    },
+    {
+      href: "https://web.facebook.com/tronxtv/",
+      icon: <FaFacebook className="h-4 w-4" />,
+      label: "Facebook",
+    },
+  ]}
+/>
 
             <BrandBlock
               title="SANRAVAL"
