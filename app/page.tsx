@@ -65,6 +65,7 @@ function SmartLink({
 
 function SocialIcons({ socials }: { socials?: Social[] }) {
   if (!socials?.length) return null;
+
   return (
     <div className="flex items-center gap-2 text-slate-500">
       {socials.map((s) => (
@@ -74,7 +75,7 @@ function SocialIcons({ socials }: { socials?: Social[] }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          className="rounded-full border border-slate-200 bg-white p-2 transition hover:border-slate-400"
+          className="rounded-full border border-slate-200 bg-white p-2 transition hover:border-slate-400 hover:text-slate-800"
         >
           {s.icon}
         </a>
@@ -174,7 +175,6 @@ export default function Home() {
           />
 
           <div className="grid gap-10 md:grid-cols-3">
-
             <div>
               <h3 className="text-lg font-semibold text-slate-900">
                 Producción estratégica
@@ -201,7 +201,6 @@ export default function Home() {
                 Desarrollo de propiedad intelectual y plataformas propias.
               </p>
             </div>
-
           </div>
         </section>
 
@@ -216,6 +215,7 @@ export default function Home() {
 
           <div className="grid gap-14 md:grid-cols-2">
 
+            {/* DEKAELO */}
             <BrandBlock
               title="Dekaelo Media"
               description="Producción audiovisual corporativa para banca y organizaciones."
@@ -234,6 +234,7 @@ export default function Home() {
               ]}
             />
 
+            {/* TRONX STRATEGY */}
             <BrandBlock
               title="Tronx Strategy"
               description="Web corporativa moderna, medición real y operación digital."
@@ -252,39 +253,46 @@ export default function Home() {
               ]}
             />
 
+            {/* TRONX TV */}
             <BrandBlock
-  title="Tronx TV"
-  description="Desarrollo de formatos audiovisuales y plataformas culturales."
-  url="https://www.tronxtv.com"
-  socials={[
-    {
-      href: "https://youtube.com/@tronxtv",
-      icon: <FaYoutube className="h-4 w-4" />,
-      label: "YouTube",
-    },
-    {
-      href: "https://www.instagram.com/tronxtv/",
-      icon: <FaInstagram className="h-4 w-4" />,
-      label: "Instagram",
-    },
-    {
-      href: "https://www.tiktok.com/@tronxtv",
-      icon: <FaTiktok className="h-4 w-4" />,
-      label: "TikTok",
-    },
-    {
-      href: "https://web.facebook.com/tronxtv/",
-      icon: <FaFacebook className="h-4 w-4" />,
-      label: "Facebook",
-    },
-  ]}
-/>
+              title="Tronx TV"
+              description="Desarrollo de formatos audiovisuales y plataformas culturales."
+              url="https://www.tronxtv.com"
+              socials={[
+                {
+                  href: "https://youtube.com/@tronxtv",
+                  icon: <FaYoutube className="h-4 w-4" />,
+                  label: "YouTube",
+                },
+                {
+                  href: "https://www.instagram.com/tronxtv/",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram",
+                },
+                {
+                  href: "https://www.tiktok.com/@tronxtv",
+                  icon: <FaTiktok className="h-4 w-4" />,
+                  label: "TikTok",
+                },
+                {
+                  href: "https://web.facebook.com/tronxtv/",
+                  icon: <FaFacebook className="h-4 w-4" />,
+                  label: "Facebook",
+                },
+              ]}
+            />
 
+            {/* SANRAVAL */}
             <BrandBlock
               title="SANRAVAL"
               description="Plataforma territorial del eje Santiago–Rancagua–Valparaíso."
               url="https://www.sanraval.cl"
               socials={[
+                {
+                  href: "https://web.facebook.com/sanraval.cl",
+                  icon: <FaFacebook className="h-4 w-4" />,
+                  label: "Facebook",
+                },
                 {
                   href: "https://www.instagram.com/sanraval.cl",
                   icon: <FaInstagram className="h-4 w-4" />,
