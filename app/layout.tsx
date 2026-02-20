@@ -96,13 +96,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="es" suppressHydrationWarning>
       <body className="bg-slate-50 text-slate-900 antialiased">
 
-        {/* Performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
 
         <Analytics />
 
-        {/* JSON-LD Organization */}
         <Script
           id="ld-org"
           type="application/ld+json"
@@ -122,6 +120,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@type": "PostalAddress",
               addressCountry: "CL",
             },
+            sameAs: [
+              "https://x.com/TronxGroup"
+            ]
           })}
         </Script>
 
@@ -129,7 +130,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
           <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
-            {/* Logo */}
             <a href="/" className="flex items-center gap-3">
               <div className="relative h-9 w-9 md:h-11 md:w-11">
                 <Image
@@ -151,14 +151,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </div>
             </a>
 
-            {/* Navigation */}
             <div className="hidden items-center gap-8 md:flex">
               <NavLink href="#enfoque">Enfoque</NavLink>
               <NavLink href="#marcas">Marcas</NavLink>
               <NavLink href="#contacto">Contacto</NavLink>
             </div>
 
-            {/* Contact CTA minimal */}
             <a
               href="#contacto"
               className="hidden rounded-full border border-slate-300 px-4 py-1.5 text-[11px] font-semibold text-slate-800 transition hover:border-slate-900 sm:inline-flex"
@@ -175,7 +173,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </nav>
         </header>
 
-        {/* MAIN */}
         <main>{children}</main>
 
         {/* FOOTER */}
@@ -184,7 +181,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
             <div className="grid gap-8 md:grid-cols-2">
 
-              {/* Left */}
               <div className="space-y-3 text-sm text-slate-600">
                 <p className="font-semibold text-slate-900">
                   Tronx Group SpA
@@ -198,7 +194,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 </p>
               </div>
 
-              {/* Right */}
               <div className="space-y-3 text-sm md:text-right">
                 <p>
                   <a
@@ -208,6 +203,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     info@tronxgroup.com
                   </a>
                 </p>
+
                 <p>
                   <a
                     href="https://wa.me/56920080031"
@@ -218,6 +214,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     +56 9 2008 0031
                   </a>
                 </p>
+
+                {/* X */}
+                <p>
+                  <a
+                    href="https://x.com/TronxGroup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-slate-800 hover:text-slate-600"
+                  >
+                    X / @TronxGroup
+                  </a>
+                </p>
+
                 <p className="text-xs text-slate-500">
                   Tronx Group SpA es la razón social de facturación.
                 </p>
