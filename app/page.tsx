@@ -22,8 +22,8 @@ function SectionHeader({
   desc?: string;
 }) {
   return (
-    <div className="space-y-3">
-      <h2 className="text-2xl font-semibold text-slate-900 md:text-3xl">
+    <div className="space-y-4">
+      <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
         {title}
       </h2>
       {desc && (
@@ -84,30 +84,30 @@ function Divider() {
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50">
-      <div className="mx-auto max-w-6xl space-y-24 px-4 pb-24 pt-20">
+      <div className="mx-auto max-w-6xl space-y-28 px-4 pb-28 pt-24">
 
         {/* HERO */}
-        <section className="grid items-center gap-14 md:grid-cols-[1.1fr,1fr]">
+        <section className="grid items-center gap-16 md:grid-cols-[1.1fr,1fr]">
           <div className="space-y-8">
             <div className="flex flex-wrap gap-2">
-              <Pill>Grupo corporativo independiente</Pill>
-              <Pill>Comunicación audiovisual</Pill>
-              <Pill>Operación digital</Pill>
+              <Pill>Holding corporativo independiente</Pill>
+              <Pill>Producción estratégica</Pill>
+              <Pill>Infraestructura digital</Pill>
             </div>
 
-            <h1 className="text-4xl font-semibold leading-tight text-slate-900 md:text-6xl md:leading-[1.05]">
+            <h1 className="text-5xl font-semibold leading-tight text-slate-900 md:text-6xl md:leading-[1.05]">
               Tronx Group
             </h1>
 
             <p className="max-w-2xl text-base text-slate-600 md:text-lg">
-              Estructura corporativa que integra producción audiovisual,
-              operación digital y desarrollo editorial bajo un mismo estándar
-              estratégico.
+              Grupo corporativo que integra comunicación audiovisual,
+              operación digital y plataformas editoriales bajo
+              una misma lógica estratégica y estándar de ejecución.
             </p>
 
             <p className="max-w-xl text-sm text-slate-500">
-              Las marcas operan de forma independiente,
-              manteniendo coherencia estructural y dirección común.
+              Las marcas operan de forma autónoma,
+              compartiendo estructura, visión y dirección común.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export default function Home() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
             </div>
           </div>
         </section>
@@ -128,41 +128,41 @@ export default function Home() {
         <Divider />
 
         {/* ENFOQUE */}
-        <section id="enfoque" className="scroll-mt-28 space-y-12">
+        <section id="enfoque" className="scroll-mt-28 space-y-14">
           <SectionHeader
-            title="Enfoque"
-            desc="Estructura liviana, liderazgo directo y crecimiento por capas."
+            title="Enfoque estructural"
+            desc="Crecimiento por capas, dirección estratégica y ejecución controlada."
           />
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-3">
 
-            <div className="space-y-3">
+            <div>
               <h3 className="text-lg font-semibold text-slate-900">
                 Comunicación audiovisual
               </h3>
-              <p className="text-sm text-slate-600">
-                Producción estratégica para instituciones y empresas.
-                Narrativa clara, ejecución precisa y estándar visual consistente.
+              <p className="mt-3 text-sm text-slate-600">
+                Producción institucional y corporativa con estándar
+                narrativo claro y consistencia visual.
               </p>
             </div>
 
-            <div className="space-y-3">
+            <div>
               <h3 className="text-lg font-semibold text-slate-900">
                 Operación digital
               </h3>
-              <p className="text-sm text-slate-600">
-                Sitios corporativos, integración con CRM y medición estructurada
-                para equipos comerciales y de comunicaciones.
+              <p className="mt-3 text-sm text-slate-600">
+                Infraestructura web moderna, integración con CRM
+                y medición trazable para equipos comerciales.
               </p>
             </div>
 
-            <div className="space-y-3">
+            <div>
               <h3 className="text-lg font-semibold text-slate-900">
                 Desarrollo editorial
               </h3>
-              <p className="text-sm text-slate-600">
-                Formatos propios y plataformas territoriales
-                con visión de largo plazo.
+              <p className="mt-3 text-sm text-slate-600">
+                Activos propios, plataformas territoriales
+                y propiedad intelectual de largo plazo.
               </p>
             </div>
 
@@ -172,145 +172,99 @@ export default function Home() {
         <Divider />
 
         {/* MARCAS */}
-        <section id="marcas" className="scroll-mt-28 space-y-14">
+        <section id="marcas" className="scroll-mt-28 space-y-16">
           <SectionHeader
-            title="Marcas y líneas"
-            desc="Unidades especializadas que operan bajo un mismo marco estratégico."
+            title="Marcas y líneas especializadas"
+            desc="Unidades independientes bajo una estructura corporativa común."
           />
 
-          <div className="grid gap-10 md:grid-cols-2">
+          <div className="grid gap-14 md:grid-cols-2">
 
             {/* DEKAELO */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-slate-900">
-                Dekaelo Media
-              </h3>
-
-              <p className="text-sm text-slate-600">
-                Producción audiovisual corporativa para banca,
-                gremios empresariales y organizaciones de alto perfil.
-              </p>
-
-              <div className="flex items-center justify-between pt-2">
-                <SmartLink href="https://www.dekaelomedia.com">
-                  Visitar sitio →
-                </SmartLink>
-
-                <SocialIcons
-                  socials={[
-                    {
-                      href: "https://www.instagram.com/dekaelo_media/",
-                      icon: <FaInstagram className="h-4 w-4" />,
-                      label: "Instagram",
-                    },
-                    {
-                      href: "https://www.linkedin.com/company/dekaelo-media/",
-                      icon: <FaLinkedinIn className="h-4 w-4" />,
-                      label: "LinkedIn",
-                    },
-                    {
-                      href: "https://www.youtube.com/@dekaelo_media",
-                      icon: <FaYoutube className="h-4 w-4" />,
-                      label: "YouTube",
-                    },
-                  ]}
-                />
-              </div>
-            </div>
+            <BrandBlock
+              title="Dekaelo Media"
+              description="Producción audiovisual corporativa para banca, gremios empresariales y organizaciones de alto perfil."
+              url="https://www.dekaelomedia.com"
+              socials={[
+                {
+                  href: "https://www.instagram.com/dekaelo_media/",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram",
+                },
+                {
+                  href: "https://www.linkedin.com/company/dekaelo-media/",
+                  icon: <FaLinkedinIn className="h-4 w-4" />,
+                  label: "LinkedIn",
+                },
+                {
+                  href: "https://www.youtube.com/@dekaelo_media",
+                  icon: <FaYoutube className="h-4 w-4" />,
+                  label: "YouTube",
+                },
+              ]}
+            />
 
             {/* TRONX STRATEGY */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-slate-900">
-                Tronx Strategy
-              </h3>
-
-              <p className="text-sm text-slate-600">
-                Web corporativa, medición y flujos operativos
-                diseñados para organizaciones que requieren trazabilidad.
-              </p>
-
-              <div className="flex items-center justify-between pt-2">
-                <SmartLink href="https://www.tronxstrategy.com">
-                  Visitar sitio →
-                </SmartLink>
-
-                <SocialIcons
-                  socials={[
-                    {
-                      href: "https://www.linkedin.com/company/tronx-strategy",
-                      icon: <FaLinkedinIn className="h-4 w-4" />,
-                      label: "LinkedIn",
-                    },
-                  ]}
-                />
-              </div>
-            </div>
+            <BrandBlock
+              title="Tronx Strategy"
+              description="Web corporativa, infraestructura moderna y operación digital con trazabilidad real."
+              url="https://www.tronxstrategy.com"
+              socials={[
+                {
+                  href: "https://www.instagram.com/tronxstrategy",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram",
+                },
+                {
+                  href: "https://www.linkedin.com/company/tronx-strategy",
+                  icon: <FaLinkedinIn className="h-4 w-4" />,
+                  label: "LinkedIn",
+                },
+              ]}
+            />
 
             {/* TRONX TV */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-slate-900">
-                Tronx TV
-              </h3>
-
-              <p className="text-sm text-slate-600">
-                Plataforma audiovisual y desarrollo de formatos originales
-                enfocados en cultura, territorio y economía real.
-              </p>
-
-              <div className="flex items-center justify-between pt-2">
-                <SmartLink href="https://www.tronxtv.com">
-                  Visitar sitio →
-                </SmartLink>
-
-                <SocialIcons
-                  socials={[
-                    {
-                      href: "https://youtube.com/@tronxtv",
-                      icon: <FaYoutube className="h-4 w-4" />,
-                      label: "YouTube",
-                    },
-                    {
-                      href: "https://www.instagram.com/tronxtv/",
-                      icon: <FaInstagram className="h-4 w-4" />,
-                      label: "Instagram",
-                    },
-                    {
-                      href: "https://www.tiktok.com/@tronxtv",
-                      icon: <FaTiktok className="h-4 w-4" />,
-                      label: "TikTok",
-                    },
-                  ]}
-                />
-              </div>
-            </div>
+            <BrandBlock
+              title="Tronx TV"
+              description="Desarrollo de formatos audiovisuales y series documentales."
+              url="https://www.tronxtv.com"
+              socials={[
+                {
+                  href: "https://youtube.com/@tronxtv",
+                  icon: <FaYoutube className="h-4 w-4" />,
+                  label: "YouTube",
+                },
+                {
+                  href: "https://www.instagram.com/tronxtv/",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram",
+                },
+                {
+                  href: "https://www.tiktok.com/@tronxtv",
+                  icon: <FaTiktok className="h-4 w-4" />,
+                  label: "TikTok",
+                },
+                {
+                  href: "https://web.facebook.com/tronxtv/",
+                  icon: <FaFacebook className="h-4 w-4" />,
+                  label: "Facebook",
+                },
+              ]}
+            />
 
             {/* SANRAVAL */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-slate-900">
-                SANRAVAL
-              </h3>
-
-              <p className="text-sm text-slate-600">
-                Plataforma territorial del eje Santiago–Rancagua–Valparaíso,
-                conectada a economía local e infraestructura.
-              </p>
-
-              <div className="flex items-center justify-between pt-2">
-                <SmartLink href="https://www.sanraval.cl">
-                  Visitar sitio →
-                </SmartLink>
-
-                <SocialIcons
-                  socials={[
-                    {
-                      href: "https://www.instagram.com/sanraval.cl",
-                      icon: <FaInstagram className="h-4 w-4" />,
-                      label: "Instagram",
-                    },
-                  ]}
-                />
-              </div>
-            </div>
+            <BrandBlock
+              title="SANRAVAL"
+              description="Plataforma territorial del eje Santiago–Rancagua–Valparaíso."
+              url="https://www.sanraval.cl"
+              socials={[
+                {
+                  href: "https://www.instagram.com/sanraval.cl",
+                  icon: <FaInstagram className="h-4 w-4" />,
+                  label: "Instagram",
+                },
+              ]}
+            />
 
           </div>
         </section>
@@ -321,10 +275,10 @@ export default function Home() {
         <section id="contacto" className="scroll-mt-28 space-y-8">
           <SectionHeader
             title="Contacto corporativo"
-            desc="Consultas institucionales y coordinación entre unidades."
+            desc="Consultas institucionales y coordinación estratégica."
           />
 
-          <div className="space-y-3 text-sm text-slate-700">
+          <div className="space-y-4 text-sm text-slate-700">
             <p>
               Correo:{" "}
               <a
@@ -355,5 +309,32 @@ export default function Home() {
 
       </div>
     </main>
+  );
+}
+
+/* ---------- BRAND BLOCK COMPONENT ---------- */
+
+function BrandBlock({
+  title,
+  description,
+  url,
+  socials,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  socials: Social[];
+}) {
+  return (
+    <div className="space-y-4">
+      <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+
+      <p className="text-sm text-slate-600">{description}</p>
+
+      <div className="flex items-center justify-between pt-2">
+        <SmartLink href={url}>Visitar sitio →</SmartLink>
+        <SocialIcons socials={socials} />
+      </div>
+    </div>
   );
 }
