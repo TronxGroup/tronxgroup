@@ -106,21 +106,31 @@ function BrandBlock({
   logo: string;
 }) {
   return (
-    <div className="space-y-6 border-b border-slate-200 pb-10 last:border-none last:pb-0">
-      <div className="relative h-12 w-44">
+    <div className="group relative rounded-2xl border border-slate-200 bg-white p-8 transition hover:shadow-lg hover:-translate-y-1">
+
+      {/* LOGO GRANDE Y PROTAGÓNICO */}
+      <div className="relative h-16 w-full max-w-xs mb-6">
         <Image
           src={logo}
           alt={title}
           fill
-          className="object-contain"
+          className="object-contain object-left"
         />
       </div>
 
-      <p className="text-sm text-slate-600 max-w-md">
-        {description}
-      </p>
+      {/* TEXTO */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold text-slate-900 tracking-tight">
+          {title}
+        </h3>
 
-      <div className="flex items-center justify-between pt-2">
+        <p className="text-sm text-slate-600 leading-relaxed">
+          {description}
+        </p>
+      </div>
+
+      {/* FOOTER DEL BLOQUE */}
+      <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">
         <SmartLink href={url}>Visitar sitio →</SmartLink>
         <SocialIcons socials={socials} />
       </div>
