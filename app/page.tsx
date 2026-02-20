@@ -16,7 +16,7 @@ type Social = { href: string; icon: ReactNode; label: string };
 
 function Pill({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-slate-300 bg-white px-3 py-1 text-[0.6rem] font-semibold tracking-[0.2em] text-slate-600 uppercase">
+    <span className="inline-flex items-center border border-slate-300 px-3 py-1 text-[0.6rem] font-semibold tracking-[0.2em] text-slate-600 uppercase">
       {children}
     </span>
   );
@@ -67,7 +67,7 @@ function SocialIcons({ socials }: { socials?: Social[] }) {
   if (!socials?.length) return null;
 
   return (
-    <div className="flex items-center gap-3 text-slate-500">
+    <div className="flex items-center gap-4 text-slate-500">
       {socials.map((s) => (
         <a
           key={s.href}
@@ -75,7 +75,7 @@ function SocialIcons({ socials }: { socials?: Social[] }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          className="text-slate-500 hover:text-slate-900 transition"
+          className="hover:text-slate-900 transition"
         >
           {s.icon}
         </a>
@@ -102,7 +102,7 @@ function BrandBlock({
   logo: string;
 }) {
   return (
-    <div className="border border-slate-200 bg-white p-12">
+    <div className="border border-slate-200 p-12 bg-white">
 
       <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400 mb-6">
         Unidad especializada
@@ -176,8 +176,49 @@ export default function Home() {
 
         <Divider />
 
+        {/* ENFOQUE ESTRUCTURAL */}
+        <section className="space-y-20">
+          <SectionHeader
+            title="Enfoque estructural"
+            desc="Crecimiento controlado, infraestructura sólida y visión de largo plazo."
+          />
+
+          <div className="grid gap-16 md:grid-cols-3">
+
+            <div className="space-y-6">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Producción estratégica
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Comunicación audiovisual orientada a posicionamiento institucional.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Operación digital
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Infraestructura web moderna, trazable y preparada para escalar.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Activos editoriales
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Desarrollo de propiedad intelectual y plataformas propias.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        <Divider />
+
         {/* MARCAS */}
-        <section id="marcas" className="space-y-20">
+        <section className="space-y-20">
           <SectionHeader
             title="Marcas especializadas"
             desc="Unidades independientes que operan bajo una estructura corporativa común."
@@ -273,7 +314,7 @@ export default function Home() {
         <Divider />
 
         {/* CONTACTO */}
-        <section id="contacto" className="space-y-10">
+        <section className="space-y-10">
           <SectionHeader
             title="Contacto corporativo"
             desc="Coordinación institucional y consultas estratégicas."
