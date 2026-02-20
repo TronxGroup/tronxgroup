@@ -193,7 +193,7 @@ export default function Home() {
             desc="Unidades independientes bajo una estructura corporativa común."
           />
 
-          <div className="grid gap-16 md:grid-cols-2">
+          <div className="grid gap-10 md:grid-cols-2">
 
             <BrandBlock
               title="Dekaelo Media"
