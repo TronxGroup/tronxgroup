@@ -1,10 +1,18 @@
 // app/page.tsx
+
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaLinkedinIn,
+  FaFacebook,
+} from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
 
 type Social = { href: string; icon: ReactNode; label: string };
+
+/* ================= COMPONENTES BASE ================= */
 
 function Pill({ children }: { children: ReactNode }) {
   return (
@@ -81,6 +89,37 @@ function Divider() {
   );
 }
 
+/* ================= BRAND BLOCK ================= */
+
+function BrandBlock({
+  title,
+  description,
+  url,
+  socials,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  socials: Social[];
+}) {
+  return (
+    <div className="space-y-5 border-b border-slate-200 pb-8 last:border-none last:pb-0">
+      <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+
+      <p className="text-sm text-slate-600 max-w-md">
+        {description}
+      </p>
+
+      <div className="flex items-center justify-between pt-2">
+        <SmartLink href={url}>Visitar sitio →</SmartLink>
+        <SocialIcons socials={socials} />
+      </div>
+    </div>
+  );
+}
+
+/* ================= PAGE ================= */
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50">
@@ -91,8 +130,8 @@ export default function Home() {
           <div className="space-y-8">
             <div className="flex flex-wrap gap-2">
               <Pill>Holding corporativo independiente</Pill>
-              <Pill>Producción estratégica</Pill>
-              <Pill>Infraestructura digital</Pill>
+              <Pill>Infraestructura estratégica</Pill>
+              <Pill>Activos propios</Pill>
             </div>
 
             <h1 className="text-5xl font-semibold leading-tight text-slate-900 md:text-6xl md:leading-[1.05]">
@@ -100,14 +139,14 @@ export default function Home() {
             </h1>
 
             <p className="max-w-2xl text-base text-slate-600 md:text-lg">
-              Grupo corporativo que integra comunicación audiovisual,
-              operación digital y plataformas editoriales bajo
-              una misma lógica estratégica y estándar de ejecución.
+              Grupo corporativo que integra producción audiovisual,
+              operación digital e iniciativas editoriales bajo
+              una misma estructura estratégica.
             </p>
 
             <p className="max-w-xl text-sm text-slate-500">
-              Las marcas operan de forma autónoma,
-              compartiendo estructura, visión y dirección común.
+              Dirección común, ejecución especializada.
+              Marcas independientes, coherencia institucional.
             </p>
           </div>
 
@@ -131,18 +170,17 @@ export default function Home() {
         <section id="enfoque" className="scroll-mt-28 space-y-14">
           <SectionHeader
             title="Enfoque estructural"
-            desc="Crecimiento por capas, dirección estratégica y ejecución controlada."
+            desc="Crecimiento controlado, infraestructura sólida y visión de largo plazo."
           />
 
           <div className="grid gap-10 md:grid-cols-3">
 
             <div>
               <h3 className="text-lg font-semibold text-slate-900">
-                Comunicación audiovisual
+                Producción estratégica
               </h3>
               <p className="mt-3 text-sm text-slate-600">
-                Producción institucional y corporativa con estándar
-                narrativo claro y consistencia visual.
+                Comunicación audiovisual orientada a posicionamiento institucional.
               </p>
             </div>
 
@@ -151,18 +189,16 @@ export default function Home() {
                 Operación digital
               </h3>
               <p className="mt-3 text-sm text-slate-600">
-                Infraestructura web moderna, integración con CRM
-                y medición trazable para equipos comerciales.
+                Infraestructura web moderna, trazable y preparada para escalar.
               </p>
             </div>
 
             <div>
               <h3 className="text-lg font-semibold text-slate-900">
-                Desarrollo editorial
+                Activos editoriales
               </h3>
               <p className="mt-3 text-sm text-slate-600">
-                Activos propios, plataformas territoriales
-                y propiedad intelectual de largo plazo.
+                Desarrollo de propiedad intelectual y plataformas propias.
               </p>
             </div>
 
@@ -174,16 +210,15 @@ export default function Home() {
         {/* MARCAS */}
         <section id="marcas" className="scroll-mt-28 space-y-16">
           <SectionHeader
-            title="Marcas y líneas especializadas"
+            title="Marcas especializadas"
             desc="Unidades independientes bajo una estructura corporativa común."
           />
 
           <div className="grid gap-14 md:grid-cols-2">
 
-            {/* DEKAELO */}
             <BrandBlock
               title="Dekaelo Media"
-              description="Producción audiovisual corporativa para banca, gremios empresariales y organizaciones de alto perfil."
+              description="Producción audiovisual corporativa para banca y organizaciones."
               url="https://www.dekaelomedia.com"
               socials={[
                 {
@@ -196,18 +231,12 @@ export default function Home() {
                   icon: <FaLinkedinIn className="h-4 w-4" />,
                   label: "LinkedIn",
                 },
-                {
-                  href: "https://www.youtube.com/@dekaelo_media",
-                  icon: <FaYoutube className="h-4 w-4" />,
-                  label: "YouTube",
-                },
               ]}
             />
 
-            {/* TRONX STRATEGY */}
             <BrandBlock
               title="Tronx Strategy"
-              description="Web corporativa, infraestructura moderna y operación digital con trazabilidad real."
+              description="Web corporativa moderna, medición real y operación digital."
               url="https://www.tronxstrategy.com"
               socials={[
                 {
@@ -223,17 +252,11 @@ export default function Home() {
               ]}
             />
 
-            {/* TRONX TV */}
             <BrandBlock
               title="Tronx TV"
-              description="Desarrollo de formatos audiovisuales y series documentales."
+              description="Desarrollo de formatos audiovisuales y plataformas culturales."
               url="https://www.tronxtv.com"
               socials={[
-                {
-                  href: "https://youtube.com/@tronxtv",
-                  icon: <FaYoutube className="h-4 w-4" />,
-                  label: "YouTube",
-                },
                 {
                   href: "https://www.instagram.com/tronxtv/",
                   icon: <FaInstagram className="h-4 w-4" />,
@@ -252,7 +275,6 @@ export default function Home() {
               ]}
             />
 
-            {/* SANRAVAL */}
             <BrandBlock
               title="SANRAVAL"
               description="Plataforma territorial del eje Santiago–Rancagua–Valparaíso."
@@ -275,7 +297,7 @@ export default function Home() {
         <section id="contacto" className="scroll-mt-28 space-y-8">
           <SectionHeader
             title="Contacto corporativo"
-            desc="Consultas institucionales y coordinación estratégica."
+            desc="Coordinación institucional y consultas estratégicas."
           />
 
           <div className="space-y-4 text-sm text-slate-700">
@@ -309,32 +331,5 @@ export default function Home() {
 
       </div>
     </main>
-  );
-}
-
-/* ---------- BRAND BLOCK COMPONENT ---------- */
-
-function BrandBlock({
-  title,
-  description,
-  url,
-  socials,
-}: {
-  title: string;
-  description: string;
-  url: string;
-  socials: Social[];
-}) {
-  return (
-    <div className="space-y-4">
-      <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
-
-      <p className="text-sm text-slate-600">{description}</p>
-
-      <div className="flex items-center justify-between pt-2">
-        <SmartLink href={url}>Visitar sitio →</SmartLink>
-        <SocialIcons socials={socials} />
-      </div>
-    </div>
   );
 }
