@@ -97,15 +97,24 @@ function BrandBlock({
   description,
   url,
   socials,
+  logo,
 }: {
   title: string;
   description: string;
   url: string;
   socials: Social[];
+  logo: string;
 }) {
   return (
-    <div className="space-y-5 border-b border-slate-200 pb-8 last:border-none last:pb-0">
-      <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+    <div className="space-y-6 border-b border-slate-200 pb-10 last:border-none last:pb-0">
+      <div className="relative h-12 w-44">
+        <Image
+          src={logo}
+          alt={title}
+          fill
+          className="object-contain"
+        />
+      </div>
 
       <p className="text-sm text-slate-600 max-w-md">
         {description}
@@ -135,7 +144,7 @@ export default function Home() {
               <Pill>Activos propios</Pill>
             </div>
 
-            <h1 className="text-5xl font-semibold leading-tight text-slate-900 md:text-6xl md:leading-[1.05]">
+            <h1 className="text-5xl font-semibold leading-tight text-slate-900 md:text-6xl">
               Tronx Group
             </h1>
 
@@ -167,45 +176,6 @@ export default function Home() {
 
         <Divider />
 
-        {/* ENFOQUE */}
-        <section id="enfoque" className="scroll-mt-28 space-y-14">
-          <SectionHeader
-            title="Enfoque estructural"
-            desc="Crecimiento controlado, infraestructura sólida y visión de largo plazo."
-          />
-
-          <div className="grid gap-10 md:grid-cols-3">
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Producción estratégica
-              </h3>
-              <p className="mt-3 text-sm text-slate-600">
-                Comunicación audiovisual orientada a posicionamiento institucional.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Operación digital
-              </h3>
-              <p className="mt-3 text-sm text-slate-600">
-                Infraestructura web moderna, trazable y preparada para escalar.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                Activos editoriales
-              </h3>
-              <p className="mt-3 text-sm text-slate-600">
-                Desarrollo de propiedad intelectual y plataformas propias.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <Divider />
-
         {/* MARCAS */}
         <section id="marcas" className="scroll-mt-28 space-y-16">
           <SectionHeader
@@ -213,13 +183,13 @@ export default function Home() {
             desc="Unidades independientes bajo una estructura corporativa común."
           />
 
-          <div className="grid gap-14 md:grid-cols-2">
+          <div className="grid gap-16 md:grid-cols-2">
 
-            {/* DEKAELO */}
             <BrandBlock
               title="Dekaelo Media"
               description="Producción audiovisual corporativa para banca y organizaciones."
               url="https://www.dekaelomedia.com"
+              logo="/tronxgroup_logo_dekaelomedia.png"
               socials={[
                 {
                   href: "https://www.instagram.com/dekaelo_media/",
@@ -234,11 +204,11 @@ export default function Home() {
               ]}
             />
 
-            {/* TRONX STRATEGY */}
             <BrandBlock
               title="Tronx Strategy"
               description="Web corporativa moderna, medición real y operación digital."
               url="https://www.tronxstrategy.com"
+              logo="/tronxgroup_logo_tronxstrategy.png"
               socials={[
                 {
                   href: "https://www.instagram.com/tronxstrategy",
@@ -253,11 +223,11 @@ export default function Home() {
               ]}
             />
 
-            {/* TRONX TV */}
             <BrandBlock
               title="Tronx TV"
               description="Desarrollo de formatos audiovisuales y plataformas culturales."
               url="https://www.tronxtv.com"
+              logo="/tronxgroup_logo_tronxtv.png"
               socials={[
                 {
                   href: "https://youtube.com/@tronxtv",
@@ -282,11 +252,11 @@ export default function Home() {
               ]}
             />
 
-            {/* SANRAVAL */}
             <BrandBlock
               title="SANRAVAL"
               description="Plataforma territorial del eje Santiago–Rancagua–Valparaíso."
               url="https://www.sanraval.cl"
+              logo="/tronxgroup_logo_sanraval.png"
               socials={[
                 {
                   href: "https://web.facebook.com/sanraval.cl",
