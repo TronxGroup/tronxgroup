@@ -16,7 +16,7 @@ type Social = { href: string; icon: ReactNode; label: string };
 
 function Pill({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-[0.65rem] font-semibold tracking-[0.18em] text-slate-700">
+    <span className="inline-flex items-center rounded-full border border-slate-300 bg-white px-3 py-1 text-[0.6rem] font-semibold tracking-[0.2em] text-slate-600 uppercase">
       {children}
     </span>
   );
@@ -30,12 +30,12 @@ function SectionHeader({
   desc?: string;
 }) {
   return (
-    <div className="space-y-4">
-      <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">
+    <div className="space-y-6">
+      <h2 className="text-4xl font-semibold text-slate-900 tracking-tight">
         {title}
       </h2>
       {desc && (
-        <p className="max-w-2xl text-sm text-slate-600 md:text-base">
+        <p className="max-w-3xl text-base text-slate-600 leading-relaxed">
           {desc}
         </p>
       )}
@@ -56,7 +56,7 @@ function SmartLink({
     <a
       href={href}
       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className="text-sm font-semibold text-slate-900 transition hover:text-slate-600"
+      className="text-sm font-semibold text-slate-900 hover:text-slate-600 transition"
     >
       {children}
     </a>
@@ -67,7 +67,7 @@ function SocialIcons({ socials }: { socials?: Social[] }) {
   if (!socials?.length) return null;
 
   return (
-    <div className="flex items-center gap-2 text-slate-500">
+    <div className="flex items-center gap-3 text-slate-500">
       {socials.map((s) => (
         <a
           key={s.href}
@@ -75,7 +75,7 @@ function SocialIcons({ socials }: { socials?: Social[] }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          className="rounded-full border border-slate-200 bg-white p-2 transition hover:border-slate-400 hover:text-slate-800"
+          className="text-slate-500 hover:text-slate-900 transition"
         >
           {s.icon}
         </a>
@@ -85,52 +85,43 @@ function SocialIcons({ socials }: { socials?: Social[] }) {
 }
 
 function Divider() {
-  return (
-    <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-  );
+  return <div className="h-px w-full bg-slate-200" />;
 }
 
 /* ================= BRAND BLOCK ================= */
 
 function BrandBlock({
-  title,
   description,
   url,
   socials,
   logo,
 }: {
-  title: string;
   description: string;
   url: string;
   socials: Social[];
   logo: string;
 }) {
   return (
-    <div className="group relative rounded-2xl border border-slate-200 bg-white p-8 transition hover:shadow-lg hover:-translate-y-1">
+    <div className="border border-slate-200 bg-white p-12">
 
-      {/* LOGO GRANDE Y PROTAGÓNICO */}
-      <div className="relative h-16 w-full max-w-xs mb-6">
+      <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400 mb-6">
+        Unidad especializada
+      </p>
+
+      <div className="relative h-24 w-full max-w-sm mb-10">
         <Image
           src={logo}
-          alt={title}
+          alt="Brand logo"
           fill
           className="object-contain object-left"
         />
       </div>
 
-      {/* TEXTO */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-slate-900 tracking-tight">
-          {title}
-        </h3>
+      <p className="text-sm text-slate-600 leading-relaxed max-w-md">
+        {description}
+      </p>
 
-        <p className="text-sm text-slate-600 leading-relaxed">
-          {description}
-        </p>
-      </div>
-
-      {/* FOOTER DEL BLOQUE */}
-      <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">
+      <div className="mt-10 flex items-center justify-between border-t border-slate-200 pt-6">
         <SmartLink href={url}>Visitar sitio →</SmartLink>
         <SocialIcons socials={socials} />
       </div>
@@ -142,36 +133,36 @@ function BrandBlock({
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50">
-      <div className="mx-auto max-w-6xl space-y-28 px-4 pb-28 pt-24">
+    <main className="min-h-screen bg-white">
+      <div className="mx-auto max-w-7xl space-y-32 px-6 pb-32 pt-32">
 
         {/* HERO */}
-        <section className="grid items-center gap-16 md:grid-cols-[1.1fr,1fr]">
-          <div className="space-y-8">
-            <div className="flex flex-wrap gap-2">
+        <section className="grid items-center gap-24 md:grid-cols-[1.1fr,1fr]">
+          <div className="space-y-10">
+            <div className="flex flex-wrap gap-3">
               <Pill>Grupo corporativo independiente</Pill>
               <Pill>Infraestructura estratégica</Pill>
               <Pill>Activos propios</Pill>
             </div>
 
-            <h1 className="text-5xl font-semibold leading-tight text-slate-900 md:text-6xl">
+            <h1 className="text-6xl font-semibold leading-[1.05] text-slate-900">
               Tronx Group
             </h1>
 
-            <p className="max-w-2xl text-base text-slate-600 md:text-lg">
+            <p className="max-w-2xl text-lg text-slate-600 leading-relaxed">
               Grupo corporativo que integra producción audiovisual,
               operación digital e iniciativas editoriales bajo
-              una misma estructura estratégica.
+              una estructura estratégica común.
             </p>
 
             <p className="max-w-xl text-sm text-slate-500">
-              Dirección común, ejecución especializada.
-              Marcas independientes, coherencia institucional.
+              Dirección unificada. Ejecución especializada.
+              Coherencia institucional entre marcas.
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-sm">
-            <div className="relative h-80 md:h-[28rem]">
+          <div className="relative overflow-hidden border border-slate-200">
+            <div className="relative h-[32rem]">
               <Image
                 src="/images/hero/tronx-hero.jpg"
                 alt="Tronx Group"
@@ -179,7 +170,6 @@ export default function Home() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
             </div>
           </div>
         </section>
@@ -187,95 +177,91 @@ export default function Home() {
         <Divider />
 
         {/* MARCAS */}
-        <section id="marcas" className="scroll-mt-28 space-y-16">
+        <section id="marcas" className="space-y-20">
           <SectionHeader
             title="Marcas especializadas"
-            desc="Unidades independientes bajo una estructura corporativa común."
+            desc="Unidades independientes que operan bajo una estructura corporativa común."
           />
 
-          <div className="grid gap-10 md:grid-cols-2">
+          <div className="grid gap-16 md:grid-cols-2">
 
             <BrandBlock
-              title="Dekaelo Media"
               description="Producción audiovisual corporativa para banca y organizaciones."
               url="https://www.dekaelomedia.com"
               logo="/tronxgroup_logo_dekaelomedia.png"
               socials={[
                 {
                   href: "https://www.instagram.com/dekaelo_media/",
-                  icon: <FaInstagram className="h-4 w-4" />,
+                  icon: <FaInstagram size={18} />,
                   label: "Instagram",
                 },
                 {
                   href: "https://www.linkedin.com/company/dekaelo-media/",
-                  icon: <FaLinkedinIn className="h-4 w-4" />,
+                  icon: <FaLinkedinIn size={18} />,
                   label: "LinkedIn",
                 },
               ]}
             />
 
             <BrandBlock
-              title="Tronx Strategy"
               description="Web corporativa moderna, medición real y operación digital."
               url="https://www.tronxstrategy.com"
               logo="/tronxgroup_logo_tronxstrategy.png"
               socials={[
                 {
                   href: "https://www.instagram.com/tronxstrategy",
-                  icon: <FaInstagram className="h-4 w-4" />,
+                  icon: <FaInstagram size={18} />,
                   label: "Instagram",
                 },
                 {
                   href: "https://www.linkedin.com/company/tronx-strategy",
-                  icon: <FaLinkedinIn className="h-4 w-4" />,
+                  icon: <FaLinkedinIn size={18} />,
                   label: "LinkedIn",
                 },
               ]}
             />
 
             <BrandBlock
-              title="Tronx TV"
               description="Desarrollo de formatos audiovisuales y plataformas culturales."
               url="https://www.tronxtv.com"
               logo="/tronxgroup_logo_tronxtv.png"
               socials={[
                 {
                   href: "https://youtube.com/@tronxtv",
-                  icon: <FaYoutube className="h-4 w-4" />,
+                  icon: <FaYoutube size={18} />,
                   label: "YouTube",
                 },
                 {
                   href: "https://www.instagram.com/tronxtv/",
-                  icon: <FaInstagram className="h-4 w-4" />,
+                  icon: <FaInstagram size={18} />,
                   label: "Instagram",
                 },
                 {
                   href: "https://www.tiktok.com/@tronxtv",
-                  icon: <FaTiktok className="h-4 w-4" />,
+                  icon: <FaTiktok size={18} />,
                   label: "TikTok",
                 },
                 {
                   href: "https://web.facebook.com/tronxtv/",
-                  icon: <FaFacebook className="h-4 w-4" />,
+                  icon: <FaFacebook size={18} />,
                   label: "Facebook",
                 },
               ]}
             />
 
             <BrandBlock
-              title="SANRAVAL"
               description="Plataforma territorial del eje Santiago–Rancagua–Valparaíso."
               url="https://www.sanraval.cl"
               logo="/tronxgroup_logo_sanraval.png"
               socials={[
                 {
                   href: "https://web.facebook.com/sanraval.cl",
-                  icon: <FaFacebook className="h-4 w-4" />,
+                  icon: <FaFacebook size={18} />,
                   label: "Facebook",
                 },
                 {
                   href: "https://www.instagram.com/sanraval.cl",
-                  icon: <FaInstagram className="h-4 w-4" />,
+                  icon: <FaInstagram size={18} />,
                   label: "Instagram",
                 },
               ]}
@@ -287,13 +273,13 @@ export default function Home() {
         <Divider />
 
         {/* CONTACTO */}
-        <section id="contacto" className="scroll-mt-28 space-y-8">
+        <section id="contacto" className="space-y-10">
           <SectionHeader
             title="Contacto corporativo"
             desc="Coordinación institucional y consultas estratégicas."
           />
 
-          <div className="space-y-4 text-sm text-slate-700">
+          <div className="space-y-6 text-base text-slate-700">
             <p>
               Correo:{" "}
               <a
@@ -316,7 +302,7 @@ export default function Home() {
               </a>
             </p>
 
-            <p className="pt-4 text-xs text-slate-500">
+            <p className="text-sm text-slate-500">
               Tronx Group SpA es la razón social de facturación.
             </p>
           </div>
