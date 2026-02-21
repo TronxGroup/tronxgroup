@@ -76,6 +76,7 @@ function SocialIcons({ socials }: { socials?: Social[] }) {
           rel="noopener noreferrer"
           aria-label={s.label}
           className="hover:text-slate-900 transition"
+          title={s.label}
         >
           {s.icon}
         </a>
@@ -91,41 +92,47 @@ function Divider() {
 /* ================= BRAND BLOCK ================= */
 
 function BrandBlock({
+  title,
   description,
   url,
   socials,
   logo,
 }: {
+  title: string;
   description: string;
   url: string;
   socials: Social[];
   logo: string;
 }) {
   return (
-    <div className="border border-slate-200 p-12 bg-white">
-
+    <article className="border border-slate-200 p-12 bg-white">
       <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400 mb-6">
         Unidad especializada
       </p>
 
-      <div className="relative h-24 w-full max-w-sm mb-10">
+      {/* Logo */}
+      <div className="relative h-24 w-full max-w-sm mb-8">
         <Image
           src={logo}
-          alt="Brand logo"
+          alt={`${title} logo`}
           fill
           className="object-contain object-left"
         />
       </div>
 
-      <p className="text-sm text-slate-600 leading-relaxed max-w-md">
+      {/* Texto */}
+      <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
+
+      <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-md">
         {description}
       </p>
 
+      {/* Footer */}
       <div className="mt-10 flex items-center justify-between border-t border-slate-200 pt-6">
         <SmartLink href={url}>Visitar sitio →</SmartLink>
         <SocialIcons socials={socials} />
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -150,15 +157,44 @@ export default function Home() {
             </h1>
 
             <p className="max-w-2xl text-lg text-slate-600 leading-relaxed">
-              Grupo corporativo que integra producción audiovisual,
-              operación digital e iniciativas editoriales bajo
-              una estructura estratégica común.
+              Grupo corporativo que integra producción audiovisual, operación
+              digital e iniciativas editoriales bajo una estructura estratégica común.
             </p>
 
             <p className="max-w-xl text-sm text-slate-500">
-              Dirección unificada. Ejecución especializada.
-              Coherencia institucional entre marcas.
+              Dirección unificada. Ejecución especializada. Coherencia institucional
+              entre marcas.
             </p>
+
+            {/* Links internos (anchors) */}
+            <nav className="pt-2">
+              <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+                <li>
+                  <a
+                    href="#enfoque"
+                    className="font-semibold text-slate-900 hover:text-slate-600 transition"
+                  >
+                    Enfoque →
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#marcas"
+                    className="font-semibold text-slate-900 hover:text-slate-600 transition"
+                  >
+                    Marcas →
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contacto"
+                    className="font-semibold text-slate-900 hover:text-slate-600 transition"
+                  >
+                    Contacto →
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           <div className="relative overflow-hidden border border-slate-200">
@@ -177,14 +213,13 @@ export default function Home() {
         <Divider />
 
         {/* ENFOQUE ESTRUCTURAL */}
-        <section className="space-y-20">
+        <section id="enfoque" className="scroll-mt-32 space-y-20">
           <SectionHeader
-            title="Enfoque estructuraal"
+            title="Enfoque estructural"
             desc="Crecimiento controlado, infraestructura sólida y visión de largo plazo."
           />
 
           <div className="grid gap-16 md:grid-cols-3">
-
             <div className="space-y-6">
               <h3 className="text-lg font-semibold text-slate-900">
                 Producción estratégica
@@ -211,22 +246,21 @@ export default function Home() {
                 Desarrollo de propiedad intelectual y plataformas propias.
               </p>
             </div>
-
           </div>
         </section>
 
         <Divider />
 
         {/* MARCAS */}
-        <section className="space-y-20">
+        <section id="marcas" className="scroll-mt-32 space-y-20">
           <SectionHeader
             title="Marcas especializadas"
             desc="Unidades independientes que operan bajo una estructura corporativa común."
           />
 
           <div className="grid gap-16 md:grid-cols-2">
-
             <BrandBlock
+              title="Dekaelo Media"
               description="Producción audiovisual corporativa para banca y organizaciones."
               url="https://www.dekaelomedia.com"
               logo="/tronxgroup_logo_dekaelomedia.png"
@@ -245,6 +279,7 @@ export default function Home() {
             />
 
             <BrandBlock
+              title="Tronx Strategy"
               description="Web corporativa moderna, medición real y operación digital."
               url="https://www.tronxstrategy.com"
               logo="/tronxgroup_logo_tronxstrategy.png"
@@ -263,6 +298,7 @@ export default function Home() {
             />
 
             <BrandBlock
+              title="Tronx TV"
               description="Desarrollo de formatos audiovisuales y plataformas culturales."
               url="https://www.tronxtv.com"
               logo="/tronxgroup_logo_tronxtv.png"
@@ -291,6 +327,7 @@ export default function Home() {
             />
 
             <BrandBlock
+              title="SANRAVAL"
               description="Plataforma territorial del eje Santiago–Rancagua–Valparaíso."
               url="https://www.sanraval.cl"
               logo="/tronxgroup_logo_sanraval.png"
@@ -307,14 +344,13 @@ export default function Home() {
                 },
               ]}
             />
-
           </div>
         </section>
 
         <Divider />
 
         {/* CONTACTO */}
-        <section className="space-y-10">
+        <section id="contacto" className="scroll-mt-32 space-y-10">
           <SectionHeader
             title="Contacto corporativo"
             desc="Coordinación institucional y consultas estratégicas."
@@ -325,7 +361,7 @@ export default function Home() {
               Correo:{" "}
               <a
                 href="mailto:info@tronxgroup.com"
-                className="font-semibold text-slate-900"
+                className="font-semibold text-slate-900 hover:text-slate-600 transition"
               >
                 info@tronxgroup.com
               </a>
@@ -337,7 +373,7 @@ export default function Home() {
                 href="https://wa.me/56920080031"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-slate-900"
+                className="font-semibold text-slate-900 hover:text-slate-600 transition"
               >
                 +56 9 2008 0031
               </a>
@@ -347,8 +383,17 @@ export default function Home() {
               Tronx Group SpA es la razón social de facturación.
             </p>
           </div>
-        </section>
 
+          {/* Volver arriba (discreto) */}
+          <div className="pt-6">
+            <a
+              href="#top"
+              className="text-sm font-semibold text-slate-900 hover:text-slate-600 transition"
+            >
+              Volver arriba →
+            </a>
+          </div>
+        </section>
       </div>
     </main>
   );
