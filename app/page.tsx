@@ -179,7 +179,7 @@ export default function Home() {
         {/* ENFOQUE ESTRUCTURAL */}
         <section className="space-y-20">
           <SectionHeader
-            title="Enfoque estructural"
+            title="Enfoque estructuraal"
             desc="Crecimiento controlado, infraestructura sólida y visión de largo plazo."
           />
 
