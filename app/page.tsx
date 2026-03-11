@@ -1,5 +1,4 @@
 // app/page.tsx
-
 import type { ReactNode } from "react";
 import {
   FaInstagram,
@@ -104,14 +103,16 @@ const units: Unit[] = [
 ];
 
 function Section({
+  id,
   title,
   children,
 }: {
+  id: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
-    <section className="border-t border-neutral-200 py-10 first:border-t-0 first:pt-0">
+    <section id={id} className="border-t border-neutral-200 py-10 first:border-t-0 first:pt-0 scroll-mt-24">
       <h2 className="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">
         {title}
       </h2>
@@ -165,7 +166,7 @@ function SocialLinks({ socials }: { socials?: Social[] }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-neutral-900" id="top">
+    <main className="min-h-screen bg-white text-neutral-900">
       <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
         <div className="space-y-6">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-neutral-500">
@@ -217,7 +218,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Section title="Perfil">
+        <Section id="perfil" title="Perfil">
           <div className="space-y-3 text-sm leading-7 text-neutral-600">
             <p>
               Tronx Group SpA articula unidades de trabajo vinculadas a
@@ -231,7 +232,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section title="Unidades">
+        <Section id="unidades" title="Unidades">
           <div className="divide-y divide-neutral-200 border border-neutral-200">
             {units.map((unit) => (
               <div key={unit.name} className="p-5">
@@ -263,7 +264,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section title="Validación">
+        <Section id="contacto" title="Validación">
           <div className="space-y-3 text-sm leading-7 text-neutral-600">
             <p>
               Tronx Group SpA es la razón social utilizada para fines de
@@ -277,7 +278,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section title="Contacto">
+        <Section id="contacto-final" title="Contacto">
           <div className="space-y-2 text-sm text-neutral-700">
             <p>
               Correo:{" "}
