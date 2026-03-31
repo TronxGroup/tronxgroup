@@ -252,7 +252,7 @@ export default function Home() {
                 href="mailto:info@tronxgroup.cl"
                 className="text-neutral-900 underline underline-offset-4 hover:text-neutral-500 transition"
               >
-                info@tronxgroup.cl
+                info@tronxgroup.com
               </a>
             </p>
             <p>
