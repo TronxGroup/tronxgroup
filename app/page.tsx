@@ -62,7 +62,6 @@ const units: Unit[] = [
 
 const legalData = [
   { label: "Razón social", value: "TRONX GROUP SpA" },
-  { label: "RUT", value: "78.297.435-1" },
   { label: "Constitución", value: "17 de noviembre de 2025" },
   { label: "Función", value: "Facturación, administración y continuidad operativa" },
 ];
@@ -270,23 +269,6 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* FOOTER */}
-        <div className="mt-10 border-t border-neutral-200 pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p className="text-xs text-neutral-400">
-            © {new Date().getFullYear()} Tronx Group SpA · RUT 78.297.435-1
-          </p>
-          <p className="text-xs text-neutral-400">
-            Desarrollado por{" "}
-            <a
-              href="https://www.tronxweb.cl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-neutral-600 transition"
-            >
-              Tronx Web
-            </a>
-          </p>
-        </div>
 
       </div>
     </main>
