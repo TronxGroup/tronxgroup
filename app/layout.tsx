@@ -115,7 +115,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             description:
               "Sociedad operativa independiente orientada a administración, facturación, control financiero y continuidad operativa.",
             email: "info@tronxgroup.com",
-            telephone: "+56 9 2008 0031",
             address: {
               "@type": "PostalAddress",
               addressCountry: "CL",
@@ -185,17 +184,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     className="text-neutral-900 hover:text-neutral-600"
                   >
                     info@tronxgroup.com
-                  </a>
-                </p>
-
-                <p>
-                  <a
-                    href="https://wa.me/56920080031"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-900 hover:text-neutral-600"
-                  >
-                    +56 9 2008 0031
                   </a>
                 </p>
 
