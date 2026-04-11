@@ -50,7 +50,7 @@ const units: Unit[] = [
     name: "Tronx TV",
     role: "Activo editorial audiovisual",
     description: "Desarrollo editorial audiovisual independiente. Serie documental Reality Day y proyectos de largo plazo.",
-    href: "https://www.youtube.com/@tronxtv",
+    href: "https://www.tronxtv.com",
     tag: "Editorial",
     socials: [
       { href: "https://youtube.com/@tronxtv", icon: <FaYoutube size={14} />, label: "YouTube" },
@@ -255,20 +255,8 @@ export default function Home() {
                 info@tronxgroup.com
               </a>
             </p>
-            <p>
-              WhatsApp:{" "}
-              <a
-                href="https://wa.me/56920080031"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-neutral-900 underline underline-offset-4 hover:text-neutral-500 transition"
-              >
-                +56 9 2008 0031
-              </a>
-            </p>
           </div>
         </Section>
-
 
       </div>
     </main>
