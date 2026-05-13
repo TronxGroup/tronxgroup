@@ -1,33 +1,55 @@
 // app/layout.tsx
+
 import "./globals.css";
-import type { Metadata, Viewport } from "next";
+
+import type {
+  Metadata,
+  Viewport,
+} from "next";
+
 import type { ReactNode } from "react";
+
 import Image from "next/image";
 import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tronxgroup.com"),
+
   title: {
     default: "Tronx Group SpA",
     template: "%s | Tronx Group SpA",
   },
+
   description:
-    "Tronx Group SpA es una sociedad operativa independiente orientada a administración, facturación, control financiero y continuidad operativa de unidades especializadas.",
+    "Tronx Group SpA es una sociedad operativa independiente orientada a administración y continuidad operativa.",
+
   applicationName: "Tronx Group SpA",
+
   category: "Business",
-  alternates: { canonical: "/" },
+
+  alternates: {
+    canonical: "/",
+  },
+
   icons: {
     icon: [{ url: "/favicon_tronx_web.png" }],
     apple: [{ url: "/favicon_tronx_web.png" }],
   },
+
   openGraph: {
     title: "Tronx Group SpA",
+
     description:
-      "Sociedad operativa independiente orientada a administración, facturación y continuidad operativa.",
+      "Sociedad operativa independiente orientada a administración y continuidad operativa.",
+
     url: "https://www.tronxgroup.com",
+
     siteName: "Tronx Group SpA",
+
     type: "website",
+
     locale: "es_CL",
+
     images: [
       {
         url: "/og-tronx.jpg",
@@ -37,13 +59,18 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
+
     title: "Tronx Group SpA",
+
     description:
-      "Sociedad operativa independiente orientada a administración, facturación y continuidad operativa.",
+      "Sociedad operativa independiente orientada a administración y continuidad operativa.",
+
     images: ["/og-tronx.jpg"],
   },
+
   robots: {
     index: true,
     follow: true,
@@ -66,40 +93,75 @@ function Analytics() {
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
       />
-      <Script id="ga-tronx" strategy="afterInteractive">
+
+      <Script
+        id="ga-tronx"
+        strategy="afterInteractive"
+      >
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', { anonymize_ip: true });
+
+          gtag('config', '${GA_ID}', {
+            anonymize_ip: true
+          });
         `}
       </Script>
     </>
   );
 }
 
-function NavLink({ href, children }: { href: string; children: ReactNode }) {
+function NavLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
   return (
     <a
       href={href}
-      className="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-900"
+      className="text-sm text-neutral-500 transition hover:text-black"
     >
       {children}
     </a>
   );
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body className="bg-white text-neutral-900 antialiased">
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
+    <html
+      lang="es"
+      suppressHydrationWarning
+    >
+      <body className="bg-white text-black antialiased">
 
+        {/* PRECONNECT */}
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+        />
+
+        <link
+          rel="preconnect"
+          href="https://www.google-analytics.com"
+        />
+
+        {/* ANALYTICS */}
         <Analytics />
 
+        {/* STRUCTURED DATA */}
         <Script
           id="ld-org"
           type="application/ld+json"
@@ -107,105 +169,125 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         >
           {JSON.stringify({
             "@context": "https://schema.org",
+
             "@type": "Organization",
+
             name: "Tronx Group SpA",
+
             legalName: "Tronx Group SpA",
+
             url: "https://www.tronxgroup.com",
-            logo: "https://www.tronxgroup.com/logo_tronx_web.png",
+
+            logo:
+              "https://www.tronxgroup.com/logo_tronx_web.png",
+
             description:
-              "Sociedad operativa independiente orientada a administración, facturación, control financiero y continuidad operativa.",
+              "Sociedad operativa independiente orientada a administración y continuidad operativa.",
+
             email: "info@tronxgroup.com",
+
             address: {
               "@type": "PostalAddress",
               addressCountry: "CL",
             },
-            sameAs: ["https://x.com/TronxGroup"],
           })}
         </Script>
 
-        <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/95 backdrop-blur">
-          <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
-            <a href="/" className="flex items-center gap-3">
+        {/* HEADER */}
+        <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur">
+
+          <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+
+            {/* LOGO */}
+            <a
+              href="/"
+              className="flex items-center gap-3"
+            >
+
               <div className="relative h-9 w-9">
+
                 <Image
                   src="/logo_tronx_web.png"
-                  alt="Tronx Group SpA"
+                  alt="Tronx Group"
                   fill
-                  className="object-contain"
                   priority
+                  className="object-contain"
                 />
+
               </div>
 
               <div className="leading-tight">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-900">
+
+                <p className="text-xs font-semibold uppercase tracking-[0.2em]">
                   Tronx Group
                 </p>
-                <p className="hidden text-[10px] text-neutral-500 sm:block">
-                  Tronx Group SpA
-                </p>
+
               </div>
+
             </a>
 
-            <div className="hidden items-center gap-7 md:flex">
-              <NavLink href="#perfil">Perfil</NavLink>
-              <NavLink href="#unidades">Unidades</NavLink>
-              <NavLink href="#contacto">Contacto</NavLink>
+            {/* NAV */}
+            <div className="hidden items-center gap-8 md:flex">
+
+              <NavLink href="#perfil">
+                Perfil
+              </NavLink>
+
+              <NavLink href="#unidades">
+                Unidades
+              </NavLink>
+
+              <NavLink href="#contacto">
+                Contacto
+              </NavLink>
+
             </div>
 
-            <a
-              href="#contacto"
-              className="text-xs font-medium text-neutral-500 transition-colors hover:text-neutral-900"
-            >
-              Contacto
-            </a>
           </nav>
+
         </header>
 
-        <main>{children}</main>
+        {/* PAGE */}
+        <main>
+          {children}
+        </main>
 
-        <footer className="mt-16 border-t border-neutral-200 bg-white">
-          <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
-            <div className="grid gap-8 md:grid-cols-2">
-              <div className="space-y-3 text-sm text-neutral-600">
-                <p className="font-medium text-neutral-900">Tronx Group SpA</p>
-                <p>
-                  Sociedad operativa independiente orientada a administración,
-                  facturación y continuidad operativa.
-                </p>
-                <p className="text-xs text-neutral-500">
-                  © {currentYear} Tronx Group SpA
-                </p>
-              </div>
+        {/* FOOTER */}
+        <footer className="border-t border-neutral-200 bg-white">
 
-              <div className="space-y-3 text-sm md:text-right">
-                <p>
-                  <a
-                    href="mailto:info@tronxgroup.com"
-                    className="text-neutral-900 hover:text-neutral-600"
-                  >
-                    info@tronxgroup.com
-                  </a>
-                </p>
+          <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
 
-                <p>
-                  <a
-                    href="https://x.com/TronxGroup"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-neutral-900 hover:text-neutral-600"
-                  >
-                    X / @TronxGroup
-                  </a>
-                </p>
+            <div>
 
-                <p className="text-xs text-neutral-500">
-                  Tronx Group SpA es la razón social de facturación y
-                  administración.
-                </p>
-              </div>
+              <p className="text-sm font-medium text-black">
+                Tronx Group SpA
+              </p>
+
+              <p className="mt-1 text-sm text-neutral-500">
+                Sociedad operativa independiente.
+              </p>
+
             </div>
+
+            <div className="text-sm text-neutral-500 sm:text-right">
+
+              <a
+                href="mailto:info@tronxgroup.com"
+                className="transition hover:text-black"
+              >
+                info@tronxgroup.com
+              </a>
+
+              <p className="mt-2 text-xs text-neutral-400">
+                © {currentYear} Tronx Group SpA
+              </p>
+
+            </div>
+
           </div>
+
         </footer>
+
       </body>
     </html>
   );
