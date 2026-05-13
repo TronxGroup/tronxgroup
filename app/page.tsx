@@ -6,6 +6,7 @@ import {
   FaYoutube,
   FaLinkedinIn,
 } from "react-icons/fa";
+
 import { FaTiktok } from "react-icons/fa6";
 
 type Social = {
@@ -27,19 +28,24 @@ const units: Unit[] = [
     name: "Dekaelo Media",
     description:
       "Producción audiovisual corporativa. Vodcast, contenido institucional y desarrollo audiovisual para empresas.",
+
     href: "https://www.dekaelomedia.com",
+
     tag: "Audiovisual",
+
     socials: [
       {
         href: "https://www.instagram.com/dekaelo_media/",
         icon: <FaInstagram size={14} />,
         label: "Instagram",
       },
+
       {
         href: "https://www.linkedin.com/company/dekaelo-media/",
         icon: <FaLinkedinIn size={14} />,
         label: "LinkedIn",
       },
+
       {
         href: "https://www.youtube.com/@dekaelo_media",
         icon: <FaYoutube size={14} />,
@@ -50,10 +56,14 @@ const units: Unit[] = [
 
   {
     name: "Tronx Web",
+
     description:
       "Sitios web modernos y rápidos para empresas y profesionales en Chile.",
+
     href: "https://www.tronxweb.cl",
+
     tag: "Web",
+
     socials: [
       {
         href: "https://www.instagram.com/tronx.web/",
@@ -65,21 +75,27 @@ const units: Unit[] = [
 
   {
     name: "Tronx TV",
+
     description:
       "Iniciativa editorial audiovisual enfocada en contenido original y desarrollo documental.",
+
     href: "https://www.tronxtv.com",
+
     tag: "Editorial",
+
     socials: [
       {
         href: "https://youtube.com/@tronxtv",
         icon: <FaYoutube size={14} />,
         label: "YouTube",
       },
+
       {
         href: "https://www.instagram.com/tronxtv/",
         icon: <FaInstagram size={14} />,
         label: "Instagram",
       },
+
       {
         href: "https://www.tiktok.com/@tronxtv",
         icon: <FaTiktok size={14} />,
@@ -94,10 +110,12 @@ const legalData = [
     label: "Razón social",
     value: "TRONX GROUP SpA",
   },
+
   {
     label: "Constitución",
     value: "17 de noviembre de 2025",
   },
+
   {
     label: "Ubicación",
     value: "Santiago, Chile",
@@ -158,7 +176,7 @@ function SocialLinks({
   if (!socials?.length) return null;
 
   return (
-    <div className="flex items-center gap-3 text-white/40">
+    <div className="flex items-center gap-3 text-white/50">
       {socials.map((s) => (
         <a
           key={s.href}
@@ -178,9 +196,18 @@ function SocialLinks({
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-white">
+    <main className="min-h-screen overflow-hidden bg-[#050816] text-white">
 
-      <div className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
+      {/* BG EFFECTS */}
+      <div className="pointer-events-none fixed inset-0">
+
+        <div className="absolute top-0 left-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-3xl" />
+
+        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-fuchsia-500/10 blur-3xl" />
+
+      </div>
+
+      <div className="relative mx-auto max-w-4xl px-6 py-20 sm:py-28">
 
         {/* HERO */}
         <div className="space-y-6">
@@ -196,7 +223,7 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className="max-w-2xl text-base leading-8 text-white/60">
+          <p className="max-w-2xl text-base leading-8 text-white/70">
             Estructura corporativa que administra y da continuidad
             operativa a unidades especializadas en producción audiovisual,
             desarrollo web e iniciativas editoriales.
@@ -212,7 +239,7 @@ export default function Home() {
               key={item.label}
               className="glass rounded-[1.75rem] p-6"
             >
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-white/45">
                 {item.label}
               </p>
 
@@ -229,7 +256,7 @@ export default function Home() {
           id="perfil"
           title="Perfil"
         >
-          <div className="space-y-4 text-sm leading-7 text-white/60">
+          <div className="space-y-4 text-sm leading-7 text-white/70">
 
             <p>
               Tronx Group SpA funciona como estructura administrativa
@@ -267,13 +294,13 @@ export default function Home() {
                         {unit.name}
                       </h3>
 
-                      <span className="rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/40">
+                      <span className="rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/45">
                         {unit.tag}
                       </span>
 
                     </div>
 
-                    <p className="mt-4 max-w-2xl leading-7 text-white/60">
+                    <p className="mt-4 max-w-2xl leading-7 text-white/65">
                       {unit.description}
                     </p>
 
@@ -290,7 +317,7 @@ export default function Home() {
                 {unit.socials?.length ? (
                   <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
 
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/35">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
                       Canales
                     </p>
 
@@ -310,7 +337,7 @@ export default function Home() {
           id="validacion"
           title="Validación"
         >
-          <div className="space-y-4 text-sm leading-7 text-white/60">
+          <div className="space-y-4 text-sm leading-7 text-white/70">
 
             <p>
               Tronx Group SpA es la razón social utilizada
@@ -332,7 +359,7 @@ export default function Home() {
           id="contacto"
           title="Contacto"
         >
-          <div className="space-y-2 text-sm text-white/60">
+          <div className="space-y-2 text-sm text-white/70">
 
             <p>
               Correo:
