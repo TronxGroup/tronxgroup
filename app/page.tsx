@@ -20,18 +20,16 @@ type Unit = {
   description: string;
   href?: string;
   socials?: Social[];
-  tag: string;
 };
 
 const units: Unit[] = [
   {
     name: "Dekaelo Media",
+
     description:
-      "Producción audiovisual corporativa. Vodcast, contenido institucional y desarrollo audiovisual para empresas.",
+      "Producción audiovisual corporativa y contenido para empresas.",
 
     href: "https://www.dekaelomedia.com",
-
-    tag: "Audiovisual",
 
     socials: [
       {
@@ -58,11 +56,9 @@ const units: Unit[] = [
     name: "Tronx Web",
 
     description:
-      "Sitios web modernos y rápidos para empresas y profesionales en Chile.",
+      "Sitios web modernos y rápidos para empresas y profesionales.",
 
     href: "https://www.tronxweb.cl",
-
-    tag: "Web",
 
     socials: [
       {
@@ -77,11 +73,9 @@ const units: Unit[] = [
     name: "Tronx TV",
 
     description:
-      "Iniciativa editorial audiovisual enfocada en contenido original y desarrollo documental.",
+      "Proyecto editorial audiovisual y documental.",
 
     href: "https://www.tronxtv.com",
-
-    tag: "Editorial",
 
     socials: [
       {
@@ -105,23 +99,6 @@ const units: Unit[] = [
   },
 ];
 
-const legalData = [
-  {
-    label: "Razón social",
-    value: "TRONX GROUP SpA",
-  },
-
-  {
-    label: "Constitución",
-    value: "17 de noviembre de 2025",
-  },
-
-  {
-    label: "Ubicación",
-    value: "Santiago, Chile",
-  },
-];
-
 function Section({
   id,
   title,
@@ -134,9 +111,9 @@ function Section({
   return (
     <section
       id={id}
-      className="scroll-mt-24 border-t border-white/10 py-12"
+      className="border-t border-neutral-200 py-12 scroll-mt-24"
     >
-      <h2 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-tronx-300">
+      <h2 className="text-xs uppercase tracking-[0.22em] text-neutral-400">
         {title}
       </h2>
 
@@ -144,27 +121,6 @@ function Section({
         {children}
       </div>
     </section>
-  );
-}
-
-function ExternalLink({
-  href,
-  children,
-}: {
-  href?: string;
-  children: React.ReactNode;
-}) {
-  if (!href) return <span>{children}</span>;
-
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white transition hover:text-tronx-300"
-    >
-      {children}
-    </a>
   );
 }
 
@@ -176,7 +132,7 @@ function SocialLinks({
   if (!socials?.length) return null;
 
   return (
-    <div className="flex items-center gap-3 text-white/50">
+    <div className="flex items-center gap-3 text-neutral-400">
       {socials.map((s) => (
         <a
           key={s.href}
@@ -184,8 +140,7 @@ function SocialLinks({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          title={s.label}
-          className="transition hover:text-tronx-300"
+          className="transition hover:text-black"
         >
           {s.icon}
         </a>
@@ -196,58 +151,25 @@ function SocialLinks({
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#050816] text-white">
+    <main className="min-h-screen bg-white text-black">
 
-      {/* BG EFFECTS */}
-      <div className="pointer-events-none fixed inset-0">
-
-        <div className="absolute top-0 left-0 h-[500px] w-[500px] rounded-full bg-cyan-500/10 blur-3xl" />
-
-        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-fuchsia-500/10 blur-3xl" />
-
-      </div>
-
-      <div className="relative mx-auto max-w-4xl px-6 py-20 sm:py-28">
+      <div className="mx-auto max-w-4xl px-6 py-20">
 
         {/* HERO */}
-        <div className="space-y-6">
+        <div>
 
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-tronx-300">
-            Sociedad operativa independiente · Santiago, Chile
+          <p className="text-xs uppercase tracking-[0.24em] text-neutral-400">
+            Santiago, Chile
           </p>
 
-          <h1 className="text-5xl font-black tracking-tight md:text-7xl">
-            TRONX{" "}
-            <span className="text-gradient">
-              GROUP
-            </span>
+          <h1 className="mt-4 text-5xl font-semibold tracking-tight">
+            TRONX GROUP
           </h1>
 
-          <p className="max-w-2xl text-base leading-8 text-white/70">
-            Estructura corporativa que administra y da continuidad
-            operativa a unidades especializadas en producción audiovisual,
-            desarrollo web e iniciativas editoriales.
+          <p className="mt-6 max-w-2xl text-neutral-600 leading-7">
+            Estructura operativa para iniciativas audiovisuales,
+            desarrollo web y proyectos editoriales.
           </p>
-
-        </div>
-
-        {/* DATOS */}
-        <div className="mt-14 grid gap-4 sm:grid-cols-3">
-
-          {legalData.map((item) => (
-            <div
-              key={item.label}
-              className="glass rounded-[1.75rem] p-6"
-            >
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/45">
-                {item.label}
-              </p>
-
-              <p className="mt-3 text-sm font-medium text-white">
-                {item.value}
-              </p>
-            </div>
-          ))}
 
         </div>
 
@@ -256,19 +178,17 @@ export default function Home() {
           id="perfil"
           title="Perfil"
         >
-          <div className="space-y-4 text-sm leading-7 text-white/70">
+
+          <div className="space-y-4 text-neutral-600 leading-7">
 
             <p>
-              Tronx Group SpA funciona como estructura administrativa
-              para distintas iniciativas digitales y audiovisuales.
-            </p>
-
-            <p>
-              El enfoque es mantener una operación simple,
-              independiente y sostenible en el tiempo.
+              Tronx Group SpA administra distintas iniciativas
+              digitales y audiovisuales bajo una estructura simple
+              e independiente.
             </p>
 
           </div>
+
         </Section>
 
         {/* UNIDADES */}
@@ -276,49 +196,45 @@ export default function Home() {
           id="unidades"
           title="Unidades"
         >
-          <div className="space-y-5">
+
+          <div className="space-y-6">
 
             {units.map((unit) => (
               <div
                 key={unit.name}
-                className="glass rounded-[2rem] p-7"
+                className="rounded-2xl border border-neutral-200 p-6"
               >
 
-                <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
 
                   <div>
 
-                    <div className="flex items-center gap-3">
+                    <h3 className="text-xl font-medium">
+                      {unit.name}
+                    </h3>
 
-                      <h3 className="text-2xl font-bold tracking-tight">
-                        {unit.name}
-                      </h3>
-
-                      <span className="rounded-full border border-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white/45">
-                        {unit.tag}
-                      </span>
-
-                    </div>
-
-                    <p className="mt-4 max-w-2xl leading-7 text-white/65">
+                    <p className="mt-3 max-w-2xl text-neutral-600 leading-7">
                       {unit.description}
                     </p>
 
                   </div>
 
-                  <ExternalLink href={unit.href}>
-                    <span className="text-sm font-semibold">
-                      Visitar →
-                    </span>
-                  </ExternalLink>
+                  <a
+                    href={unit.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-neutral-500 transition hover:text-black"
+                  >
+                    Sitio →
+                  </a>
 
                 </div>
 
                 {unit.socials?.length ? (
-                  <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+                  <div className="mt-6 flex items-center justify-between border-t border-neutral-200 pt-5">
 
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
-                      Canales
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-400">
+                      Redes
                     </p>
 
                     <SocialLinks socials={unit.socials} />
@@ -330,6 +246,7 @@ export default function Home() {
             ))}
 
           </div>
+
         </Section>
 
         {/* VALIDACIÓN */}
@@ -337,7 +254,8 @@ export default function Home() {
           id="validacion"
           title="Validación"
         >
-          <div className="space-y-4 text-sm leading-7 text-white/70">
+
+          <div className="space-y-4 text-neutral-600 leading-7">
 
             <p>
               Tronx Group SpA es la razón social utilizada
@@ -345,13 +263,8 @@ export default function Home() {
               asociados a las unidades del grupo.
             </p>
 
-            <p>
-              Facturas emitidas por Tronx Group SpA relacionadas
-              con Dekaelo Media, Tronx Web o Tronx TV
-              corresponden a la estructura operativa oficial.
-            </p>
-
           </div>
+
         </Section>
 
         {/* CONTACTO */}
@@ -359,20 +272,18 @@ export default function Home() {
           id="contacto"
           title="Contacto"
         >
-          <div className="space-y-2 text-sm text-white/70">
 
-            <p>
-              Correo:
-              {" "}
-              <a
-                href="mailto:info@tronxgroup.com"
-                className="text-white transition hover:text-tronx-300"
-              >
-                info@tronxgroup.com
-              </a>
-            </p>
+          <div className="text-neutral-600">
+
+            <a
+              href="mailto:info@tronxgroup.com"
+              className="transition hover:text-black"
+            >
+              info@tronxgroup.com
+            </a>
 
           </div>
+
         </Section>
 
       </div>
