@@ -1,10 +1,12 @@
 // app/page.tsx
 
 import type { ReactNode } from "react";
+
 import {
   FaInstagram,
   FaYoutube,
   FaLinkedinIn,
+  FaFacebookF,
 } from "react-icons/fa";
 
 import { FaTiktok } from "react-icons/fa6";
@@ -70,39 +72,40 @@ const units: Unit[] = [
   },
 
   {
-  name: "Tronx Media",
+    name: "Tronx Media",
 
-  description:
-    "Canal editorial audiovisual y documental sobre personas reales e historias reales en Chile.",
+    description:
+      "Canal editorial audiovisual y documental sobre personas reales e historias reales en Chile.",
 
-  href: "https://www.tronxmedia.cl",
+    href: "https://www.tronxmedia.cl",
 
-  socials: [
-    {
-      href: "https://youtube.com/@tronxmedia",
-      icon: <FaYoutube size={14} />,
-      label: "YouTube",
-    },
+    socials: [
+      {
+        href: "https://youtube.com/@tronxmedia",
+        icon: <FaYoutube size={14} />,
+        label: "YouTube",
+      },
 
-    {
-      href: "https://www.instagram.com/tronxmedia/",
-      icon: <FaInstagram size={14} />,
-      label: "Instagram",
-    },
+      {
+        href: "https://www.instagram.com/tronxmedia/",
+        icon: <FaInstagram size={14} />,
+        label: "Instagram",
+      },
 
-    {
-      href: "https://www.facebook.com/tronxmedia",
-      icon: <FaInstagram size={14} />,
-      label: "Facebook",
-    },
+      {
+        href: "https://www.facebook.com/tronxmedia",
+        icon: <FaFacebookF size={14} />,
+        label: "Facebook",
+      },
 
-    {
-      href: "https://www.tiktok.com/@tronx.media",
-      icon: <FaTiktok size={14} />,
-      label: "TikTok",
-    },
-  ],
-},
+      {
+        href: "https://www.tiktok.com/@tronx.media",
+        icon: <FaTiktok size={14} />,
+        label: "TikTok",
+      },
+    ],
+  },
+];
 
 function Section({
   id,
@@ -168,12 +171,12 @@ export default function Home() {
           </p>
 
           <h1 className="mt-4 text-5xl font-semibold tracking-tight">
-            TRONX GROUP
+            TRONX MEDIA
           </h1>
 
           <p className="mt-6 max-w-2xl text-neutral-600 leading-7">
-            Estructura operativa para iniciativas audiovisuales,
-            desarrollo web y proyectos editoriales.
+            Plataforma editorial audiovisual enfocada en historias reales,
+            documentales y contenido sobre Chile desde adentro.
           </p>
 
         </div>
@@ -187,9 +190,9 @@ export default function Home() {
           <div className="space-y-4 text-neutral-600 leading-7">
 
             <p>
-              Tronx Group SpA administra distintas iniciativas
-              digitales y audiovisuales bajo una estructura simple
-              e independiente.
+              Tronx Media desarrolla contenido documental y audiovisual
+              enfocado en personas reales, negocios, oficios y cultura
+              chilena bajo una línea editorial independiente.
             </p>
 
           </div>
@@ -199,7 +202,7 @@ export default function Home() {
         {/* UNIDADES */}
         <Section
           id="unidades"
-          title="Unidades"
+          title="Proyectos"
         >
 
           <div className="space-y-6">
@@ -257,15 +260,15 @@ export default function Home() {
         {/* VALIDACIÓN */}
         <Section
           id="validacion"
-          title="Validación"
+          title="Reality Day"
         >
 
           <div className="space-y-4 text-neutral-600 leading-7">
 
             <p>
-              Tronx Group SpA es la razón social utilizada
-              para administración y facturación de servicios
-              asociados a las unidades del grupo.
+              Reality Day es la serie documental principal de Tronx Media,
+              enfocada en mostrar el trabajo real, las historias humanas
+              y el día a día de distintos negocios y oficios en Chile.
             </p>
 
           </div>
