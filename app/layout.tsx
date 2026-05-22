@@ -10,70 +10,22 @@ import type {
 import type { ReactNode } from "react";
 
 import Image from "next/image";
-import Script from "next/script";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.tronxmedia.cl"),
-
-  title: {
-    default: "Tronx Media",
-    template: "%s | Tronx Media",
-  },
-
-  description:
-    "Tronx Media es una plataforma editorial audiovisual chilena enfocada en historias reales, documentales y contenido sobre Chile desde adentro.",
-
-  applicationName: "Tronx Media",
-
-  category: "Media",
-
-  alternates: {
-    canonical: "/",
-  },
-
-  icons: {
-    icon: [{ url: "/favicon_tronx_web.png" }],
-    apple: [{ url: "/favicon_tronx_web.png" }],
-  },
-
-  openGraph: {
-    title: "Tronx Media",
-
-    description:
-      "Historias reales, documentales y contenido audiovisual sobre Chile desde adentro.",
-
-    url: "https://www.tronxmedia.cl",
-
-    siteName: "Tronx Media",
-
-    type: "website",
-
-    locale: "es_CL",
-
-    images: [
-      {
-        url: "/og-tronx.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Tronx Media",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-
-    title: "Tronx Media",
-
-    description:
-      "Historias reales, documentales y contenido audiovisual sobre Chile desde adentro.",
-
-    images: ["/og-tronx.jpg"],
-  },
-
+  title: "Tronx Group",
+  description: "Tronx Group",
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "none",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -83,38 +35,6 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
-
-const GA_ID = "G-3ZXV73VV96";
-
-function Analytics() {
-  return (
-    <>
-      <Script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-      />
-
-      <Script
-        id="ga-tronx"
-        strategy="afterInteractive"
-      >
-        {`
-          window.dataLayer = window.dataLayer || [];
-
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-
-          gtag('js', new Date());
-
-          gtag('config', '${GA_ID}', {
-            anonymize_ip: true
-          });
-        `}
-      </Script>
-    </>
-  );
-}
 
 function NavLink({
   href,
@@ -147,59 +67,6 @@ export default function RootLayout({
     >
       <body className="bg-white text-black antialiased">
 
-        {/* PRECONNECT */}
-        <link
-          rel="preconnect"
-          href="https://www.googletagmanager.com"
-        />
-
-        <link
-          rel="preconnect"
-          href="https://www.google-analytics.com"
-        />
-
-        {/* ANALYTICS */}
-        <Analytics />
-
-        {/* STRUCTURED DATA */}
-        <Script
-          id="ld-org"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify({
-            "@context": "https://schema.org",
-
-            "@type": "Organization",
-
-            name: "Tronx Media",
-
-            legalName: "Tronx Group SpA",
-
-            url: "https://www.tronxmedia.cl",
-
-            logo:
-              "https://www.tronxmedia.cl/logo_tronx_web.png",
-
-            description:
-              "Plataforma editorial audiovisual chilena enfocada en historias reales y documentales.",
-
-            email: "info@tronxgroup.com",
-
-            sameAs: [
-              "https://www.instagram.com/tronxmedia/",
-              "https://www.facebook.com/tronxmedia",
-              "https://www.tiktok.com/@tronx.media",
-              "https://youtube.com/@tronxmedia",
-            ],
-
-            address: {
-              "@type": "PostalAddress",
-              addressCountry: "CL",
-            },
-          })}
-        </Script>
-
         {/* HEADER */}
         <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur">
 
@@ -215,7 +82,7 @@ export default function RootLayout({
 
                 <Image
                   src="/logo_tronx_web.png"
-                  alt="Tronx Media"
+                  alt="Tronx Group"
                   fill
                   priority
                   className="object-contain"
@@ -226,7 +93,7 @@ export default function RootLayout({
               <div className="leading-tight">
 
                 <p className="text-xs font-semibold uppercase tracking-[0.2em]">
-                  Tronx Media
+                  Tronx Group
                 </p>
 
               </div>
@@ -241,7 +108,7 @@ export default function RootLayout({
               </NavLink>
 
               <NavLink href="#unidades">
-                Proyectos
+                Unidades
               </NavLink>
 
               <NavLink href="#contacto">
@@ -267,11 +134,11 @@ export default function RootLayout({
             <div>
 
               <p className="text-sm font-medium text-black">
-                Tronx Media
+                Tronx Group SpA
               </p>
 
               <p className="mt-1 text-sm text-neutral-500">
-                Historias reales. Chile desde adentro.
+                Estructura operativa independiente.
               </p>
 
             </div>
@@ -286,7 +153,7 @@ export default function RootLayout({
               </a>
 
               <p className="mt-2 text-xs text-neutral-400">
-                © {currentYear} Tronx Media
+                © {currentYear} Tronx Group SpA
               </p>
 
             </div>
