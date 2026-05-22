@@ -175,9 +175,9 @@ export default function Home() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-neutral-600 leading-7">
-            Estructura operativa para iniciativas audiovisuales,
-            desarrollo web y proyectos editoriales independientes.
-          </p>
+  Grupo independiente enfocado en proyectos audiovisuales,
+  desarrollo web y medios editoriales en Chile.
+</p>
 
         </div>
 
@@ -190,10 +190,9 @@ export default function Home() {
           <div className="space-y-4 text-neutral-600 leading-7">
 
             <p>
-              Tronx Group SpA administra distintas iniciativas
-              digitales, audiovisuales y editoriales bajo una
-              estructura operativa independiente.
-            </p>
+  Tronx Group SpA administra distintas unidades digitales
+  y creativas bajo una estructura operativa flexible e independiente.
+</p>
 
           </div>
 
