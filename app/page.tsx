@@ -70,34 +70,39 @@ const units: Unit[] = [
   },
 
   {
-    name: "Tronx TV",
+  name: "Tronx Media",
 
-    description:
-      "Proyecto editorial audiovisual y documental.",
+  description:
+    "Canal editorial audiovisual y documental sobre personas reales e historias reales en Chile.",
 
-    href: "https://www.tronxtv.com",
+  href: "https://www.tronxmedia.cl",
 
-    socials: [
-      {
-        href: "https://youtube.com/@tronxtv",
-        icon: <FaYoutube size={14} />,
-        label: "YouTube",
-      },
+  socials: [
+    {
+      href: "https://youtube.com/@tronxmedia",
+      icon: <FaYoutube size={14} />,
+      label: "YouTube",
+    },
 
-      {
-        href: "https://www.instagram.com/tronxtv/",
-        icon: <FaInstagram size={14} />,
-        label: "Instagram",
-      },
+    {
+      href: "https://www.instagram.com/tronxmedia/",
+      icon: <FaInstagram size={14} />,
+      label: "Instagram",
+    },
 
-      {
-        href: "https://www.tiktok.com/@tronxtv",
-        icon: <FaTiktok size={14} />,
-        label: "TikTok",
-      },
-    ],
-  },
-];
+    {
+      href: "https://www.facebook.com/tronxmedia",
+      icon: <FaInstagram size={14} />,
+      label: "Facebook",
+    },
+
+    {
+      href: "https://www.tiktok.com/@tronx.media",
+      icon: <FaTiktok size={14} />,
+      label: "TikTok",
+    },
+  ],
+},
 
 function Section({
   id,
