@@ -13,19 +13,19 @@ import Image from "next/image";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.tronxgroup.com"),
+  metadataBase: new URL("https://www.tronxmedia.cl"),
 
   title: {
-    default: "Tronx Group SpA",
-    template: "%s | Tronx Group SpA",
+    default: "Tronx Media",
+    template: "%s | Tronx Media",
   },
 
   description:
-    "Tronx Group SpA es una sociedad operativa independiente orientada a administración y continuidad operativa.",
+    "Tronx Media es una plataforma editorial audiovisual chilena enfocada en historias reales, documentales y contenido sobre Chile desde adentro.",
 
-  applicationName: "Tronx Group SpA",
+  applicationName: "Tronx Media",
 
-  category: "Business",
+  category: "Media",
 
   alternates: {
     canonical: "/",
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Tronx Group SpA",
+    title: "Tronx Media",
 
     description:
-      "Sociedad operativa independiente orientada a administración y continuidad operativa.",
+      "Historias reales, documentales y contenido audiovisual sobre Chile desde adentro.",
 
-    url: "https://www.tronxgroup.com",
+    url: "https://www.tronxmedia.cl",
 
-    siteName: "Tronx Group SpA",
+    siteName: "Tronx Media",
 
     type: "website",
 
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: "/og-tronx.jpg",
         width: 1200,
         height: 630,
-        alt: "Tronx Group SpA",
+        alt: "Tronx Media",
       },
     ],
   },
@@ -63,10 +63,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Tronx Group SpA",
+    title: "Tronx Media",
 
     description:
-      "Sociedad operativa independiente orientada a administración y continuidad operativa.",
+      "Historias reales, documentales y contenido audiovisual sobre Chile desde adentro.",
 
     images: ["/og-tronx.jpg"],
   },
@@ -172,19 +172,26 @@ export default function RootLayout({
 
             "@type": "Organization",
 
-            name: "Tronx Group SpA",
+            name: "Tronx Media",
 
             legalName: "Tronx Group SpA",
 
-            url: "https://www.tronxgroup.com",
+            url: "https://www.tronxmedia.cl",
 
             logo:
-              "https://www.tronxgroup.com/logo_tronx_web.png",
+              "https://www.tronxmedia.cl/logo_tronx_web.png",
 
             description:
-              "Sociedad operativa independiente orientada a administración y continuidad operativa.",
+              "Plataforma editorial audiovisual chilena enfocada en historias reales y documentales.",
 
             email: "info@tronxgroup.com",
+
+            sameAs: [
+              "https://www.instagram.com/tronxmedia/",
+              "https://www.facebook.com/tronxmedia",
+              "https://www.tiktok.com/@tronx.media",
+              "https://youtube.com/@tronxmedia",
+            ],
 
             address: {
               "@type": "PostalAddress",
@@ -208,7 +215,7 @@ export default function RootLayout({
 
                 <Image
                   src="/logo_tronx_web.png"
-                  alt="Tronx Group"
+                  alt="Tronx Media"
                   fill
                   priority
                   className="object-contain"
@@ -219,7 +226,7 @@ export default function RootLayout({
               <div className="leading-tight">
 
                 <p className="text-xs font-semibold uppercase tracking-[0.2em]">
-                  Tronx Group
+                  Tronx Media
                 </p>
 
               </div>
@@ -234,7 +241,7 @@ export default function RootLayout({
               </NavLink>
 
               <NavLink href="#unidades">
-                Unidades
+                Proyectos
               </NavLink>
 
               <NavLink href="#contacto">
@@ -260,11 +267,11 @@ export default function RootLayout({
             <div>
 
               <p className="text-sm font-medium text-black">
-                Tronx Group SpA
+                Tronx Media
               </p>
 
               <p className="mt-1 text-sm text-neutral-500">
-                Sociedad operativa independiente.
+                Historias reales. Chile desde adentro.
               </p>
 
             </div>
@@ -279,7 +286,7 @@ export default function RootLayout({
               </a>
 
               <p className="mt-2 text-xs text-neutral-400">
-                © {currentYear} Tronx Group SpA
+                © {currentYear} Tronx Media
               </p>
 
             </div>
